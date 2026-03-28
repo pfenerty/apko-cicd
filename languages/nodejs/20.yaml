@@ -3,6 +3,7 @@ include: base/apko.yaml
 contents:
     packages:
         - nodejs=~20
+        - npm=~11.11.1
 
 annotations:
     org.opencontainers.image.title: Node.js 20

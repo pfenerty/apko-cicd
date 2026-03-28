@@ -9,3 +9,4 @@ annotations:
 contents:
     packages:
         - nodejs=~24
+        - npm=~11.11.1

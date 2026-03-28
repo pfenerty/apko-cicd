@@ -27,6 +27,17 @@
         },
         {
             "customType": "regex",
+            "description": "Track package versions in languages/nodejs/*.yaml (X.Y.Z pins only)",
+            "managerFilePatterns": ["/languages/nodejs/[^/]+\\.yaml$/"],
+            "matchStrings": [
+                "- (?<depName>[a-z][a-z0-9-]+)=~(?<currentValue>\\d+\\.\\d+\\.\\d+[^\\s]*)"
+            ],
+            "datasourceTemplate": "github-releases",
+            "versioningTemplate": "semver-coerced",
+            "extractVersionTemplate": "^v?(?<version>.+)$"
+        },
+        {
+            "customType": "regex",
             "description": "Track tool version tags in Makefile (kept in sync with tools/*/apko.yaml)",
             "managerFilePatterns": ["/Makefile$/"],
             "matchStrings": [
@@ -101,6 +112,11 @@
         },
         {
             "matchManagers": ["regex"],
+            "matchPackageNames": ["npm"],
+            "registryUrls": ["https://github.com/npm/cli"]
+        },
+        {
+            "matchManagers": ["regex"],
             "matchPackageNames": ["golangci-lint"],
             "registryUrls": ["https://github.com/golangci/golangci-lint"]
         },
@@ -153,6 +169,19 @@
             "matchPackageNames": ["golangci-lint"],
             "groupName": "golangci-lint",
             "branchName": "renovate/golangci-lint"
+        },
+        {
+            "description": "Group npm bumps across all Node.js images into one PR",
+            "matchManagers": ["regex"],
+            "matchFileNames": [
+                "languages/nodejs/18.yaml",
+                "languages/nodejs/20.yaml",
+                "languages/nodejs/22.yaml",
+                "languages/nodejs/24.yaml"
+            ],
+            "matchPackageNames": ["npm"],
+            "groupName": "npm",
+            "branchName": "renovate/npm"
         },
         {
             "description": "Automerge minor and patch updates",
