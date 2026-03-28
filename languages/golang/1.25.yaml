@@ -1,0 +1,11 @@
+include: base/apko.yaml
+
+contents:
+    packages:
+        - go=~1.25
+
+annotations:
+    org.opencontainers.image.title: Go 1.25
+    org.opencontainers.image.description: Go 1.25 CI/CD image based on Wolfi
+    org.opencontainers.image.version: "1.25"
+    org.opencontainers.image.base.name: ghcr.io/pfenerty/apko-cicd/base:stable

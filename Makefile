@@ -27,7 +27,7 @@ $(eval $(call IMAGE,tools-apko,tools/apko/apko.yaml,apko:1.1.16))
 $(eval $(call IMAGE,tools-melange,tools/melange/apko.yaml,melange:0.46.1))
 $(eval $(call IMAGE,tools-golangci-lint,tools/golangci-lint/apko.yaml,golangci-lint:2.11.4))
 
-# ── Node.js ──────────────────────────────────────────────────────────────────
+# # ── Node.js ──────────────────────────────────────────────────────────────────
 $(eval $(call IMAGE,nodejs-18,languages/nodejs/18.yaml,nodejs:18))
 $(eval $(call IMAGE,nodejs-20,languages/nodejs/20.yaml,nodejs:20))
 $(eval $(call IMAGE,nodejs-22,languages/nodejs/22.yaml,nodejs:22))
@@ -37,6 +37,7 @@ $(eval $(call IMAGE,nodejs-24,languages/nodejs/24.yaml,nodejs:24))
 $(eval $(call IMAGE,golang-1.22,languages/golang/1.22.yaml,golang:1.22))
 $(eval $(call IMAGE,golang-1.23,languages/golang/1.23.yaml,golang:1.23))
 $(eval $(call IMAGE,golang-1.24,languages/golang/1.24.yaml,golang:1.24))
+$(eval $(call IMAGE,golang-1.25,languages/golang/1.25.yaml,golang:1.25))
 
 # ── Java ─────────────────────────────────────────────────────────────────────
 $(eval $(call IMAGE,java-jdk-11,languages/java/11/jdk.yaml,jdk:11))
