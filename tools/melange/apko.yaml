@@ -3,3 +3,9 @@ include: base/apko.yaml
 contents:
     packages:
         - melange=~0.46.1
+
+annotations:
+    org.opencontainers.image.title: Melange
+    org.opencontainers.image.description: APK package builder for Wolfi and Alpine
+    org.opencontainers.image.version: "0.46.1"
+    org.opencontainers.image.base.name: ghcr.io/pfenerty/apko-cicd/base:stable

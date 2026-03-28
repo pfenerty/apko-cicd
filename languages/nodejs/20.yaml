@@ -3,3 +3,9 @@ include: base/apko.yaml
 contents:
     packages:
         - nodejs=~20
+
+annotations:
+    org.opencontainers.image.title: Node.js 20
+    org.opencontainers.image.description: Node.js 20 LTS CI/CD image based on Wolfi
+    org.opencontainers.image.version: "20"
+    org.opencontainers.image.base.name: ghcr.io/pfenerty/apko-cicd/base:stable

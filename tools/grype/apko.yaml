@@ -3,3 +3,9 @@ include: base/apko.yaml
 contents:
     packages:
         - grype=~0.110.0
+
+annotations:
+    org.opencontainers.image.title: Grype
+    org.opencontainers.image.description: Vulnerability scanner for container images and filesystems
+    org.opencontainers.image.version: 0.110.0
+    org.opencontainers.image.base.name: ghcr.io/pfenerty/apko-cicd/base:stable

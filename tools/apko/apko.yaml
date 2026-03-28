@@ -3,3 +3,9 @@ include: base/apko.yaml
 contents:
     packages:
         - apko=~1.1.15
+
+annotations:
+    org.opencontainers.image.title: apko
+    org.opencontainers.image.description: apk-based OCI image builder
+    org.opencontainers.image.version: 1.1.16
+    org.opencontainers.image.base.name: ghcr.io/pfenerty/apko-cicd/base:stable

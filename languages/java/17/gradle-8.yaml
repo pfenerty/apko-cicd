@@ -3,3 +3,9 @@ include: languages/java/17/jdk.yaml
 contents:
     packages:
         - gradle=~8
+
+annotations:
+    org.opencontainers.image.title: Gradle 8 (JDK 17)
+    org.opencontainers.image.description: Gradle 8 with OpenJDK 17 CI/CD image
+    org.opencontainers.image.version: "8"
+    org.opencontainers.image.base.name: ghcr.io/pfenerty/apko-cicd/jdk:17

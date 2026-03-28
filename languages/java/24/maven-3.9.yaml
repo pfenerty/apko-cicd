@@ -3,3 +3,9 @@ include: languages/java/24/jdk.yaml
 contents:
     packages:
         - maven=~3.9
+
+annotations:
+    org.opencontainers.image.title: Maven 3.9 (JDK 24)
+    org.opencontainers.image.description: Apache Maven 3.9 CI/CD image with OpenJDK 24
+    org.opencontainers.image.version: "3.9"
+    org.opencontainers.image.base.name: ghcr.io/pfenerty/apko-cicd/jdk:24

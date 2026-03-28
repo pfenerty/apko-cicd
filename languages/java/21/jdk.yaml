@@ -1,5 +1,11 @@
 include: base/apko.yaml
 
+annotations:
+    org.opencontainers.image.title: OpenJDK 21
+    org.opencontainers.image.description: OpenJDK 21 LTS CI/CD image built on Wolfi
+    org.opencontainers.image.version: "21"
+    org.opencontainers.image.base.name: ghcr.io/pfenerty/apko-cicd/base:stable
+
 contents:
     packages:
         - openjdk-21=~21

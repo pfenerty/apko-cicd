@@ -3,3 +3,9 @@ include: base/apko.yaml
 contents:
     packages:
         - openjdk-11=~11
+
+annotations:
+    org.opencontainers.image.title: OpenJDK 11
+    org.opencontainers.image.description: OpenJDK 11 CI/CD image
+    org.opencontainers.image.version: "11"
+    org.opencontainers.image.base.name: ghcr.io/pfenerty/apko-cicd/base:stable

@@ -3,3 +3,9 @@ include: base/apko.yaml
 contents:
     packages:
         - openjdk-17=~17
+
+annotations:
+    org.opencontainers.image.title: OpenJDK 17
+    org.opencontainers.image.description: OpenJDK 17 CI/CD image
+    org.opencontainers.image.version: "17"
+    org.opencontainers.image.base.name: ghcr.io/pfenerty/apko-cicd/base:stable

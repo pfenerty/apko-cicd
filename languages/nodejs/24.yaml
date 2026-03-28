@@ -1,5 +1,11 @@
 include: base/apko.yaml
 
+annotations:
+    org.opencontainers.image.title: Node.js 24
+    org.opencontainers.image.description: Node.js 24 CI/CD image
+    org.opencontainers.image.version: "24"
+    org.opencontainers.image.base.name: ghcr.io/pfenerty/apko-cicd/base:stable
+
 contents:
     packages:
         - nodejs=~24

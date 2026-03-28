@@ -3,3 +3,9 @@ include: base/apko.yaml
 contents:
     packages:
         - go=~1.22
+
+annotations:
+    org.opencontainers.image.title: Go 1.22
+    org.opencontainers.image.description: Go 1.22 CI/CD image
+    org.opencontainers.image.version: "1.22"
+    org.opencontainers.image.base.name: ghcr.io/pfenerty/apko-cicd/base:stable

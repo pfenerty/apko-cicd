@@ -1,5 +1,11 @@
 include: base/apko.yaml
 
+annotations:
+    org.opencontainers.image.title: Node.js 18
+    org.opencontainers.image.description: Node.js 18 LTS CI/CD image based on Wolfi
+    org.opencontainers.image.version: "18"
+    org.opencontainers.image.base.name: ghcr.io/pfenerty/apko-cicd/base:stable
+
 contents:
     packages:
         - nodejs=~18
