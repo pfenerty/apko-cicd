@@ -1,0 +1,5 @@
+include: base/apko.yaml
+
+contents:
+    packages:
+        - melange=~0.46.1

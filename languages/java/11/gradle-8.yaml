@@ -1,0 +1,5 @@
+include: languages/java/11/jdk.yaml
+
+contents:
+    packages:
+        - gradle=~8

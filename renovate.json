@@ -1,0 +1,157 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": ["config:recommended"],
+    "labels": ["dependencies"],
+    "customManagers": [
+        {
+            "customType": "regex",
+            "description": "Track base/apko.yaml packages (X.Y.Z pins only)",
+            "managerFilePatterns": ["/base/apko\\.yaml$/"],
+            "matchStrings": [
+                "- (?<depName>[a-z][a-z0-9-]+)=~(?<currentValue>\\d+\\.\\d+\\.\\d+[^\\s]*)"
+            ],
+            "datasourceTemplate": "github-releases",
+            "versioningTemplate": "semver-coerced",
+            "extractVersionTemplate": "^v?(?<version>.+)$"
+        },
+        {
+            "customType": "regex",
+            "description": "Track tool versions in tools/*/apko.yaml (X.Y.Z pins only)",
+            "managerFilePatterns": ["/tools/[^/]+/apko\\.yaml$/"],
+            "matchStrings": [
+                "- (?<depName>[a-z][a-z0-9-]+)=~(?<currentValue>\\d+\\.\\d+\\.\\d+[^\\s]*)"
+            ],
+            "datasourceTemplate": "github-releases",
+            "versioningTemplate": "semver-coerced",
+            "extractVersionTemplate": "^v?(?<version>.+)$"
+        },
+        {
+            "customType": "regex",
+            "description": "Track tool version tags in Makefile (kept in sync with tools/*/apko.yaml)",
+            "managerFilePatterns": ["/Makefile$/"],
+            "matchStrings": [
+                "\\$\\(REGISTRY\\)/(?<depName>[a-z][a-z0-9-]+):(?<currentValue>\\d+\\.\\d+\\.\\d+)"
+            ],
+            "datasourceTemplate": "github-releases",
+            "versioningTemplate": "semver-coerced",
+            "extractVersionTemplate": "^v?(?<version>.+)$"
+        }
+    ],
+    "packageRules": [
+        {
+            "matchManagers": ["regex"],
+            "matchPackageNames": ["nushell"],
+            "registryUrls": ["https://github.com/nushell/nushell"]
+        },
+        {
+            "matchManagers": ["regex"],
+            "matchPackageNames": ["git"],
+            "registryUrls": ["https://github.com/git/git"]
+        },
+        {
+            "description": "curl tags use curl-8_19_0 format; loose versioning handles underscore-delimited versions",
+            "matchManagers": ["regex"],
+            "matchPackageNames": ["curl"],
+            "registryUrls": ["https://github.com/curl/curl"],
+            "versioningTemplate": "loose",
+            "extractVersionTemplate": "^curl-(?<version>.+)$"
+        },
+        {
+            "description": "openssl tags are prefixed: openssl-3.6.1",
+            "matchManagers": ["regex"],
+            "matchPackageNames": ["openssl"],
+            "registryUrls": ["https://github.com/openssl/openssl"],
+            "extractVersionTemplate": "^openssl-(?<version>.+)$"
+        },
+        {
+            "matchManagers": ["regex"],
+            "matchPackageNames": ["zstd"],
+            "registryUrls": ["https://github.com/facebook/zstd"]
+        },
+        {
+            "description": "ca-certificates-bundle uses a Wolfi-specific date version with no upstream GitHub releases",
+            "matchPackageNames": ["ca-certificates-bundle"],
+            "enabled": false
+        },
+        {
+            "matchManagers": ["regex"],
+            "matchPackageNames": ["syft"],
+            "registryUrls": ["https://github.com/anchore/syft"],
+            "allowedVersions": ">=1.0.0 <2.0.0"
+        },
+        {
+            "matchManagers": ["regex"],
+            "matchPackageNames": ["grype"],
+            "registryUrls": ["https://github.com/anchore/grype"]
+        },
+        {
+            "matchManagers": ["regex"],
+            "matchPackageNames": ["grant"],
+            "registryUrls": ["https://github.com/anchore/grant"]
+        },
+        {
+            "matchManagers": ["regex"],
+            "matchPackageNames": ["oras"],
+            "registryUrls": ["https://github.com/oras-project/oras"]
+        },
+        {
+            "matchManagers": ["regex"],
+            "matchPackageNames": ["hadolint"],
+            "registryUrls": ["https://github.com/hadolint/hadolint"]
+        },
+        {
+            "description": "Group base image package bumps into one PR",
+            "matchManagers": ["regex"],
+            "matchFileNames": ["base/apko.yaml"],
+            "groupName": "base packages",
+            "branchName": "renovate/base-packages"
+        },
+        {
+            "description": "Each tool gets its own PR (yaml + Makefile tag grouped by package name)",
+            "matchManagers": ["regex"],
+            "matchFileNames": ["tools/syft/apko.yaml", "Makefile"],
+            "matchPackageNames": ["syft"],
+            "groupName": "syft",
+            "branchName": "renovate/syft"
+        },
+        {
+            "matchManagers": ["regex"],
+            "matchFileNames": ["tools/grype/apko.yaml", "Makefile"],
+            "matchPackageNames": ["grype"],
+            "groupName": "grype",
+            "branchName": "renovate/grype"
+        },
+        {
+            "matchManagers": ["regex"],
+            "matchFileNames": ["tools/grant/apko.yaml", "Makefile"],
+            "matchPackageNames": ["grant"],
+            "groupName": "grant",
+            "branchName": "renovate/grant"
+        },
+        {
+            "matchManagers": ["regex"],
+            "matchFileNames": ["tools/oras/apko.yaml", "Makefile"],
+            "matchPackageNames": ["oras"],
+            "groupName": "oras",
+            "branchName": "renovate/oras"
+        },
+        {
+            "matchManagers": ["regex"],
+            "matchFileNames": ["tools/hadolint/apko.yaml", "Makefile"],
+            "matchPackageNames": ["hadolint"],
+            "groupName": "hadolint",
+            "branchName": "renovate/hadolint"
+        },
+        {
+            "description": "Automerge minor and patch updates",
+            "matchUpdateTypes": ["minor", "patch"],
+            "automerge": true
+        },
+        {
+            "description": "Major version locks: never auto-bump the major for language runtimes",
+            "matchPackageNames": ["nodejs", "go", "openjdk-11", "openjdk-17", "openjdk-21", "openjdk-24"],
+            "matchUpdateTypes": ["major"],
+            "enabled": false
+        }
+    ]
+}

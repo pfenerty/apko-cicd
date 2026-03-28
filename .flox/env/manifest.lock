@@ -1,0 +1,132 @@
+{
+  "lockfile-version": 1,
+  "manifest": {
+    "schema-version": "1.11.0",
+    "install": {
+      "apko": {
+        "pkg-path": "apko"
+      }
+    },
+    "hook": {},
+    "profile": {},
+    "options": {}
+  },
+  "packages": [
+    {
+      "attr_path": "apko",
+      "broken": false,
+      "derivation": "/nix/store/ap218pb5f9niav7zbl9lh7mf6xig3f4s-apko-1.1.12.drv",
+      "description": "Build OCI images using APK directly without Dockerfile",
+      "install_id": "apko",
+      "license": "Apache-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "name": "apko-1.1.12",
+      "pname": "apko",
+      "rev": "46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "rev_count": 969196,
+      "rev_date": "2026-03-24T21:09:33Z",
+      "scrape_date": "2026-03-27T03:38:23.021367Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.1.12",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/2fligfyxfzxjsw0q1ra0qjn51v8wg6cw-apko-1.1.12"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "apko",
+      "broken": false,
+      "derivation": "/nix/store/6vnhyj5q73vff0vfwvkwxid87z29l7vw-apko-1.1.12.drv",
+      "description": "Build OCI images using APK directly without Dockerfile",
+      "install_id": "apko",
+      "license": "Apache-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "name": "apko-1.1.12",
+      "pname": "apko",
+      "rev": "46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "rev_count": 969196,
+      "rev_date": "2026-03-24T21:09:33Z",
+      "scrape_date": "2026-03-27T04:13:46.479338Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.1.12",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/9zkjiprscnjvm2zkm9ny3aabdm2xp549-apko-1.1.12"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "apko",
+      "broken": false,
+      "derivation": "/nix/store/gkwjjizdvcy23rn40v2qwxffxsav999k-apko-1.1.12.drv",
+      "description": "Build OCI images using APK directly without Dockerfile",
+      "install_id": "apko",
+      "license": "Apache-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "name": "apko-1.1.12",
+      "pname": "apko",
+      "rev": "46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "rev_count": 969196,
+      "rev_date": "2026-03-24T21:09:33Z",
+      "scrape_date": "2026-03-27T04:46:25.993638Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.1.12",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/ljp6lh8rml4xw5sn6wm4x6cahji3r42i-apko-1.1.12"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "apko",
+      "broken": false,
+      "derivation": "/nix/store/h7xv0cr8g7zrs9p9za30q82rqxhwg9ri-apko-1.1.12.drv",
+      "description": "Build OCI images using APK directly without Dockerfile",
+      "install_id": "apko",
+      "license": "Apache-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "name": "apko-1.1.12",
+      "pname": "apko",
+      "rev": "46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "rev_count": 969196,
+      "rev_date": "2026-03-24T21:09:33Z",
+      "scrape_date": "2026-03-27T05:24:54.302716Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.1.12",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/gfddgq5z55fm86nlxlaxixib4gsf5fwj-apko-1.1.12"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    }
+  ]
+}

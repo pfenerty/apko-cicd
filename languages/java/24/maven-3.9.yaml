@@ -1,0 +1,5 @@
+include: languages/java/24/jdk.yaml
+
+contents:
+    packages:
+        - maven=~3.9

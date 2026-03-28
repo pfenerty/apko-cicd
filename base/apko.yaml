@@ -1,0 +1,31 @@
+contents:
+    keyring:
+        - https://packages.wolfi.dev/os/wolfi-signing.rsa.pub
+    repositories:
+        - https://packages.wolfi.dev/os
+    packages:
+        - wolfi-base=~1
+        - ca-certificates-bundle=~20251003
+        - nushell=~0.111.0
+        - git=~2.53.0
+        - curl=~8.19.0
+        - openssl=~3.6.1
+        - zstd=~1.5.7
+
+accounts:
+    groups:
+        - groupname: nonroot
+          gid: 1001
+    users:
+        - username: nonroot
+          uid: 1001
+          gid: 1001
+          shell: /usr/bin/nu
+    run-as: nonroot
+
+entrypoint:
+    command: /usr/bin/nu -l
+
+archs:
+    - amd64
+    - arm64
