@@ -75,6 +75,16 @@
         },
         {
             "matchManagers": ["regex"],
+            "matchPackageNames": ["apko"],
+            "registryUrls": ["https://github.com/chainguard-dev/apko"]
+        },
+        {
+            "matchManagers": ["regex"],
+            "matchPackageNames": ["melange"],
+            "registryUrls": ["https://github.com/chainguard-dev/melange"]
+        },
+        {
+            "matchManagers": ["regex"],
             "matchPackageNames": ["syft"],
             "registryUrls": ["https://github.com/anchore/syft"],
             "allowedVersions": ">=1.0.0 <2.0.0"
@@ -86,18 +96,13 @@
         },
         {
             "matchManagers": ["regex"],
-            "matchPackageNames": ["grant"],
-            "registryUrls": ["https://github.com/anchore/grant"]
-        },
-        {
-            "matchManagers": ["regex"],
             "matchPackageNames": ["oras"],
             "registryUrls": ["https://github.com/oras-project/oras"]
         },
         {
             "matchManagers": ["regex"],
-            "matchPackageNames": ["hadolint"],
-            "registryUrls": ["https://github.com/hadolint/hadolint"]
+            "matchPackageNames": ["golangci-lint"],
+            "registryUrls": ["https://github.com/golangci/golangci-lint"]
         },
         {
             "description": "Group base image package bumps into one PR",
@@ -108,6 +113,20 @@
         },
         {
             "description": "Each tool gets its own PR (yaml + Makefile tag grouped by package name)",
+            "matchManagers": ["regex"],
+            "matchFileNames": ["tools/apko/apko.yaml", "Makefile"],
+            "matchPackageNames": ["apko"],
+            "groupName": "apko",
+            "branchName": "renovate/apko"
+        },
+        {
+            "matchManagers": ["regex"],
+            "matchFileNames": ["tools/melange/apko.yaml", "Makefile"],
+            "matchPackageNames": ["melange"],
+            "groupName": "melange",
+            "branchName": "renovate/melange"
+        },
+        {
             "matchManagers": ["regex"],
             "matchFileNames": ["tools/syft/apko.yaml", "Makefile"],
             "matchPackageNames": ["syft"],
@@ -123,13 +142,6 @@
         },
         {
             "matchManagers": ["regex"],
-            "matchFileNames": ["tools/grant/apko.yaml", "Makefile"],
-            "matchPackageNames": ["grant"],
-            "groupName": "grant",
-            "branchName": "renovate/grant"
-        },
-        {
-            "matchManagers": ["regex"],
             "matchFileNames": ["tools/oras/apko.yaml", "Makefile"],
             "matchPackageNames": ["oras"],
             "groupName": "oras",
@@ -137,10 +149,10 @@
         },
         {
             "matchManagers": ["regex"],
-            "matchFileNames": ["tools/hadolint/apko.yaml", "Makefile"],
-            "matchPackageNames": ["hadolint"],
-            "groupName": "hadolint",
-            "branchName": "renovate/hadolint"
+            "matchFileNames": ["tools/golangci-lint/apko.yaml", "Makefile"],
+            "matchPackageNames": ["golangci-lint"],
+            "groupName": "golangci-lint",
+            "branchName": "renovate/golangci-lint"
         },
         {
             "description": "Automerge minor and patch updates",
@@ -149,7 +161,14 @@
         },
         {
             "description": "Major version locks: never auto-bump the major for language runtimes",
-            "matchPackageNames": ["nodejs", "go", "openjdk-11", "openjdk-17", "openjdk-21", "openjdk-24"],
+            "matchPackageNames": [
+                "nodejs",
+                "go",
+                "openjdk-11",
+                "openjdk-17",
+                "openjdk-21",
+                "openjdk-24"
+            ],
             "matchUpdateTypes": ["major"],
             "enabled": false
         }

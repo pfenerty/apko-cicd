@@ -1,0 +1,11 @@
+include: base/apko.yaml
+
+contents:
+    packages:
+        - golangci-lint=~2.11.4
+
+annotations:
+    org.opencontainers.image.title: Golangci-lint
+    org.opencontainers.image.description: Golangci-lint is a fast linters runner for Go
+    org.opencontainers.image.version: 2.11.4
+    org.opencontainers.image.base.name: ghcr.io/pfenerty/apko-cicd/base:stable

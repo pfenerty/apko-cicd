@@ -33,9 +33,9 @@ archs:
 annotations:
     org.opencontainers.image.source: https://github.com/pfenerty/apko-cicd
     org.opencontainers.image.url: https://github.com/pfenerty/apko-cicd
-    org.opencontainers.image.documentation: https://github.com/pfenerty/apko-cicd
+    org.opencontainers.image.documentation: https://github.com/pfenerty/apko-cicd/README.md
     org.opencontainers.image.vendor: pfenerty
-    org.opencontainers.image.authors: pfenerty
+    org.opencontainers.image.authors: Patrick Fenerty - patrick@fenerty.me
     org.opencontainers.image.licenses: Apache-2.0
     org.opencontainers.image.title: Base CI/CD Image
     org.opencontainers.image.description: Wolfi-based base image for CI/CD pipelines

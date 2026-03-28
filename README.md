@@ -29,6 +29,7 @@ The base image includes common tooling for CICD tasking: `git`, `curl`, `openssl
 | `oras` | `1.3.1` | OCI Registry As Storage CLI |
 | `apko` | `1.1.16` | apk-based OCI image builder |
 | `melange` | `0.46.1` | APK package builder for Wolfi and Alpine |
+| `golangci-lint` | `2.11.4` | Fast linters runner for Go |
 
 ### Node.js
 
