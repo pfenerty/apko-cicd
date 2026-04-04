@@ -1,0 +1,11 @@
+include: languages/golang/1.25.yaml
+
+contents:
+    packages:
+        - golangci-lint=~2.11.4
+
+annotations:
+    org.opencontainers.image.title: Golangci-lint 2.11 (Go 1.25)
+    org.opencontainers.image.description: Golangci-lint with Go 1.25 CI/CD image
+    org.opencontainers.image.version: 2.11.4
+    org.opencontainers.image.base.name: ghcr.io/pfenerty/apko-cicd/golang:1.25

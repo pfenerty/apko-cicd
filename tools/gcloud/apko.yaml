@@ -1,0 +1,11 @@
+include: base/apko.yaml
+
+contents:
+    packages:
+        - google-cloud-sdk=~563.0.0
+
+annotations:
+    org.opencontainers.image.title: Google Cloud SDK
+    org.opencontainers.image.description: Google Cloud CLI for interacting with GCP services (storage, compute, etc.)
+    org.opencontainers.image.version: 563.0.0
+    org.opencontainers.image.base.name: ghcr.io/pfenerty/apko-cicd/base:stable
