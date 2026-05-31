@@ -1,0 +1,50 @@
+name: Update package versions
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install apko
+        env:
+          APKO_VERSION: "v1.1.16"
+        run: |
+          curl -sL "https://github.com/chainguard-dev/apko/releases/download/${APKO_VERSION}/apko_${APKO_VERSION#v}_linux_amd64.tar.gz" \
+            | tar xz apko
+          sudo mv apko /usr/local/bin/apko
+          apko version
+
+      - name: Generate lock files
+        run: |
+          find base tools languages -name '*.yaml' | sort | while read -r yaml; do
+            lock="${yaml%.yaml}.lock.json"
+            echo "Locking $yaml"
+            apko lock "$yaml" --output "$lock"
+          done
+
+      - name: Update version pins from lock files
+        run: python3 scripts/update-versions.py
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "chore: update package versions"
+          title: "chore: update package versions"
+          body: |
+            Automated package version update.
+
+            Lock files were regenerated with `apko lock` and version pins
+            updated to match the latest available Wolfi packages.
+          branch: update/package-versions
+          labels: dependencies
+          delete-branch: true

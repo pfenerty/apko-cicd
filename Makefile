@@ -1,19 +1,19 @@
 REGISTRY   := ghcr.io/pfenerty/apko-cicd
 DIST_DIR   := dist
 APKO       := apko --log-level WARN
-APKO_BUILD   = $(APKO) build --sbom-path $(DIST_DIR)
-APKO_PUBLISH = $(APKO) publish --sbom-path $(DIST_DIR)
 
 IMAGES :=
 
 # $(1)=target  $(2)=config  $(3)=image:tag
+# Passes --lockfile when a lock file exists alongside the config YAML.
+# Lock file path: tools/grype/apko.yaml -> tools/grype/apko.lock.json
 define IMAGE
 IMAGES += $(1)
 .PHONY: $(1) publish-$(1)
 $(1): $$(DIST_DIR)
-	$$(APKO_BUILD) $(2) $$(REGISTRY)/$(3) $$(DIST_DIR)/$(1).tar
+	$$(APKO) build --sbom-path $$(DIST_DIR) $$(if $$(wildcard $(2:.yaml=.lock.json)),--lockfile $(2:.yaml=.lock.json)) $(2) $$(REGISTRY)/$(3) $$(DIST_DIR)/$(1).tar
 publish-$(1): $$(DIST_DIR)
-	$$(APKO_PUBLISH) $(2) $$(REGISTRY)/$(3)
+	$$(APKO) publish --sbom-path $$(DIST_DIR) $$(if $$(wildcard $(2:.yaml=.lock.json)),--lockfile $(2:.yaml=.lock.json)) $(2) $$(REGISTRY)/$(3)
 endef
 
 # ── Base ─────────────────────────────────────────────────────────────────────
