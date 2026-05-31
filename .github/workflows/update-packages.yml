@@ -17,9 +17,9 @@ jobs:
 
       - name: Install apko
         env:
-          APKO_VERSION: "v1.1.16"
+          APKO_VERSION: "1.2.14"
         run: |
-          curl -sL "https://github.com/chainguard-dev/apko/releases/download/${APKO_VERSION}/apko_${APKO_VERSION#v}_linux_amd64.tar.gz" \
+          curl -sL "https://github.com/chainguard-dev/apko/releases/download/v${APKO_VERSION}/apko_${APKO_VERSION#v}_linux_amd64.tar.gz" \
             | tar xz apko
           sudo mv apko /usr/local/bin/apko
           apko version
