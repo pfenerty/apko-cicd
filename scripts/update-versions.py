@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 """
-Update apko YAML version pins, OCI version annotations, and Makefile image tags
-based on generated apko lock files.
+Update Makefile image tags and OCI version annotations from apko lock files.
 
-Reads every *.lock.json found under the repo, derives the corresponding .yaml,
-and updates any =~X.Y.Z pins (three-component versions only) whose resolved
-version has changed. Major-only (=~22) and major.minor-only (=~1.22) pins are
-intentionally left alone — they are range constraints, not point pins.
+For each image whose tag contains a full x.y.z version, finds the single
+unpinned package directly listed in its YAML (the "primary package"), reads
+its resolved version from the lock file, and updates the Makefile tag and
+annotation when the version has changed.
+
+Images with channel tags (base:stable, nodejs:22, golang:1.22, rust:1.92,
+jdk:11, etc.) are skipped — their tags are intentional and do not change.
 """
 
 import json
@@ -24,7 +26,7 @@ def strip_wolfi_suffix(version: str) -> str:
 
 
 def lock_version(lock_path: Path, pkg_name: str) -> str | None:
-    """Return the upstream version of pkg_name from a lock file (x86_64)."""
+    """Return the upstream version of pkg_name (x86_64) from a lock file."""
     data = json.loads(lock_path.read_text())
     for pkg in data["contents"]["packages"]:
         if pkg["name"] == pkg_name and pkg["architecture"] == "x86_64":
@@ -32,64 +34,88 @@ def lock_version(lock_path: Path, pkg_name: str) -> str | None:
     return None
 
 
-def update_yaml(yaml_path: Path, lock_path: Path) -> dict[str, tuple[str, str]]:
+def get_direct_packages(yaml_path: Path) -> list[str]:
     """
-    Update =~X.Y.Z pins in yaml_path from lock_path.
-    Also updates the org.opencontainers.image.version annotation when the
-    annotation value exactly matches the old pin version.
-    Returns {pkg_name: (old_ver, new_ver)} for each changed package.
+    Return packages listed directly in this YAML's contents.packages,
+    excluding anything pulled in via include:.
     """
-    content = yaml_path.read_text()
-    changes: dict[str, tuple[str, str]] = {}
+    try:
+        import yaml
+        data = yaml.safe_load(yaml_path.read_text()) or {}
+        return data.get("contents", {}).get("packages", [])
+    except ImportError:
+        pass
 
-    def replace(m: re.Match) -> str:
-        prefix = m.group(1)    # "- grype=~"
-        pkg_name = m.group(2)  # "grype"
-        old_ver = m.group(3)   # "0.110.0"
-        new_ver = lock_version(lock_path, pkg_name)
-        if new_ver and new_ver != old_ver:
-            changes[pkg_name] = (old_ver, new_ver)
-            return f"{prefix}{new_ver}"
-        return m.group(0)
-
-    new_content = re.sub(r"(- ([\w-]+)=~)(\d+\.\d+\.\d+\S*)", replace, content)
-
-    for _pkg, (old_ver, new_ver) in changes.items():
-        new_content = new_content.replace(
-            f"org.opencontainers.image.version: {old_ver}",
-            f"org.opencontainers.image.version: {new_ver}",
-        )
-
-    if new_content != content:
-        yaml_path.write_text(new_content)
-
-    return changes
+    # Fallback regex parser for the consistent apko YAML format
+    packages: list[str] = []
+    in_pkgs = False
+    pkg_indent: int | None = None
+    for line in yaml_path.read_text().splitlines():
+        if re.match(r" {4,}packages:\s*$", line):
+            in_pkgs = True
+            pkg_indent = None
+            continue
+        if in_pkgs:
+            m = re.match(r"( +)- (.+)", line)
+            if m:
+                indent = len(m.group(1))
+                if pkg_indent is None:
+                    pkg_indent = indent
+                if indent == pkg_indent:
+                    packages.append(m.group(2).strip())
+            elif line.strip() and not line.startswith("    "):
+                in_pkgs = False
+    return packages
 
 
-def update_makefile(yaml_path: Path, changes: dict[str, tuple[str, str]]) -> None:
+def primary_package(yaml_path: Path, image_tag: str) -> str | None:
     """
-    Update the IMAGE() call(s) in the Makefile for the given yaml config.
-    Handles simple tags (grype:0.110.0) and compound tags (golangci-lint:2.11.4-go1.22).
-    """
-    if not changes:
-        return
+    Return the primary package name if this image has a trackable version,
+    otherwise None.
 
+    Trackable: tag contains a full x.y.z version AND the YAML has exactly
+    one directly-listed package with no version constraint (i.e. unpinned).
+    """
+    if not re.search(r":\d+\.\d+\.\d+", image_tag):
+        return None  # channel tag (nodejs:22, golang:1.22, base:stable, …)
+
+    unpinned = [
+        p for p in get_direct_packages(yaml_path)
+        if not re.search(r"[=<>!~]", p)
+    ]
+    return unpinned[0] if len(unpinned) == 1 else None
+
+
+def makefile_entry(config_rel: str) -> tuple[str, str] | tuple[None, None]:
+    """Return (target, image_tag) for config_rel, or (None, None)."""
+    m = re.search(
+        rf"call IMAGE,([^,]+),{re.escape(config_rel)},([^)]+)",
+        MAKEFILE.read_text(),
+    )
+    return (m.group(1), m.group(2)) if m else (None, None)
+
+
+def update_makefile(config_rel: str, old_ver: str, new_ver: str) -> None:
     content = MAKEFILE.read_text()
-    new_content = content
-    config_rel = str(yaml_path.relative_to(REPO))
+    # Handles simple tags (grype:0.110.0) and compound ones (golangci-lint:2.11.4-go1.22)
+    pattern = (
+        rf"(call IMAGE,[^,]+,{re.escape(config_rel)},[^:]+:)"
+        rf"{re.escape(old_ver)}"
+        rf"((?:-go[\d.]+)?)\)"
+    )
+    updated = re.sub(pattern, rf"\g<1>{new_ver}\2)", content)
+    if updated != content:
+        MAKEFILE.write_text(updated)
 
-    for _pkg, (old_ver, new_ver) in changes.items():
-        # Matches: call IMAGE,<target>,<config>,<image-name>:<old_ver><optional-suffix>)
-        # The optional suffix handles the -go1.22 part of golangci-lint tags.
-        pattern = (
-            rf"(call IMAGE,[^,]+,{re.escape(config_rel)},[^:]+:)"
-            rf"{re.escape(old_ver)}"
-            rf"((?:-go[\d.]+)?)\)"
-        )
-        new_content = re.sub(pattern, rf"\g<1>{new_ver}\2)", new_content)
 
-    if new_content != content:
-        MAKEFILE.write_text(new_content)
+def update_annotation(yaml_path: Path, old_ver: str, new_ver: str) -> None:
+    content = yaml_path.read_text()
+    updated = content.replace(
+        f"org.opencontainers.image.version: {old_ver}",
+        f"org.opencontainers.image.version: {new_ver}",
+    )
+    if updated != content:
+        yaml_path.write_text(updated)
 
 
 def main() -> int:
@@ -103,20 +129,34 @@ def main() -> int:
         stem = lock_path.name.removesuffix(".lock.json")
         yaml_path = lock_path.parent / f"{stem}.yaml"
         if not yaml_path.exists():
-            print(f"Warning: no YAML found for {lock_path}", file=sys.stderr)
+            print(f"Warning: no YAML for {lock_path}", file=sys.stderr)
             continue
 
-        changes = update_yaml(yaml_path, lock_path)
-        if changes:
-            any_changes = True
-            rel = yaml_path.relative_to(REPO)
-            for pkg, (old, new) in changes.items():
-                print(f"  {rel}: {pkg} {old} -> {new}")
-            update_makefile(yaml_path, changes)
+        config_rel = str(yaml_path.relative_to(REPO))
+        _, image_tag = makefile_entry(config_rel)
+        if not image_tag:
+            continue
+
+        pkg = primary_package(yaml_path, image_tag)
+        if not pkg:
+            continue
+
+        m = re.search(r":(\d+\.\d+\.\d+)", image_tag)
+        current_ver = m.group(1) if m else None
+        if not current_ver:
+            continue
+
+        new_ver = lock_version(lock_path, pkg)
+        if not new_ver or new_ver == current_ver:
+            continue
+
+        any_changes = True
+        print(f"  {config_rel}: {pkg} {current_ver} -> {new_ver}")
+        update_makefile(config_rel, current_ver, new_ver)
+        update_annotation(yaml_path, current_ver, new_ver)
 
     if not any_changes:
         print("No version changes detected")
-
     return 0
 
 

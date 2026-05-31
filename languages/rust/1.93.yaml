@@ -2,7 +2,7 @@ include: base/apko.yaml
 
 contents:
     packages:
-        - rust=~1.93.1
+        - rust=~1.93
 
 annotations:
     org.opencontainers.image.title: Rust 1.93

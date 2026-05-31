@@ -21,9 +21,9 @@ $(eval $(call IMAGE,base,base/apko.yaml,base:stable))
 
 # ── Tools ────────────────────────────────────────────────────────────────────
 $(eval $(call IMAGE,tools-syft,tools/syft/apko.yaml,syft:1.42.3))
-$(eval $(call IMAGE,tools-grype,tools/grype/apko.yaml,grype:0.110.0))
+$(eval $(call IMAGE,tools-grype,tools/grype/apko.yaml,grype:0.112.0))
 $(eval $(call IMAGE,tools-oras,tools/oras/apko.yaml,oras:1.3.1))
-$(eval $(call IMAGE,tools-apko,tools/apko/apko.yaml,apko:1.1.16))
+$(eval $(call IMAGE,tools-apko,tools/apko/apko.yaml,apko:1.1.15))
 $(eval $(call IMAGE,tools-melange,tools/melange/apko.yaml,melange:0.46.1))
 $(eval $(call IMAGE,tools-golangci-lint-go1.22,tools/golangci-lint/1.22.yaml,golangci-lint:2.11.4-go1.22))
 $(eval $(call IMAGE,tools-golangci-lint-go1.23,tools/golangci-lint/1.23.yaml,golangci-lint:2.11.4-go1.23))

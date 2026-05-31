@@ -4,13 +4,13 @@ contents:
     repositories:
         - https://packages.wolfi.dev/os
     packages:
-        - wolfi-base=~1
-        - ca-certificates-bundle=~20251003
-        - nushell=~0.111.0
-        - git=~2.53.0
-        - curl=~8.19.0
-        - openssl=~3.6.1
-        - zstd=~1.5.7
+        - wolfi-base
+        - ca-certificates-bundle
+        - nushell
+        - git
+        - curl
+        - openssl
+        - zstd
 
 accounts:
     groups:

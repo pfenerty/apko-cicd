@@ -2,7 +2,7 @@ include: base/apko.yaml
 
 contents:
     packages:
-        - google-cloud-sdk=~563.0.0
+        - google-cloud-sdk
 
 annotations:
     org.opencontainers.image.title: Google Cloud SDK

@@ -2,7 +2,7 @@ include: languages/golang/1.25.yaml
 
 contents:
     packages:
-        - golangci-lint=~2.11.4
+        - golangci-lint
 
 annotations:
     org.opencontainers.image.title: Golangci-lint 2.11 (Go 1.25)
