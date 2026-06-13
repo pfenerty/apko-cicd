@@ -2,7 +2,7 @@
   "version": "v1",
   "config": {
     "name": "tools/golangci-lint/1.26.yaml",
-    "checksum": "sha256-Ra8aZEzQVB2D6lWxNhRPh2Wy5frPTxZaC5oQMH6vAuk="
+    "checksum": "sha256-jkY1n6DYzQ0RAMN+sdzw9Agh6s2E0XUfnjsiRetJrp4="
   },
   "contents": {
     "keyring": [
