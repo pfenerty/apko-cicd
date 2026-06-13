@@ -29,6 +29,7 @@ $(eval $(call IMAGE,tools-golangci-lint-go1.22,tools/golangci-lint/1.22.yaml,gol
 $(eval $(call IMAGE,tools-golangci-lint-go1.23,tools/golangci-lint/1.23.yaml,golangci-lint:2.12.2-go1.23))
 $(eval $(call IMAGE,tools-golangci-lint-go1.24,tools/golangci-lint/1.24.yaml,golangci-lint:2.12.2-go1.24))
 $(eval $(call IMAGE,tools-golangci-lint-go1.25,tools/golangci-lint/1.25.yaml,golangci-lint:2.12.2-go1.25))
+$(eval $(call IMAGE,tools-golangci-lint-go1.26,tools/golangci-lint/1.26.yaml,golangci-lint:2.12.2-go1.26))
 $(eval $(call IMAGE,tools-gcloud,tools/gcloud/apko.yaml,gcloud:572.0.0))
 
 # # ── Node.js ──────────────────────────────────────────────────────────────────
@@ -42,6 +43,7 @@ $(eval $(call IMAGE,golang-1.22,languages/golang/1.22.yaml,golang:1.22))
 $(eval $(call IMAGE,golang-1.23,languages/golang/1.23.yaml,golang:1.23))
 $(eval $(call IMAGE,golang-1.24,languages/golang/1.24.yaml,golang:1.24))
 $(eval $(call IMAGE,golang-1.25,languages/golang/1.25.yaml,golang:1.25))
+$(eval $(call IMAGE,golang-1.26,languages/golang/1.26.yaml,golang:1.26))
 
 # ── Java ─────────────────────────────────────────────────────────────────────
 $(eval $(call IMAGE,java-jdk-11,languages/java/11/jdk.yaml,jdk:11))
