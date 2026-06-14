@@ -63,9 +63,9 @@ apko.pkg-path = "apko"
 ## ... environments to create a composed environment
 ## ------------------------------------------------------------------
 [include]
-# environments = [
-#     { dir = "../common" }
-# ]
+environments = [
+    { dir = "../common" }
+]
 
 
 ## Build and publish your own packages ------------------------------
