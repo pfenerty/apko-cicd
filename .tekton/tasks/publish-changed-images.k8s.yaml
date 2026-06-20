@@ -25,12 +25,28 @@ spec:
     - env:
         - name: DOCKER_CONFIG
           value: /tmp/docker-auth
-      image: ghcr.io/pfenerty/apko-cicd/apko:1.2.16
+      image: ghcr.io/pfenerty/apko-cicd/base:stable
       name: publish
       script: |-
-        #!/usr/bin/env nu
+        #!/bin/sh
+        set -e
 
+        # Download apko binary matching the version this repo publishes.
+        # base:stable runs as nonroot (uid 1001) so apk add is unavailable;
+        # download to workspace which is writable via fsGroup 1001.
+        APKO_VERSION=$(grep 'image.version' tools/apko/apko.yaml | awk '{print $NF}' | tr -d '[:space:]')
+        echo "Fetching apko ${APKO_VERSION}"
+        TMPDIR=$(mktemp -d)
+        APKO_URL="https://github.com/chainguard-dev/apko/releases/download/v${APKO_VERSION}/apko_${APKO_VERSION}_linux_amd64.tar.gz"
+        curl -fsSL "${APKO_URL}" | tar xz -C "${TMPDIR}"
+        mv "${TMPDIR}"/apko_*/apko "$(workspaces.workspace.path)/apko"
+        chmod +x "$(workspaces.workspace.path)/apko"
+        rm -rf "${TMPDIR}"
+
+        cat > /tmp/publish.nu << 'NUSHELL'
         git config --global --add safe.directory $(workspaces.workspace.path)
+
+        let apko = $"$(workspaces.workspace.path)/apko"
 
         let changed = (
           git diff --name-only HEAD~1 HEAD
@@ -65,8 +81,11 @@ spec:
           )
 
           print $"[publish] ($yaml) → ghcr.io/pfenerty/apko-cicd/($tag)"
-          apko publish --sbom-path dist --lockfile $lockfile $yaml $"ghcr.io/pfenerty/apko-cicd/($tag)"
+          ^$apko publish --sbom-path dist --lockfile $lockfile $yaml $"ghcr.io/pfenerty/apko-cicd/($tag)"
         }
+        NUSHELL
+
+        exec nu /tmp/publish.nu
       volumeMounts:
         - mountPath: /tmp/docker-auth/config.json
           name: docker-config
