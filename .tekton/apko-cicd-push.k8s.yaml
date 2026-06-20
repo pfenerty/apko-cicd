@@ -1,0 +1,69 @@
+apiVersion: tekton.dev/v1
+kind: PipelineRun
+metadata:
+  annotations:
+    pipelinesascode.tekton.dev/max-keep-runs: "5"
+    pipelinesascode.tekton.dev/on-event: "[push]"
+    pipelinesascode.tekton.dev/on-target-branch: "[main]"
+    pipelinesascode.tekton.dev/task: "[.tekton/tasks/git-clone.k8s.yaml,
+      .tekton/tasks/publish-changed-images.k8s.yaml]"
+  name: apko-cicd-push
+spec:
+  params:
+    - name: revision
+      value: "{{ revision }}"
+    - name: url
+      value: "{{ repo_url }}"
+  pipelineSpec:
+    params:
+      - name: revision
+        type: string
+      - name: url
+        type: string
+    tasks:
+      - name: git-clone
+        params:
+          - name: url
+            value: $(params.url)
+          - name: revision
+            value: $(params.revision)
+        taskRef:
+          kind: Task
+          name: apko-cicd-git-clone
+        workspaces:
+          - name: workspace
+            workspace: workspace
+      - name: publish-changed-images
+        params:
+          - name: revision
+            value: $(params.revision)
+        runAfter:
+          - git-clone
+        taskRef:
+          kind: Task
+          name: apko-cicd-publish-changed-images
+        workspaces:
+          - name: workspace
+            workspace: workspace
+    workspaces:
+      - name: workspace
+  taskRunTemplate:
+    podTemplate:
+      securityContext:
+        fsGroup: 1001
+        runAsGroup: 1001
+        runAsNonRoot: true
+        runAsUser: 1001
+        seccompProfile:
+          type: RuntimeDefault
+    serviceAccountName: default
+  workspaces:
+    - name: workspace
+      volumeClaimTemplate:
+        spec:
+          accessModes:
+            - ReadWriteOnce
+          resources:
+            requests:
+              storage: 2Gi
+          storageClassName: local-path

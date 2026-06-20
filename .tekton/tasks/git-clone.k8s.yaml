@@ -1,0 +1,56 @@
+apiVersion: tekton.dev/v1
+kind: Task
+metadata:
+  name: apko-cicd-git-clone
+  namespace: apko-cicd-ci
+spec:
+  params:
+    - name: url
+      type: string
+    - name: revision
+      type: string
+  results:
+    - description: Full commit SHA
+      name: commit
+      type: string
+    - description: Abbreviated commit SHA
+      name: short-sha
+      type: string
+  stepTemplate:
+    computeResources:
+      limits:
+        cpu: "1"
+        memory: 512Mi
+      requests:
+        cpu: 100m
+        memory: 128Mi
+    securityContext:
+      allowPrivilegeEscalation: false
+      capabilities:
+        drop:
+          - ALL
+  steps:
+    - env:
+        - name: GIT_CONFIG_GLOBAL
+          value: $(workspaces.workspace.path)/.gitconfig
+      image: ghcr.io/pfenerty/apko-cicd/base:stable
+      name: clone
+      script: |-
+        #!/usr/bin/env nu
+        # Mark workspace as safe before any git operations that check directory ownership.
+        # The workspace dir may be owned by root (local-path provisioner) while the pod
+        # runs as a non-root uid; git 2.35.2+ rejects such repos without this config.
+        git config --global --add safe.directory $(workspaces.workspace.path)
+        git init -b main .
+        git remote add origin $(params.url)
+        # Fetch with depth=2 so the publish task can compute git diff HEAD~1 HEAD.
+        git fetch --depth=2 origin $(params.revision)
+        git checkout -b $(params.revision) FETCH_HEAD
+
+        let sha = (git rev-parse HEAD | str trim)
+        let short_sha = (git rev-parse --short HEAD | str trim)
+        $sha       | save -f $(results.commit.path)
+        $short_sha | save -f $(results.short-sha.path)
+      workingDir: $(workspaces.workspace.path)
+  workspaces:
+    - name: workspace
