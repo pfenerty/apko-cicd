@@ -38,3 +38,7 @@ beads.right.meta.json
 # are tracked by git by default since no pattern above ignores them.
 last-touched
 .beads/
+
+# Embedded Dolt database and migration backup (created by beads ≥1.0 migration)
+embeddeddolt/
+backup/

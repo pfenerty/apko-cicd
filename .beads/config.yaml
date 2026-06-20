@@ -28,8 +28,8 @@
 # Allows hydrating from multiple repositories and routing writes to the correct JSONL
 repos:
   primary: "."
-  additional:
-    - ~/code/common  # Cross-repo epics (apko-cicd → tektonic → ocidex)
+  # additional:
+  #   - /Users/patrickfenerty/code/common  # unimplemented in current beads version; causes daemon JSONL-watch errors
 
 # Integration settings (access with 'bd config get/set')
 # These are stored in the database, not in this file:
