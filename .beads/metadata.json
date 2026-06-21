@@ -1,4 +1,7 @@
 {
   "database": "dolt",
-  "jsonl_export": "issues.jsonl"
+  "backend": "dolt",
+  "dolt_mode": "embedded",
+  "dolt_database": "apko_cicd",
+  "project_id": "49bd6b22-4ade-4356-be42-963170b62648"
 }
