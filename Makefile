@@ -75,3 +75,8 @@ $(DIST_DIR):
 
 clean:
 	rm -rf $(DIST_DIR)
+
+# ── Tekton (Pipelines as Code) ───────────────────────────────────────────────
+.PHONY: tekton-synth
+tekton-synth:
+	cd .tektonic && npm install && npx ts-node pipeline.ts

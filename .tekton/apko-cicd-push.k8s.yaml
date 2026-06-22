@@ -5,22 +5,44 @@ metadata:
     pipelinesascode.tekton.dev/max-keep-runs: "5"
     pipelinesascode.tekton.dev/on-event: "[push]"
     pipelinesascode.tekton.dev/on-target-branch: "[main]"
-    pipelinesascode.tekton.dev/task: "[.tekton/tasks/git-clone.k8s.yaml,
-      .tekton/tasks/publish-changed-images.k8s.yaml]"
+    pipelinesascode.tekton.dev/task: "[.tekton/tasks/set-status-pending.k8s.yaml, .tekton/tasks/git-clone.k8s.yaml, .tekton/tasks/publish-changed-images.k8s.yaml]"
   name: apko-cicd-push
 spec:
   params:
+    - name: project-name
+      value: "{{ repo_name }}"
+    - name: repo-full-name
+      value: "{{ repo_owner }}/{{ repo_name }}"
+    - name: source-branch
+      value: "{{ source_branch }}"
     - name: revision
       value: "{{ revision }}"
     - name: url
       value: "{{ repo_url }}"
   pipelineSpec:
     params:
+      - name: project-name
+        type: string
+      - name: repo-full-name
+        type: string
+      - name: source-branch
+        type: string
       - name: revision
         type: string
       - name: url
         type: string
     tasks:
+      - name: set-status-pending
+        params:
+          - name: repo-full-name
+            value: $(params.repo-full-name)
+          - name: revision
+            value: $(params.revision)
+        runAfter:
+          - git-clone
+        taskRef:
+          kind: Task
+          name: apko-cicd-set-status-pending
       - name: git-clone
         params:
           - name: url
@@ -35,10 +57,12 @@ spec:
             workspace: workspace
       - name: publish-changed-images
         params:
+          - name: repo-full-name
+            value: $(params.repo-full-name)
           - name: revision
             value: $(params.revision)
         runAfter:
-          - git-clone
+          - set-status-pending
         taskRef:
           kind: Task
           name: apko-cicd-publish-changed-images

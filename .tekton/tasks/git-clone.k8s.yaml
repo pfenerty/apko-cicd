@@ -16,6 +16,30 @@ spec:
     - description: Abbreviated commit SHA
       name: short-sha
       type: string
+    - description: Checked-out branch/revision
+      name: branch
+      type: string
+    - description: Commit subject line
+      name: commit-message
+      type: string
+    - description: Commit author name
+      name: author-name
+      type: string
+    - description: Commit author email
+      name: author-email
+      type: string
+    - description: Author timestamp (ISO 8601)
+      name: timestamp
+      type: string
+    - description: Repository remote URL
+      name: remote-url
+      type: string
+    - description: Repository URL fetched (Tekton Chains provenance material)
+      name: CHAINS-GIT_URL
+      type: string
+    - description: Commit SHA fetched (Tekton Chains provenance material)
+      name: CHAINS-GIT_COMMIT
+      type: string
   stepTemplate:
     computeResources:
       limits:
@@ -36,21 +60,32 @@ spec:
       image: ghcr.io/pfenerty/apko-cicd/base:stable
       name: clone
       script: |-
-        #!/usr/bin/env nu
+        #!/bin/sh
+        log() { printf '[%s] %s\n' "$(date +%H:%M:%S)" "$*"; }
+        set -e
         # Mark workspace as safe before any git operations that check directory ownership.
         # The workspace dir may be owned by root (local-path provisioner) while the pod
         # runs as a non-root uid; git 2.35.2+ rejects such repos without this config.
         git config --global --add safe.directory $(workspaces.workspace.path)
         git init -b main .
         git remote add origin $(params.url)
-        # Fetch with depth=2 so the publish task can compute git diff HEAD~1 HEAD.
+        # Fetch only the target branch. GitHub doesn't allow fetching by arbitrary SHA,
+        # but the revision is always a branch tip in CI (push/PR events). Fetching a
+        # single branch avoids wildcard-refspec pack issues in newer git versions.
         git fetch --depth=2 origin $(params.revision)
         git checkout -b $(params.revision) FETCH_HEAD
 
-        let sha = (git rev-parse HEAD | str trim)
-        let short_sha = (git rev-parse --short HEAD | str trim)
-        $sha       | save -f $(results.commit.path)
-        $short_sha | save -f $(results.short-sha.path)
+        # Write git metadata as Tekton results for downstream tasks.
+        git rev-parse HEAD          | tr -d '\n' > $(results.commit.path)
+        git rev-parse --short HEAD  | tr -d '\n' > $(results.short-sha.path)
+        git log -1 --format=%s      | tr -d '\n' > $(results.commit-message.path)
+        git log -1 --format=%an     | tr -d '\n' > $(results.author-name.path)
+        git log -1 --format=%ae     | tr -d '\n' > $(results.author-email.path)
+        git log -1 --format=%aI     | tr -d '\n' > $(results.timestamp.path)
+        printf '%s' "$(params.revision)" > $(results.branch.path)
+        printf '%s' "$(params.url)" > $(results.remote-url.path)
+        git rev-parse HEAD | tr -d '\n' > $(results.CHAINS-GIT_COMMIT.path)
+        printf '%s' "$(params.url)" > $(results.CHAINS-GIT_URL.path)
       workingDir: $(workspaces.workspace.path)
   workspaces:
     - name: workspace
