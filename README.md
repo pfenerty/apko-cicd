@@ -65,6 +65,16 @@ The base image includes common tooling for CICD tasking: `git`, `curl`, `openssl
 | `rust` | `1.93` |
 | `rust` | `1.94` |
 
+## Verifying images
+
+Every published image carries an SBOM and is signed by Tekton Chains (cosign + public Rekor).
+See **[docs/verifying-artifacts.md](docs/verifying-artifacts.md)** for copy-paste verification,
+and [`cosign.pub`](cosign.pub) for the signing key:
+
+```bash
+cosign verify --key cosign.pub ghcr.io/pfenerty/apko-cicd/base@sha256:<digest>
+```
+
 ## Version Management
 
 Package versions are managed by [Renovate](renovate.json). Version constraints use the `~` (compatible release) operator so that patch-level updates are picked up automatically while major/minor versions remain pinned.
