@@ -7,5 +7,5 @@ contents:
 annotations:
     org.opencontainers.image.title: apko
     org.opencontainers.image.description: apk-based OCI image builder
-    org.opencontainers.image.version: 1.2.20
+    org.opencontainers.image.version: 1.2.21
     org.opencontainers.image.base.name: ghcr.io/pfenerty/apko-cicd/base:stable
