@@ -750,22 +750,22 @@
       },
       {
         "name": "go-1.26",
-        "url": "https://packages.wolfi.dev/os/x86_64/go-1.26-1.26.5-r0.apk",
-        "version": "1.26.5-r0",
+        "url": "https://packages.wolfi.dev/os/x86_64/go-1.26-1.26.5-r1.apk",
+        "version": "1.26.5-r1",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-7895",
-          "checksum": "sha1-PiKUuqVofBoi9txv4LGZs0W9hjY="
+          "range": "bytes=0-7888",
+          "checksum": "sha1-3ju4KwBbgbf++Q4Y4J4jCvM2vI4="
         },
         "data": {
-          "range": "bytes=7896-57370410",
-          "checksum": "sha256-yjHulXynvADPdwxdw8gcFYYe5Ekip2EsDB67ghIOleY="
+          "range": "bytes=7889-57370682",
+          "checksum": "sha256-jKrUNVuZDOQZkWgIQ2Cv2H0Wmxu3tmkX7+lwZvf8jvM="
         },
-        "checksum": "Q1PiKUuqVofBoi9txv4LGZs0W9hjY="
+        "checksum": "Q13ju4KwBbgbf++Q4Y4J4jCvM2vI4="
       },
       {
         "name": "http-parser",
@@ -1681,22 +1681,22 @@
       },
       {
         "name": "go-1.26",
-        "url": "https://packages.wolfi.dev/os/aarch64/go-1.26-1.26.5-r0.apk",
-        "version": "1.26.5-r0",
+        "url": "https://packages.wolfi.dev/os/aarch64/go-1.26-1.26.5-r1.apk",
+        "version": "1.26.5-r1",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-7929",
-          "checksum": "sha1-OdRg+yQmDRQzxJk1M5NqgLufpmk="
+          "range": "bytes=0-7922",
+          "checksum": "sha1-Cl9julhlqzKC1rUIKE7QiAWRZXs="
         },
         "data": {
-          "range": "bytes=7930-53982426",
-          "checksum": "sha256-J/tAtYAg0BBXTpKz9j+58qb7iRGM8VLLCG/CCOex3/k="
+          "range": "bytes=7923-53982600",
+          "checksum": "sha256-0FMIXWwD5vPTPrheOHNYEDxr839SAsTDcspIMGMrc5c="
         },
-        "checksum": "Q1OdRg+yQmDRQzxJk1M5NqgLufpmk="
+        "checksum": "Q1Cl9julhlqzKC1rUIKE7QiAWRZXs="
       },
       {
         "name": "http-parser",

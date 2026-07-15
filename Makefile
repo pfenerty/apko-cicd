@@ -30,7 +30,7 @@ $(eval $(call IMAGE,tools-golangci-lint-go1.23,tools/golangci-lint/1.23.yaml,gol
 $(eval $(call IMAGE,tools-golangci-lint-go1.24,tools/golangci-lint/1.24.yaml,golangci-lint:2.12.2-go1.24))
 $(eval $(call IMAGE,tools-golangci-lint-go1.25,tools/golangci-lint/1.25.yaml,golangci-lint:2.12.2-go1.25))
 $(eval $(call IMAGE,tools-golangci-lint-go1.26,tools/golangci-lint/1.26.yaml,golangci-lint:2.12.2-go1.26))
-$(eval $(call IMAGE,tools-gcloud,tools/gcloud/apko.yaml,gcloud:575.0.1))
+$(eval $(call IMAGE,tools-gcloud,tools/gcloud/apko.yaml,gcloud:576.0.0))
 
 # # ── Node.js ──────────────────────────────────────────────────────────────────
 $(eval $(call IMAGE,nodejs-18,languages/nodejs/18.yaml,nodejs:18))
