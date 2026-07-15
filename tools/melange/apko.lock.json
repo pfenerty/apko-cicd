@@ -826,22 +826,22 @@
       },
       {
         "name": "melange",
-        "url": "https://packages.wolfi.dev/os/x86_64/melange-0.56.2-r0.apk",
-        "version": "0.56.2-r0",
+        "url": "https://packages.wolfi.dev/os/x86_64/melange-0.56.2-r1.apk",
+        "version": "0.56.2-r1",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-5823",
-          "checksum": "sha1-YnQawiWOVXpXOjCRR4nfwUe1saA="
+          "range": "bytes=0-5822",
+          "checksum": "sha1-Z1HQDKwgskMDqmsLcEJAXz3l0Ws="
         },
         "data": {
-          "range": "bytes=5824-14356707",
-          "checksum": "sha256-aBdyFwNMGF5XjctuJJEgP3DFXlMUjn2GJ9GhzRL9QRA="
+          "range": "bytes=5823-14356687",
+          "checksum": "sha256-+i4D2NCKEeP9ji7kuOA9N44UKpgpCOKq+AKMMRSrs98="
         },
-        "checksum": "Q1YnQawiWOVXpXOjCRR4nfwUe1saA="
+        "checksum": "Q1Z1HQDKwgskMDqmsLcEJAXz3l0Ws="
       },
       {
         "name": "http-parser",
@@ -1833,22 +1833,22 @@
       },
       {
         "name": "melange",
-        "url": "https://packages.wolfi.dev/os/aarch64/melange-0.56.2-r0.apk",
-        "version": "0.56.2-r0",
+        "url": "https://packages.wolfi.dev/os/aarch64/melange-0.56.2-r1.apk",
+        "version": "0.56.2-r1",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-5855",
-          "checksum": "sha1-nNLY7Kyj73D69zfHqrlnfjdtmkA="
+          "range": "bytes=0-5858",
+          "checksum": "sha1-Oz1VyTW/ItyEyANvE1StksVTP0M="
         },
         "data": {
-          "range": "bytes=5856-13124014",
-          "checksum": "sha256-hIsme4hAN+lYxjhDNfL7Dkwyr6cocGpCQMrCsVA3r4g="
+          "range": "bytes=5859-13124022",
+          "checksum": "sha256-aP9+HyACoRfULhdQYoy+P6zaIJN/HrY4v2xTuYZj09k="
         },
-        "checksum": "Q1nNLY7Kyj73D69zfHqrlnfjdtmkA="
+        "checksum": "Q1Oz1VyTW/ItyEyANvE1StksVTP0M="
       },
       {
         "name": "http-parser",

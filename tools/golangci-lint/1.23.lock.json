@@ -807,22 +807,22 @@
       },
       {
         "name": "pkgconf",
-        "url": "https://packages.wolfi.dev/os/x86_64/pkgconf-3.0.2-r0.apk",
-        "version": "3.0.2-r0",
+        "url": "https://packages.wolfi.dev/os/x86_64/pkgconf-3.0.3-r0.apk",
+        "version": "3.0.3-r0",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-7578",
-          "checksum": "sha1-DorytWaEaZsT36Ri9X0jGMVYW6I="
+          "range": "bytes=0-7572",
+          "checksum": "sha1-a58/cmUQEt5JCvCvJsQ5Px2EFx0="
         },
         "data": {
-          "range": "bytes=7579-147259",
-          "checksum": "sha256-dn52nQt1tXzuL3AEcVTmR6M30bNOKxr3sf35Es3sJtU="
+          "range": "bytes=7573-147264",
+          "checksum": "sha256-3Fq3sLaU5bYbYltvxiJMRFlq52UHbz59E66s/AvC2eE="
         },
-        "checksum": "Q1DorytWaEaZsT36Ri9X0jGMVYW6I="
+        "checksum": "Q1a58/cmUQEt5JCvCvJsQ5Px2EFx0="
       },
       {
         "name": "libxcrypt-dev",
@@ -2194,22 +2194,22 @@
       },
       {
         "name": "pkgconf",
-        "url": "https://packages.wolfi.dev/os/aarch64/pkgconf-3.0.2-r0.apk",
-        "version": "3.0.2-r0",
+        "url": "https://packages.wolfi.dev/os/aarch64/pkgconf-3.0.3-r0.apk",
+        "version": "3.0.3-r0",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-7614",
-          "checksum": "sha1-xIFuamDjNxYZ1xZMS7AWKBeO1HA="
+          "range": "bytes=0-7610",
+          "checksum": "sha1-phM1QPID/tgYQ0gNXa25hwR5z9s="
         },
         "data": {
-          "range": "bytes=7615-143624",
-          "checksum": "sha256-LKXploKiQO9mRWPo6CD/cespmBFCPoK6OiSq2O7oTC8="
+          "range": "bytes=7611-143679",
+          "checksum": "sha256-Rk+PY4ec2jh1RffIP+CU+j5YNxxFnjvWDc7zt/589qs="
         },
-        "checksum": "Q1xIFuamDjNxYZ1xZMS7AWKBeO1HA="
+        "checksum": "Q1phM1QPID/tgYQ0gNXa25hwR5z9s="
       },
       {
         "name": "libxcrypt-dev",

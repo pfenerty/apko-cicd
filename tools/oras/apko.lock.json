@@ -2,7 +2,7 @@
   "version": "v1",
   "config": {
     "name": "tools/oras/apko.yaml",
-    "checksum": "sha256-vCGw1mGL7V36ZW4wYaa6uxVduuIT5LaE1GtU86A7Qq0="
+    "checksum": "sha256-bN+8sG3cL1VRf+RuH/3J0uYWJQCRm/PoU+TZp16V7rM="
   },
   "contents": {
     "keyring": [
