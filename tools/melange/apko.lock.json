@@ -598,41 +598,41 @@
       },
       {
         "name": "cyrus-sasl-heimdal-libs",
-        "url": "https://packages.wolfi.dev/os/x86_64/cyrus-sasl-heimdal-libs-2.1.28-r52.apk",
-        "version": "2.1.28-r52",
+        "url": "https://packages.wolfi.dev/os/x86_64/cyrus-sasl-heimdal-libs-2.1.28-r53.apk",
+        "version": "2.1.28-r53",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-9755",
-          "checksum": "sha1-dU1RuQ9xgBNzfbpA1HFnm1vYBWo="
+          "range": "bytes=0-10514",
+          "checksum": "sha1-4adHe8xGUKGxuRMQ2Sq+rpoZjq4="
         },
         "data": {
-          "range": "bytes=9756-216677",
-          "checksum": "sha256-nhlqN2keSi7L9T0h8EwsMte7aGREj3u6Yhfw0b5+OsM="
+          "range": "bytes=10515-217335",
+          "checksum": "sha256-qbOv7u6YAzzBKBl60O5VeB7pOGG94EqSTZPqFy0z0HU="
         },
-        "checksum": "Q1dU1RuQ9xgBNzfbpA1HFnm1vYBWo="
+        "checksum": "Q14adHe8xGUKGxuRMQ2Sq+rpoZjq4="
       },
       {
         "name": "libldap-2.6",
-        "url": "https://packages.wolfi.dev/os/x86_64/libldap-2.6-2.6.13-r4.apk",
-        "version": "2.6.13-r4",
+        "url": "https://packages.wolfi.dev/os/x86_64/libldap-2.6-2.6.13-r5.apk",
+        "version": "2.6.13-r5",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-14245",
-          "checksum": "sha1-kEG+z4XD6lluFSah75b/8G5seDk="
+          "range": "bytes=0-14959",
+          "checksum": "sha1-92pABM9CPYiD/ashMBt6gtuClD8="
         },
         "data": {
-          "range": "bytes=14246-255477",
-          "checksum": "sha256-+ogmUJc4fCh0yGwxuKr+TEAFMGDbygCDZ4jNRDI+5nM="
+          "range": "bytes=14960-265419",
+          "checksum": "sha256-lf2l/+jH43RJJaUXB31hxvXP/EATQHEOeqIh6/Hd9MU="
         },
-        "checksum": "Q1kEG+z4XD6lluFSah75b/8G5seDk="
+        "checksum": "Q192pABM9CPYiD/ashMBt6gtuClD8="
       },
       {
         "name": "libcurl-openssl4",
@@ -826,22 +826,22 @@
       },
       {
         "name": "melange",
-        "url": "https://packages.wolfi.dev/os/x86_64/melange-0.56.2-r1.apk",
-        "version": "0.56.2-r1",
+        "url": "https://packages.wolfi.dev/os/x86_64/melange-0.56.3-r0.apk",
+        "version": "0.56.3-r0",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-5822",
-          "checksum": "sha1-Z1HQDKwgskMDqmsLcEJAXz3l0Ws="
+          "range": "bytes=0-5820",
+          "checksum": "sha1-qDBJTBmfnCiY2Ryv0IhfSrhNOvc="
         },
         "data": {
-          "range": "bytes=5823-14356687",
-          "checksum": "sha256-+i4D2NCKEeP9ji7kuOA9N44UKpgpCOKq+AKMMRSrs98="
+          "range": "bytes=5821-14418360",
+          "checksum": "sha256-Xus14IGl17x+2QLEflousD9H2Vt+F0XcLIi/f4VYC8M="
         },
-        "checksum": "Q1Z1HQDKwgskMDqmsLcEJAXz3l0Ws="
+        "checksum": "Q1qDBJTBmfnCiY2Ryv0IhfSrhNOvc="
       },
       {
         "name": "http-parser",
@@ -1605,41 +1605,41 @@
       },
       {
         "name": "cyrus-sasl-heimdal-libs",
-        "url": "https://packages.wolfi.dev/os/aarch64/cyrus-sasl-heimdal-libs-2.1.28-r52.apk",
-        "version": "2.1.28-r52",
+        "url": "https://packages.wolfi.dev/os/aarch64/cyrus-sasl-heimdal-libs-2.1.28-r53.apk",
+        "version": "2.1.28-r53",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-9802",
-          "checksum": "sha1-Dawzz5REmzpgehFltC2vMGTNnTg="
+          "range": "bytes=0-10560",
+          "checksum": "sha1-yy0fYvhnPYBBcz23A3bKts+vWAM="
         },
         "data": {
-          "range": "bytes=9803-240118",
-          "checksum": "sha256-/berZd4fRJ6y/TdIa4Juy4XrDx2Y55/bkUTgIUN5mww="
+          "range": "bytes=10561-240754",
+          "checksum": "sha256-Ku1f1U1isKuV0+6pjNSap0lq0/H9Ul28BIytzNOR/CI="
         },
-        "checksum": "Q1Dawzz5REmzpgehFltC2vMGTNnTg="
+        "checksum": "Q1yy0fYvhnPYBBcz23A3bKts+vWAM="
       },
       {
         "name": "libldap-2.6",
-        "url": "https://packages.wolfi.dev/os/aarch64/libldap-2.6-2.6.13-r4.apk",
-        "version": "2.6.13-r4",
+        "url": "https://packages.wolfi.dev/os/aarch64/libldap-2.6-2.6.13-r5.apk",
+        "version": "2.6.13-r5",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-14281",
-          "checksum": "sha1-2af1B1RzuXO6JpxXz766vyx10tA="
+          "range": "bytes=0-14998",
+          "checksum": "sha1-U5A7vDuHvqQGAyvT82hq2UX6vMw="
         },
         "data": {
-          "range": "bytes=14282-246313",
-          "checksum": "sha256-g+K9wOnM4BTKEIl1v8qGqmBL6lS18ahsduoZ3rQyWq0="
+          "range": "bytes=14999-246602",
+          "checksum": "sha256-7nS/k+EWMGQF2Vqz9ZPaXu6RkEMtgS7BT0urtDq+QnI="
         },
-        "checksum": "Q12af1B1RzuXO6JpxXz766vyx10tA="
+        "checksum": "Q1U5A7vDuHvqQGAyvT82hq2UX6vMw="
       },
       {
         "name": "libcurl-openssl4",
@@ -1833,22 +1833,22 @@
       },
       {
         "name": "melange",
-        "url": "https://packages.wolfi.dev/os/aarch64/melange-0.56.2-r1.apk",
-        "version": "0.56.2-r1",
+        "url": "https://packages.wolfi.dev/os/aarch64/melange-0.56.3-r0.apk",
+        "version": "0.56.3-r0",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-5858",
-          "checksum": "sha1-Oz1VyTW/ItyEyANvE1StksVTP0M="
+          "range": "bytes=0-5851",
+          "checksum": "sha1-i8DiNy8Sk38ei5lgrNFskPwWcxE="
         },
         "data": {
-          "range": "bytes=5859-13124022",
-          "checksum": "sha256-aP9+HyACoRfULhdQYoy+P6zaIJN/HrY4v2xTuYZj09k="
+          "range": "bytes=5852-13157117",
+          "checksum": "sha256-S5a+pGVOvkduwRg9w711CziMkH2ID1tgW9oZIyJxcmQ="
         },
-        "checksum": "Q1Oz1VyTW/ItyEyANvE1StksVTP0M="
+        "checksum": "Q1i8DiNy8Sk38ei5lgrNFskPwWcxE="
       },
       {
         "name": "http-parser",
