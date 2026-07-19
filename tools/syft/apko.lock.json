@@ -2,7 +2,7 @@
   "version": "v1",
   "config": {
     "name": "tools/syft/apko.yaml",
-    "checksum": "sha256-nN3eqBf3j5mtAgBimiMBCSrn43Q8bVMWVq6IBXEvcl8="
+    "checksum": "sha256-BfQGwpNTbCqxQpEzo4XRZK6XNNwAnZ54lAMTEE3/pEM="
   },
   "contents": {
     "keyring": [
@@ -465,27 +465,27 @@
       },
       {
         "name": "ncurses-terminfo-base",
-        "url": "https://packages.wolfi.dev/os/x86_64/ncurses-terminfo-base-6.6.20260711-r0.apk",
-        "version": "6.6.20260711-r0",
+        "url": "https://packages.wolfi.dev/os/x86_64/ncurses-terminfo-base-6.6.20260718-r0.apk",
+        "version": "6.6.20260718-r0",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-10344",
-          "checksum": "sha1-pVN+YvFtG69jaMZJt1Tqh20wICg="
+          "range": "bytes=0-10349",
+          "checksum": "sha1-ohry9iJ9EPiq1h84PvmLK0L3Ne8="
         },
         "data": {
-          "range": "bytes=10345-117892",
-          "checksum": "sha256-60tsu38al1Llm+/RtctrJ6trjIy+aNm+CwLwZSIN3C0="
+          "range": "bytes=10350-118080",
+          "checksum": "sha256-4MGGnP2I2FqS0SllL0xvWMGCuF6BAUzpjEaQ0k3BFu8="
         },
-        "checksum": "Q1pVN+YvFtG69jaMZJt1Tqh20wICg="
+        "checksum": "Q1ohry9iJ9EPiq1h84PvmLK0L3Ne8="
       },
       {
         "name": "ncurses",
-        "url": "https://packages.wolfi.dev/os/x86_64/ncurses-6.6.20260711-r0.apk",
-        "version": "6.6.20260711-r0",
+        "url": "https://packages.wolfi.dev/os/x86_64/ncurses-6.6.20260718-r0.apk",
+        "version": "6.6.20260718-r0",
         "architecture": "x86_64",
         "signature": {
           "range": "",
@@ -493,13 +493,13 @@
         },
         "control": {
           "range": "bytes=0-10489",
-          "checksum": "sha1-oPiv8opB0FpEKDHei2gycB7Lcsk="
+          "checksum": "sha1-0gyrR0IeyJCrMsHGLqw8bscyewQ="
         },
         "data": {
-          "range": "bytes=10490-621030",
-          "checksum": "sha256-tq1Y6IreKkDvbO6vHEb/+oysUnBVBfw7uPrxYQ9s3oQ="
+          "range": "bytes=10490-621086",
+          "checksum": "sha256-HrQRncGKYRcErxKaVUr30rsWcK5Xpv4iSCpBMOzPGRI="
         },
-        "checksum": "Q1oPiv8opB0FpEKDHei2gycB7Lcsk="
+        "checksum": "Q10gyrR0IeyJCrMsHGLqw8bscyewQ="
       },
       {
         "name": "readline",
@@ -769,22 +769,22 @@
       },
       {
         "name": "libgit2",
-        "url": "https://packages.wolfi.dev/os/x86_64/libgit2-1.9.4-r3.apk",
-        "version": "1.9.4-r3",
+        "url": "https://packages.wolfi.dev/os/x86_64/libgit2-1.9.6-r0.apk",
+        "version": "1.9.6-r0",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-7400",
-          "checksum": "sha1-FrPncMHQbIfvTbNzSltlsAlMyvs="
+          "range": "bytes=0-7536",
+          "checksum": "sha1-FqQwJUGi9MgJ5oBtwa20CG20z58="
         },
         "data": {
-          "range": "bytes=7401-1557396",
-          "checksum": "sha256-m6QAe2QY1VK427E5u6/M1jTTrfbm3RWE/31lG48alGI="
+          "range": "bytes=7537-1557957",
+          "checksum": "sha256-g0zVzwnA8/MFw18T6x2XdKoiZKN3OwJwIEYjJINnHfI="
         },
-        "checksum": "Q1FrPncMHQbIfvTbNzSltlsAlMyvs="
+        "checksum": "Q1FqQwJUGi9MgJ5oBtwa20CG20z58="
       },
       {
         "name": "nushell",
@@ -1377,41 +1377,41 @@
       },
       {
         "name": "ncurses-terminfo-base",
-        "url": "https://packages.wolfi.dev/os/aarch64/ncurses-terminfo-base-6.6.20260711-r0.apk",
-        "version": "6.6.20260711-r0",
+        "url": "https://packages.wolfi.dev/os/aarch64/ncurses-terminfo-base-6.6.20260718-r0.apk",
+        "version": "6.6.20260718-r0",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-10384",
-          "checksum": "sha1-6+HnF1MKAZrzENYuZRr+HKSWVuQ="
+          "range": "bytes=0-10390",
+          "checksum": "sha1-tjfUXO9UKcQcmSd7xBIXPHgcGWM="
         },
         "data": {
-          "range": "bytes=10385-117921",
-          "checksum": "sha256-GOWZ0l3saEcM7aImny2HZgZhd3+ZzqKysdeCLp6CXeY="
+          "range": "bytes=10391-118108",
+          "checksum": "sha256-B+OUuu13uVYtdrLfv4PLZHUtU4SglNdonIuVw4cQDPY="
         },
-        "checksum": "Q16+HnF1MKAZrzENYuZRr+HKSWVuQ="
+        "checksum": "Q1tjfUXO9UKcQcmSd7xBIXPHgcGWM="
       },
       {
         "name": "ncurses",
-        "url": "https://packages.wolfi.dev/os/aarch64/ncurses-6.6.20260711-r0.apk",
-        "version": "6.6.20260711-r0",
+        "url": "https://packages.wolfi.dev/os/aarch64/ncurses-6.6.20260718-r0.apk",
+        "version": "6.6.20260718-r0",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-10529",
-          "checksum": "sha1-TP/JXcCHBS6Gfb3SkDCabTzHruc="
+          "range": "bytes=0-10526",
+          "checksum": "sha1-kC+mEsy2dPzn6oU6dGk7Rt2cn08="
         },
         "data": {
-          "range": "bytes=10530-612436",
-          "checksum": "sha256-O1lVAWdkPhehiONLyZpP5QdKXksYlg8LFZ8+vQX/ZNs="
+          "range": "bytes=10527-612572",
+          "checksum": "sha256-TiSKciiAzJWA7dFiimB5QqX+2Q2uxMn+h9ckCQcXOdY="
         },
-        "checksum": "Q1TP/JXcCHBS6Gfb3SkDCabTzHruc="
+        "checksum": "Q1kC+mEsy2dPzn6oU6dGk7Rt2cn08="
       },
       {
         "name": "readline",
@@ -1681,22 +1681,22 @@
       },
       {
         "name": "libgit2",
-        "url": "https://packages.wolfi.dev/os/aarch64/libgit2-1.9.4-r3.apk",
-        "version": "1.9.4-r3",
+        "url": "https://packages.wolfi.dev/os/aarch64/libgit2-1.9.6-r0.apk",
+        "version": "1.9.6-r0",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-7429",
-          "checksum": "sha1-E9NzkiSBThEeSNDzQrOCCG8qkvU="
+          "range": "bytes=0-7567",
+          "checksum": "sha1-HopR7qZhr0T9MKBq7jL49c1Gq4w="
         },
         "data": {
-          "range": "bytes=7430-1453560",
-          "checksum": "sha256-zJ86Heq9lHqyqaVIO2+n+QgcPwg9j5pkv+W/xz/brEs="
+          "range": "bytes=7568-1449731",
+          "checksum": "sha256-IBa1/oZ5NUMeIYJv9vRaHjn+US4K5oijOCK2NvIEl7k="
         },
-        "checksum": "Q1E9NzkiSBThEeSNDzQrOCCG8qkvU="
+        "checksum": "Q1HopR7qZhr0T9MKBq7jL49c1Gq4w="
       },
       {
         "name": "nushell",
