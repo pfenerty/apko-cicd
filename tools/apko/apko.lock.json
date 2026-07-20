@@ -66,8 +66,8 @@
       },
       {
         "name": "apko",
-        "url": "https://packages.wolfi.dev/os/x86_64/apko-1.2.26-r0.apk",
-        "version": "1.2.26-r0",
+        "url": "https://packages.wolfi.dev/os/x86_64/apko-1.2.27-r0.apk",
+        "version": "1.2.27-r0",
         "architecture": "x86_64",
         "signature": {
           "range": "",
@@ -75,13 +75,13 @@
         },
         "control": {
           "range": "bytes=0-5921",
-          "checksum": "sha1-yYwkKq9xjQY+MEuTVKrQXEXtxNw="
+          "checksum": "sha1-CrC/deTRd8HEYjZSuX2cdG7syos="
         },
         "data": {
-          "range": "bytes=5922-11920353",
-          "checksum": "sha256-NEpW+S9U9rsKVEOdIm6LyiOvn7pdHPFvm1TPqCAccNc="
+          "range": "bytes=5922-11920352",
+          "checksum": "sha256-NiRj3DUSKmCsaVbG5u5Sfnf/UwEcdZSMNy9ln5AXmE0="
         },
-        "checksum": "Q1yYwkKq9xjQY+MEuTVKrQXEXtxNw="
+        "checksum": "Q1CrC/deTRd8HEYjZSuX2cdG7syos="
       },
       {
         "name": "ld-linux",
@@ -978,22 +978,22 @@
       },
       {
         "name": "apko",
-        "url": "https://packages.wolfi.dev/os/aarch64/apko-1.2.26-r0.apk",
-        "version": "1.2.26-r0",
+        "url": "https://packages.wolfi.dev/os/aarch64/apko-1.2.27-r0.apk",
+        "version": "1.2.27-r0",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-5954",
-          "checksum": "sha1-Pc40fpLlE6NMS/XLqXLD5/JTj/E="
+          "range": "bytes=0-5953",
+          "checksum": "sha1-AkkG4hPzCgK6jlVE6JsecAP42T4="
         },
         "data": {
-          "range": "bytes=5955-10807822",
-          "checksum": "sha256-oaHanAnk0EwAkbNNHzSyOgE4/n1ml02+yrdX9Vt1A34="
+          "range": "bytes=5954-10807841",
+          "checksum": "sha256-3mlRmz7hWS8czXWXnedQ+d/ALKr4YyDZr9cUaNyw89o="
         },
-        "checksum": "Q1Pc40fpLlE6NMS/XLqXLD5/JTj/E="
+        "checksum": "Q1AkkG4hPzCgK6jlVE6JsecAP42T4="
       },
       {
         "name": "libgcc",
