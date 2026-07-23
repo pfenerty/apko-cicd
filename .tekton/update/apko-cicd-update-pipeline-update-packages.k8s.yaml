@@ -1,0 +1,35 @@
+apiVersion: tekton.dev/v1
+kind: Pipeline
+metadata:
+  name: apko-cicd-update-update-packages
+  namespace: apko-cicd-ci
+spec:
+  params:
+    - name: url
+      type: string
+    - name: revision
+      type: string
+  tasks:
+    - name: git-clone
+      params:
+        - name: url
+          value: $(params.url)
+        - name: revision
+          value: $(params.revision)
+      taskRef:
+        kind: Task
+        name: apko-cicd-update-git-clone
+      workspaces:
+        - name: workspace
+          workspace: workspace
+    - name: update-packages
+      runAfter:
+        - git-clone
+      taskRef:
+        kind: Task
+        name: apko-cicd-update-update-packages
+      workspaces:
+        - name: workspace
+          workspace: workspace
+  workspaces:
+    - name: workspace
