@@ -1,5 +1,10 @@
 dist/
 
+# melange (gosec) build output + ephemeral signing key — never commit
+packages/
+local-melange.rsa
+local-melange.rsa.pub
+
 # Beads / Dolt files (added by bd init)
 .dolt/
 *.db

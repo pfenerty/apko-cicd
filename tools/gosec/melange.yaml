@@ -1,0 +1,46 @@
+# gosec is not published as a Wolfi package, so we build it ourselves with
+# melange and consume the resulting apk from the versioned apko configs in this
+# directory (see tools/gosec/1.2x.yaml).
+#
+# The version pin below is NOT tracked by scripts/update-versions.py (that script
+# only follows Wolfi package versions via apko lock). Bump `version` +
+# `expected-commit` together when upgrading gosec — the update-packages Tekton
+# job (or a maintainer) does this by hand.
+package:
+    name: gosec
+    version: "2.28.0"
+    epoch: 0
+    description: Go source code security analyzer
+    copyright:
+        - license: Apache-2.0
+
+vars:
+    go-version: "1.26"
+
+environment:
+    contents:
+        packages:
+            - go-${{vars.go-version}}
+
+pipeline:
+    - uses: git-checkout
+      with:
+          repository: https://github.com/securego/gosec
+          tag: v${{package.version}}
+          expected-commit: 9e75c0576c9878035d4221392108d458abe10fc3
+
+    - uses: go/build
+      with:
+          output: gosec
+          packages: ./cmd/gosec
+          ldflags: -X main.Version=v${{package.version}}
+
+test:
+    pipeline:
+        - runs: |
+              gosec --version
+              gosec --help
+    environment:
+        contents:
+            packages:
+                - go-${{vars.go-version}}

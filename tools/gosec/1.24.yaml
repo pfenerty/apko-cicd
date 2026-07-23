@@ -1,0 +1,18 @@
+include: languages/golang/1.24.yaml
+
+# gosec is provided by the locally-built melange package (tools/gosec/melange.yaml),
+# served from ./packages and signed with the ephemeral local-melange key. Run
+# `make melange-gosec` before building this image.
+contents:
+    repositories:
+        - '@local ./packages'
+    keyring:
+        - ./local-melange.rsa.pub
+    packages:
+        - gosec@local
+
+annotations:
+    org.opencontainers.image.title: gosec (Go 1.24)
+    org.opencontainers.image.description: Go source code security analyzer on Go 1.24
+    org.opencontainers.image.version: "2.28.0"
+    org.opencontainers.image.base.name: ghcr.io/pfenerty/apko-cicd/golang:1.24

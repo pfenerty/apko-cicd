@@ -30,7 +30,28 @@ $(eval $(call IMAGE,tools-golangci-lint-go1.23,tools/golangci-lint/1.23.yaml,gol
 $(eval $(call IMAGE,tools-golangci-lint-go1.24,tools/golangci-lint/1.24.yaml,golangci-lint:2.12.2-go1.24))
 $(eval $(call IMAGE,tools-golangci-lint-go1.25,tools/golangci-lint/1.25.yaml,golangci-lint:2.12.2-go1.25))
 $(eval $(call IMAGE,tools-golangci-lint-go1.26,tools/golangci-lint/1.26.yaml,golangci-lint:2.12.2-go1.26))
+$(eval $(call IMAGE,tools-govulncheck-go1.22,tools/govulncheck/1.22.yaml,govulncheck:1.6.0-go1.22))
+$(eval $(call IMAGE,tools-govulncheck-go1.23,tools/govulncheck/1.23.yaml,govulncheck:1.6.0-go1.23))
+$(eval $(call IMAGE,tools-govulncheck-go1.24,tools/govulncheck/1.24.yaml,govulncheck:1.6.0-go1.24))
+$(eval $(call IMAGE,tools-govulncheck-go1.25,tools/govulncheck/1.25.yaml,govulncheck:1.6.0-go1.25))
+$(eval $(call IMAGE,tools-govulncheck-go1.26,tools/govulncheck/1.26.yaml,govulncheck:1.6.0-go1.26))
+$(eval $(call IMAGE,tools-gosec-go1.22,tools/gosec/1.22.yaml,gosec:2.28.0-go1.22))
+$(eval $(call IMAGE,tools-gosec-go1.23,tools/gosec/1.23.yaml,gosec:2.28.0-go1.23))
+$(eval $(call IMAGE,tools-gosec-go1.24,tools/gosec/1.24.yaml,gosec:2.28.0-go1.24))
+$(eval $(call IMAGE,tools-gosec-go1.25,tools/gosec/1.25.yaml,gosec:2.28.0-go1.25))
+$(eval $(call IMAGE,tools-gosec-go1.26,tools/gosec/1.26.yaml,gosec:2.28.0-go1.26))
 $(eval $(call IMAGE,tools-gcloud,tools/gcloud/apko.yaml,gcloud:576.0.0))
+
+# gosec has no Wolfi package — build the apk with melange first, then the apko
+# configs above consume it from ./packages via the @local repository.
+# NOTE: melange builds Linux apks and only runs on Linux (uses bubblewrap), so
+# this target runs in the Tekton pipeline / a Linux host — not natively on macOS.
+GOSEC_IMAGES := tools-gosec-go1.22 tools-gosec-go1.23 tools-gosec-go1.24 tools-gosec-go1.25 tools-gosec-go1.26
+.PHONY: melange-gosec
+melange-gosec:
+	@test -f local-melange.rsa || melange keygen local-melange.rsa
+	melange build tools/gosec/melange.yaml --arch amd64,arm64 --signing-key local-melange.rsa --out-dir packages
+$(GOSEC_IMAGES) $(addprefix publish-,$(GOSEC_IMAGES)): melange-gosec
 
 # # ── Node.js ──────────────────────────────────────────────────────────────────
 $(eval $(call IMAGE,nodejs-18,languages/nodejs/18.yaml,nodejs:18))
