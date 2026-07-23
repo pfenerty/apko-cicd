@@ -9,6 +9,10 @@ git config --global --add safe.directory $(workspaces.workspace.path)
 let melange = "$(workspaces.workspace.path)/melange"
 let apko = "$(workspaces.workspace.path)/apko"
 
+# melange's bubblewrap runner needs bwrap, which base:stable does not ship. This
+# step runs privileged as root, so install it at runtime.
+^apk add --no-cache bubblewrap
+
 # Build the gosec apk so tools/gosec/*.yaml can be locked. Ephemeral signing key.
 if not ("local-melange.rsa" | path exists) {
   ^$melange keygen local-melange.rsa

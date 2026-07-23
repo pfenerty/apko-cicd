@@ -115,6 +115,10 @@ spec:
           return
         }
 
+        # melange's bubblewrap runner needs bwrap, which base:stable does not ship. This
+        # step runs privileged as root, so install it at runtime.
+        ^apk add --no-cache bubblewrap
+
         # Fresh ephemeral signing key: apko reads the pubkey we generate here in the same
         # run, so nothing needs to be persisted or committed.
         if not ("local-melange.rsa" | path exists) {

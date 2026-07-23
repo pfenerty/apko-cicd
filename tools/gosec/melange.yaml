@@ -19,6 +19,13 @@ vars:
 
 environment:
     contents:
+        # Wolfi's own build system injects these globally; a standalone melange
+        # build must declare the repository + signing key so the guest build
+        # environment (go toolchain, busybox, …) can be assembled.
+        keyring:
+            - https://packages.wolfi.dev/os/wolfi-signing.rsa.pub
+        repositories:
+            - https://packages.wolfi.dev/os
         packages:
             - go-${{vars.go-version}}
 
