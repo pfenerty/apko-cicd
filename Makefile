@@ -50,7 +50,7 @@ GOSEC_IMAGES := tools-gosec-go1.22 tools-gosec-go1.23 tools-gosec-go1.24 tools-g
 .PHONY: melange-gosec
 melange-gosec:
 	@test -f local-melange.rsa || melange keygen local-melange.rsa
-	melange build tools/gosec/melange.yaml --arch amd64,arm64 --signing-key local-melange.rsa --out-dir packages
+	melange build tools/gosec/melange.yaml --arch amd64 --signing-key local-melange.rsa --out-dir packages
 $(GOSEC_IMAGES) $(addprefix publish-,$(GOSEC_IMAGES)): melange-gosec
 
 # # ── Node.js ──────────────────────────────────────────────────────────────────

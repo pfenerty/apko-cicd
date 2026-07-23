@@ -19,7 +19,7 @@ if not ("local-melange.rsa" | path exists) {
 }
 let build = (
   ^$melange build tools/gosec/melange.yaml
-    --arch amd64,arm64
+    --arch amd64
     --signing-key local-melange.rsa
     --out-dir packages
   | complete

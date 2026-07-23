@@ -1,5 +1,10 @@
 include: languages/golang/1.24.yaml
 
+# amd64-only: gosec is built with melange, and cross-arch emulation is not
+# available on the Talos build nodes, so this image is restricted to amd64.
+archs:
+    - amd64
+
 # gosec is provided by the locally-built melange package (tools/gosec/melange.yaml),
 # served from ./packages and signed with the ephemeral local-melange key. Run
 # `make melange-gosec` before building this image.

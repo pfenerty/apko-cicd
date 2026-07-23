@@ -31,7 +31,7 @@ The base image includes common tooling for CICD tasking: `git`, `curl`, `openssl
 | `melange` | `0.46.1` | APK package builder for Wolfi and Alpine |
 | `golangci-lint` | `2.11.4` | Fast linters runner for Go |
 | `govulncheck` | `1.6.0` | Go vulnerability scanner (tagged per Go version, e.g. `1.6.0-go1.26`) |
-| `gosec` | `2.28.0` | Go source code security analyzer (tagged per Go version, e.g. `2.28.0-go1.26`) |
+| `gosec` | `2.28.0` | Go source code security analyzer (tagged per Go version, e.g. `2.28.0-go1.26`; **amd64 only**) |
 
 ### Node.js
 
