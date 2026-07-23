@@ -712,22 +712,22 @@
       },
       {
         "name": "git",
-        "url": "https://packages.wolfi.dev/os/x86_64/git-2.55.0-r3.apk",
-        "version": "2.55.0-r3",
+        "url": "https://packages.wolfi.dev/os/x86_64/git-2.55.0-r4.apk",
+        "version": "2.55.0-r4",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-8603",
-          "checksum": "sha1-PtUDb/m/zpkvHifauwAoYIHfrjA="
+          "range": "bytes=0-8596",
+          "checksum": "sha1-m5iqPzPggZn/SxFmGCMhO07SYSY="
         },
         "data": {
-          "range": "bytes=8604-9774551",
-          "checksum": "sha256-/UYSqM5PAadwzT72YCYZLfLaE1B+TKks03WFwlh79LM="
+          "range": "bytes=8597-9774543",
+          "checksum": "sha256-UwJ6vOT1zKhqd61gt67HfislDBSi4xnYpbRDk4kXyVY="
         },
-        "checksum": "Q1PtUDb/m/zpkvHifauwAoYIHfrjA="
+        "checksum": "Q1m5iqPzPggZn/SxFmGCMhO07SYSY="
       },
       {
         "name": "bash",
@@ -1643,22 +1643,22 @@
       },
       {
         "name": "git",
-        "url": "https://packages.wolfi.dev/os/aarch64/git-2.55.0-r3.apk",
-        "version": "2.55.0-r3",
+        "url": "https://packages.wolfi.dev/os/aarch64/git-2.55.0-r4.apk",
+        "version": "2.55.0-r4",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-8629",
-          "checksum": "sha1-WDK1zOriH+okvBav/LXFYIt9yEs="
+          "range": "bytes=0-8621",
+          "checksum": "sha1-AIOKYIDILguXGd0g/TIHnqRskgA="
         },
         "data": {
-          "range": "bytes=8630-9268151",
-          "checksum": "sha256-N5/5wooLx+67lxEpzQuET/l9aOg5jVdMeTzfjfH11+s="
+          "range": "bytes=8622-9268141",
+          "checksum": "sha256-t0Opc77GduZh7EhD/n7mP17ZijnnZ+xtUtVdH8aWsBs="
         },
-        "checksum": "Q1WDK1zOriH+okvBav/LXFYIt9yEs="
+        "checksum": "Q1AIOKYIDILguXGd0g/TIHnqRskgA="
       },
       {
         "name": "bash",

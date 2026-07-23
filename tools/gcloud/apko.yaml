@@ -7,5 +7,5 @@ contents:
 annotations:
     org.opencontainers.image.title: Google Cloud SDK
     org.opencontainers.image.description: Google Cloud CLI for interacting with GCP services (storage, compute, etc.)
-    org.opencontainers.image.version: 576.0.0
+    org.opencontainers.image.version: 577.0.0
     org.opencontainers.image.base.name: ghcr.io/pfenerty/apko-cicd/base:stable

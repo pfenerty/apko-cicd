@@ -712,22 +712,22 @@
       },
       {
         "name": "git",
-        "url": "https://packages.wolfi.dev/os/x86_64/git-2.55.0-r3.apk",
-        "version": "2.55.0-r3",
+        "url": "https://packages.wolfi.dev/os/x86_64/git-2.55.0-r4.apk",
+        "version": "2.55.0-r4",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-8603",
-          "checksum": "sha1-PtUDb/m/zpkvHifauwAoYIHfrjA="
+          "range": "bytes=0-8596",
+          "checksum": "sha1-m5iqPzPggZn/SxFmGCMhO07SYSY="
         },
         "data": {
-          "range": "bytes=8604-9774551",
-          "checksum": "sha256-/UYSqM5PAadwzT72YCYZLfLaE1B+TKks03WFwlh79LM="
+          "range": "bytes=8597-9774543",
+          "checksum": "sha256-UwJ6vOT1zKhqd61gt67HfislDBSi4xnYpbRDk4kXyVY="
         },
-        "checksum": "Q1PtUDb/m/zpkvHifauwAoYIHfrjA="
+        "checksum": "Q1m5iqPzPggZn/SxFmGCMhO07SYSY="
       },
       {
         "name": "libstdc++",
@@ -902,46 +902,46 @@
       },
       {
         "name": "google-cloud-sdk-core",
-        "url": "https://packages.wolfi.dev/os/x86_64/google-cloud-sdk-core-576.0.0-r0.apk",
-        "version": "576.0.0-r0",
+        "url": "https://packages.wolfi.dev/os/x86_64/google-cloud-sdk-core-577.0.0-r0.apk",
+        "version": "577.0.0-r0",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-3879",
-          "checksum": "sha1-90+kJvLNY5vv7TQ05gfNSovKxz8="
+          "range": "bytes=0-3878",
+          "checksum": "sha1-hnO8Dz1x+Ml0369FPrBlgLtjNC8="
         },
         "data": {
-          "range": "bytes=3880-63108659",
-          "checksum": "sha256-XziHFToAby/06hW95JKbrXlwyfIt7vkOQFKDZIjFmnY="
+          "range": "bytes=3879-63363630",
+          "checksum": "sha256-RfHXi58ucRItX2hjFrjYC0GTj0uhdcoWspEDCs/MfDQ="
         },
-        "checksum": "Q190+kJvLNY5vv7TQ05gfNSovKxz8="
+        "checksum": "Q1hnO8Dz1x+Ml0369FPrBlgLtjNC8="
       },
       {
         "name": "py3.13-google-cloud-sdk",
-        "url": "https://packages.wolfi.dev/os/x86_64/py3.13-google-cloud-sdk-576.0.0-r0.apk",
-        "version": "576.0.0-r0",
+        "url": "https://packages.wolfi.dev/os/x86_64/py3.13-google-cloud-sdk-577.0.0-r0.apk",
+        "version": "577.0.0-r0",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-3900",
-          "checksum": "sha1-3KkpI9hCcrVvnY3DMKu7mQV6I5Y="
+          "range": "bytes=0-3898",
+          "checksum": "sha1-+PuSQGnfVNINNZdoUzAbQbjf4GQ="
         },
         "data": {
-          "range": "bytes=3901-5537",
-          "checksum": "sha256-8BK2haGTYU1cr6vuJLiibJg9C8Xnp9I80NEeXhZ4oos="
+          "range": "bytes=3899-5546",
+          "checksum": "sha256-SKchf9Hg+o0rxjD+pCW0J2ExoCWLUgxliwjLA2a1BxM="
         },
-        "checksum": "Q13KkpI9hCcrVvnY3DMKu7mQV6I5Y="
+        "checksum": "Q1+PuSQGnfVNINNZdoUzAbQbjf4GQ="
       },
       {
         "name": "google-cloud-sdk",
-        "url": "https://packages.wolfi.dev/os/x86_64/google-cloud-sdk-576.0.0-r0.apk",
-        "version": "576.0.0-r0",
+        "url": "https://packages.wolfi.dev/os/x86_64/google-cloud-sdk-577.0.0-r0.apk",
+        "version": "577.0.0-r0",
         "architecture": "x86_64",
         "signature": {
           "range": "",
@@ -949,13 +949,13 @@
         },
         "control": {
           "range": "bytes=0-3880",
-          "checksum": "sha1-QuMKH9M9ENaGSlh6Ty/ryDRdt/Y="
+          "checksum": "sha1-Qsod8+WOGfqVo++Lnu/3DPtZlxY="
         },
         "data": {
-          "range": "bytes=3881-5506",
-          "checksum": "sha256-55Qf09w+P6aAkuewJ/3lgYHsxn3tNMcS0nq/Hcv3zaU="
+          "range": "bytes=3881-5510",
+          "checksum": "sha256-n9Uci6n6krrBNO8agxxXHLUWrlT6aRpWQioNmnGMLzw="
         },
-        "checksum": "Q1QuMKH9M9ENaGSlh6Ty/ryDRdt/Y="
+        "checksum": "Q1Qsod8+WOGfqVo++Lnu/3DPtZlxY="
       },
       {
         "name": "http-parser",
@@ -1833,22 +1833,22 @@
       },
       {
         "name": "git",
-        "url": "https://packages.wolfi.dev/os/aarch64/git-2.55.0-r3.apk",
-        "version": "2.55.0-r3",
+        "url": "https://packages.wolfi.dev/os/aarch64/git-2.55.0-r4.apk",
+        "version": "2.55.0-r4",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-8629",
-          "checksum": "sha1-WDK1zOriH+okvBav/LXFYIt9yEs="
+          "range": "bytes=0-8621",
+          "checksum": "sha1-AIOKYIDILguXGd0g/TIHnqRskgA="
         },
         "data": {
-          "range": "bytes=8630-9268151",
-          "checksum": "sha256-N5/5wooLx+67lxEpzQuET/l9aOg5jVdMeTzfjfH11+s="
+          "range": "bytes=8622-9268141",
+          "checksum": "sha256-t0Opc77GduZh7EhD/n7mP17ZijnnZ+xtUtVdH8aWsBs="
         },
-        "checksum": "Q1WDK1zOriH+okvBav/LXFYIt9yEs="
+        "checksum": "Q1AIOKYIDILguXGd0g/TIHnqRskgA="
       },
       {
         "name": "libstdc++",
@@ -2023,27 +2023,27 @@
       },
       {
         "name": "google-cloud-sdk-core",
-        "url": "https://packages.wolfi.dev/os/aarch64/google-cloud-sdk-core-576.0.0-r0.apk",
-        "version": "576.0.0-r0",
+        "url": "https://packages.wolfi.dev/os/aarch64/google-cloud-sdk-core-577.0.0-r0.apk",
+        "version": "577.0.0-r0",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-3917",
-          "checksum": "sha1-ggIeyJXje3n/CpGUebyn9R6xe/A="
+          "range": "bytes=0-3918",
+          "checksum": "sha1-6UpDpeUf0sVHYz9ECQB+M2X2fQ8="
         },
         "data": {
-          "range": "bytes=3918-63108701",
-          "checksum": "sha256-n2tZQi/oHA3Snnee9PHHRrzXNaDOsoLiPk3BBRXv4BI="
+          "range": "bytes=3919-63363677",
+          "checksum": "sha256-hVGvzw8lq3lZyUxZdgIxKsARFuEf/36mER73dr/LE8Q="
         },
-        "checksum": "Q1ggIeyJXje3n/CpGUebyn9R6xe/A="
+        "checksum": "Q16UpDpeUf0sVHYz9ECQB+M2X2fQ8="
       },
       {
         "name": "py3.13-google-cloud-sdk",
-        "url": "https://packages.wolfi.dev/os/aarch64/py3.13-google-cloud-sdk-576.0.0-r0.apk",
-        "version": "576.0.0-r0",
+        "url": "https://packages.wolfi.dev/os/aarch64/py3.13-google-cloud-sdk-577.0.0-r0.apk",
+        "version": "577.0.0-r0",
         "architecture": "aarch64",
         "signature": {
           "range": "",
@@ -2051,32 +2051,32 @@
         },
         "control": {
           "range": "bytes=0-3938",
-          "checksum": "sha1-iHO2cbbUv5o4kVy02iEVvfIcVdc="
+          "checksum": "sha1-xJ+aScOcOR+sKDCnH3wa72Q44nY="
         },
         "data": {
-          "range": "bytes=3939-5584",
-          "checksum": "sha256-EPik5XIwUKFU9SDY1ETBsUsxhrbBLfunuV7aH4wgi8o="
+          "range": "bytes=3939-5583",
+          "checksum": "sha256-M5mOwPhMODZBWJnyN9JUTFLI8Uqx7Vig2jAbOkqrIS0="
         },
-        "checksum": "Q1iHO2cbbUv5o4kVy02iEVvfIcVdc="
+        "checksum": "Q1xJ+aScOcOR+sKDCnH3wa72Q44nY="
       },
       {
         "name": "google-cloud-sdk",
-        "url": "https://packages.wolfi.dev/os/aarch64/google-cloud-sdk-576.0.0-r0.apk",
-        "version": "576.0.0-r0",
+        "url": "https://packages.wolfi.dev/os/aarch64/google-cloud-sdk-577.0.0-r0.apk",
+        "version": "577.0.0-r0",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-3921",
-          "checksum": "sha1-GQygkAaePruL4NO0hXDSqk0JU6M="
+          "range": "bytes=0-3920",
+          "checksum": "sha1-A+N/+NO888HWJ8tHgeyotG29/VU="
         },
         "data": {
-          "range": "bytes=3922-5550",
-          "checksum": "sha256-Monv5BxCdlYxbbKg38RtTsYlzDkP+k7qs2Rkg94mRTw="
+          "range": "bytes=3921-5549",
+          "checksum": "sha256-Os+mMpXBPk6T7sRrGCvJoyBF0t/sazQ5apwiXOihmQg="
         },
-        "checksum": "Q1GQygkAaePruL4NO0hXDSqk0JU6M="
+        "checksum": "Q1A+N/+NO888HWJ8tHgeyotG29/VU="
       },
       {
         "name": "http-parser",

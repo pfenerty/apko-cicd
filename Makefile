@@ -20,7 +20,7 @@ endef
 $(eval $(call IMAGE,base,base/apko.yaml,base:stable))
 
 # ── Tools ────────────────────────────────────────────────────────────────────
-$(eval $(call IMAGE,tools-syft,tools/syft/apko.yaml,syft:1.48.0))
+$(eval $(call IMAGE,tools-syft,tools/syft/apko.yaml,syft:1.49.0))
 $(eval $(call IMAGE,tools-grype,tools/grype/apko.yaml,grype:0.116.0))
 $(eval $(call IMAGE,tools-oras,tools/oras/apko.yaml,oras:1.3.3))
 $(eval $(call IMAGE,tools-apko,tools/apko/apko.yaml,apko:1.2.27))
@@ -30,7 +30,7 @@ $(eval $(call IMAGE,tools-golangci-lint-go1.23,tools/golangci-lint/1.23.yaml,gol
 $(eval $(call IMAGE,tools-golangci-lint-go1.24,tools/golangci-lint/1.24.yaml,golangci-lint:2.12.2-go1.24))
 $(eval $(call IMAGE,tools-golangci-lint-go1.25,tools/golangci-lint/1.25.yaml,golangci-lint:2.12.2-go1.25))
 $(eval $(call IMAGE,tools-golangci-lint-go1.26,tools/golangci-lint/1.26.yaml,golangci-lint:2.12.2-go1.26))
-$(eval $(call IMAGE,tools-gcloud,tools/gcloud/apko.yaml,gcloud:576.0.0))
+$(eval $(call IMAGE,tools-gcloud,tools/gcloud/apko.yaml,gcloud:577.0.0))
 
 # # ── Node.js ──────────────────────────────────────────────────────────────────
 $(eval $(call IMAGE,nodejs-18,languages/nodejs/18.yaml,nodejs:18))
