@@ -1,50 +1,39 @@
 #!/usr/bin/env nu
-# Publish each image selected by the detect step (to-publish.tsv). Wolfi images
-# use their committed lockfile; melange-built images have an empty lock field and
-# are published from the local @local repo built by the build-melange step.
-# Records each image@digest for Tekton Chains. $(workspaces.workspace.path) and
-# $(results.IMAGES.path) are Tekton variables substituted before nu runs.
+# Per-image cell (matrix), publish step. Runs in the cell subdir the melange step
+# prepared and publishes this unit's image with apko (--lockfile for Wolfi images;
+# from the local @local repo for melange images). Emits the image@digest for
+# Tekton Chains. $(workspaces.workspace.path), $(params.unit), $(context.taskRun.name),
+# and $(results.IMAGE.path) are Tekton variables.
 
 git config --global --add safe.directory $(workspaces.workspace.path)
 
-# This step runs on the apko image, so `apko` is already on PATH.
-# --raw: nushell would otherwise auto-parse a .tsv into a table; we want the lines.
-let rows = (open --raw to-publish.tsv | lines | where {|l| ($l | str trim) | is-not-empty})
-if ($rows | is-empty) {
-  log "Nothing to publish."
-  "" | save -f $(results.IMAGES.path)
-  return
-}
+let unit = "$(params.unit)"
+let f = ($unit | split row ",")
+let config = $f.0
+let tag = $f.1
+let lock = ($f | get 2? | default "")
 
+let cell = "$(workspaces.workspace.path)/.cell-$(context.taskRun.name)"
+cd $cell
 mkdir dist
-mut published = []
-for row in $rows {
-  let parts = ($row | split row "\t")
-  let config = $parts.0
-  let tag = $parts.1
-  let lock = ($parts | get 2? | default "")
-  let image = $"ghcr.io/pfenerty/apko-cicd/($tag)"
 
-  let args = (
-    if ($lock | is-empty) {
-      ["publish" "--sbom-path" "dist" $config $image]
-    } else {
-      ["publish" "--sbom-path" "dist" "--lockfile" $lock $config $image]
-    }
-  )
-  log $"[publish] ($config) → ($image)"
-  let out = (^apko ...$args | complete)
-  print $out.stderr
-  if $out.exit_code != 0 {
-    error make {msg: $"apko publish failed for ($config)"}
+let image = $"ghcr.io/pfenerty/apko-cicd/($tag)"
+let args = (
+  if ($lock | is-empty) {
+    ["publish" "--sbom-path" "dist" $config $image]
+  } else {
+    ["publish" "--sbom-path" "dist" "--lockfile" $lock $config $image]
   }
-
-  # apko prints the published digest reference (image@sha256:...) on stdout.
-  let digest_lines = ($out.stdout | lines | where {|l| $l =~ '@sha256:'})
-  let digest_ref = (if ($digest_lines | is-empty) { $image } else { $digest_lines | last | str trim })
-  $published = ($published | append $digest_ref)
+)
+log $"[publish] ($config) → ($image)"
+let out = (^apko ...$args | complete)
+print $out.stderr
+if $out.exit_code != 0 {
+  error make {msg: $"apko publish failed for ($config)"}
 }
 
-# Tekton Chains build subjects: newline-separated image@digest list.
-$published | str join (char nl) | save -f $(results.IMAGES.path)
-log $"Published ($published | length) image\(s\)."
+# apko prints the published digest reference (image@sha256:...) on stdout.
+let digest_lines = ($out.stdout | lines | where {|l| $l =~ '@sha256:'})
+let digest_ref = (if ($digest_lines | is-empty) { $image } else { $digest_lines | last | str trim })
+$digest_ref | save -f $(results.IMAGE.path)
+log $"Published ($image)."

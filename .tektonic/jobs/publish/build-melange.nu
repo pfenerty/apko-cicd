@@ -1,34 +1,32 @@
 #!/usr/bin/env nu
-# Build each melange package selected by the detect step into ./packages, so the
-# apko configs that consume it via the @local repo can be published. This is the
-# only privileged step — melange's bubblewrap runner needs bwrap + root. It is a
-# no-op for Wolfi-only pushes. $(workspaces.workspace.path) is a Tekton variable.
+# Per-image cell (matrix), melange step. Copies the repo into a cell-unique subdir
+# (isolating packages/ and dist/ from other parallel cells on the shared RWO
+# workspace) and, if this unit has a melange.yaml, builds its apk into ./packages.
+# No-op for Wolfi images. This is the only privileged step (bubblewrap).
+# $(workspaces.workspace.path), $(params.unit), $(context.taskRun.name) are Tekton vars.
 
 git config --global --add safe.directory $(workspaces.workspace.path)
 
-let to_build = (open --raw to-build.txt | lines | where {|l| ($l | str trim) | is-not-empty})
-if ($to_build | is-empty) {
-  log "No melange packages to build."
+let unit = "$(params.unit)"
+let melange = ($unit | split row "," | get 3? | default "")
+
+let cell = "$(workspaces.workspace.path)/.cell-$(context.taskRun.name)"
+^mkdir -p $cell
+^cp -r base tools languages Makefile $cell
+cd $cell
+
+if ($melange | is-empty) {
+  log $"[($unit)] Wolfi image — no melange build."
   return
 }
 
-# This step runs on the melange image, so `melange` is already on PATH. Ensure
-# bwrap is present for melange's bubblewrap runner (a no-op once the image ships
-# it); this step runs as root so apk works.
+# The melange image already ships melange; ensure bwrap for its sandbox runner.
 ^apk add --no-cache bubblewrap
+^melange keygen local-melange.rsa
 
-# One ephemeral signing key for every build; apko reads the pubkey in the same run,
-# so nothing is persisted. Only amd64 is built (no cross-arch emulation available).
-if not ("local-melange.rsa" | path exists) {
-  ^melange keygen local-melange.rsa
+log $"[melange] building ($melange)"
+let out = (^melange build $melange --arch amd64 --signing-key local-melange.rsa --out-dir packages | complete)
+print $out.stderr
+if $out.exit_code != 0 {
+  error make {msg: $"melange build failed for ($melange)"}
 }
-
-for m in $to_build {
-  log $"[melange] building ($m)"
-  let out = (^melange build $m --arch amd64 --signing-key local-melange.rsa --out-dir packages | complete)
-  print $out.stderr
-  if $out.exit_code != 0 {
-    error make {msg: $"melange build failed for ($m)"}
-  }
-}
-log $"Built ($to_build | length) melange package\(s\)."

@@ -1,12 +1,12 @@
 import { GitPipeline, TektonicProject, TRIGGER_EVENTS } from "@pfenerty/tektonic";
 
-import { publishChangedImages } from "./jobs/publish/spec";
+import { detectChangedImages, buildPublishImage } from "./jobs/publish/spec";
 
 // ─── Push pipeline (Pipelines as Code) ────────────────────────────────────────
-// On push to main, (re)publish every image whose apko config, lock file, or
-// sibling melange.yaml changed. The trigger's pathsChanged keeps the run from
-// firing on non-image commits (docs, CI, scripts). cloneDepth: 2 lets the detect
-// task compute `git diff HEAD~1 HEAD`.
+// On push to main, detect every image whose apko config, lock file, or sibling
+// melange.yaml changed, then fan out into one build+publish job per image.
+// The trigger's pathsChanged keeps the run from firing on non-image commits;
+// cloneDepth: 2 lets detect compute `git diff HEAD~1 HEAD`.
 const pushPipeline = new GitPipeline({
   name: "push",
   trigger: {
@@ -19,7 +19,7 @@ const pushPipeline = new GitPipeline({
     ],
   },
   cloneDepth: 2,
-  tasks: [publishChangedImages],
+  tasks: [detectChangedImages, buildPublishImage],
 });
 
 new TektonicProject({

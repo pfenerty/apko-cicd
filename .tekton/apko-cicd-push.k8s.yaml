@@ -6,7 +6,7 @@ metadata:
     pipelinesascode.tekton.dev/on-event: "[push]"
     pipelinesascode.tekton.dev/on-path-changed: "[base/**, tools/**, languages/**]"
     pipelinesascode.tekton.dev/on-target-branch: "[main]"
-    pipelinesascode.tekton.dev/task: "[.tekton/tasks/set-status-pending-push.k8s.yaml, .tekton/tasks/git-clone.k8s.yaml, .tekton/tasks/publish-changed-images.k8s.yaml]"
+    pipelinesascode.tekton.dev/task: "[.tekton/tasks/git-clone.k8s.yaml, .tekton/tasks/detect-changed-images.k8s.yaml, .tekton/tasks/build-publish-image.k8s.yaml]"
   name: apko-cicd-push
 spec:
   params:
@@ -16,10 +16,10 @@ spec:
       value: "{{ repo_owner }}/{{ repo_name }}"
     - name: source-branch
       value: "{{ source_branch }}"
-    - name: revision
-      value: "{{ revision }}"
     - name: url
       value: "{{ repo_url }}"
+    - name: revision
+      value: "{{ revision }}"
   pipelineSpec:
     params:
       - name: project-name
@@ -28,22 +28,11 @@ spec:
         type: string
       - name: source-branch
         type: string
-      - name: revision
-        type: string
       - name: url
         type: string
+      - name: revision
+        type: string
     tasks:
-      - name: set-status-pending-push
-        params:
-          - name: repo-full-name
-            value: $(params.repo-full-name)
-          - name: revision
-            value: $(params.revision)
-        runAfter:
-          - git-clone
-        taskRef:
-          kind: Task
-          name: apko-cicd-set-status-pending-push
       - name: git-clone
         params:
           - name: url
@@ -56,17 +45,25 @@ spec:
         workspaces:
           - name: workspace
             workspace: workspace
-      - name: publish-changed-images
-        params:
-          - name: repo-full-name
-            value: $(params.repo-full-name)
-          - name: revision
-            value: $(params.revision)
+      - name: detect-changed-images
         runAfter:
-          - set-status-pending-push
+          - git-clone
         taskRef:
           kind: Task
-          name: apko-cicd-publish-changed-images
+          name: apko-cicd-detect-changed-images
+        workspaces:
+          - name: workspace
+            workspace: workspace
+      - matrix:
+          params:
+            - name: unit
+              value: $(tasks.detect-changed-images.results.units[*])
+        name: build-publish-image
+        runAfter:
+          - detect-changed-images
+        taskRef:
+          kind: Task
+          name: apko-cicd-build-publish-image
         workspaces:
           - name: workspace
             workspace: workspace

@@ -1,50 +1,52 @@
 import * as path from "path";
-import { Task, Result, scriptFromFile } from "@pfenerty/tektonic";
-import { baseImage, apkoImage, melangeImage, statusReporter, dockerConfigVolume } from "../../shared";
+import { Task, Param, Result, scriptFromFile } from "@pfenerty/tektonic";
+import { baseImage, apkoImage, melangeImage, dockerConfigVolume } from "../../shared";
 
-// Unified publish workflow. On push it (re)publishes every image whose apko
-// config, lock file, or sibling melange.yaml changed. Images with a melange.yaml
-// are built with melange first (into a local @local repo); Wolfi images publish
-// straight from their committed lockfile. Adding a future melange+apko image needs
-// no CI change — just drop a <dir>/melange.yaml, apko config(s), and a Makefile line.
-//
-// Steps run in one pod sharing the cloned workspace; the apko/melange binaries come
-// from this repo's own tool images (no per-run downloads). Only the melange build
-// step is privileged (bubblewrap).
+// Change-driven matrix publish. `detect` emits one unit per changed image (its
+// apko config, lock file, or sibling melange.yaml changed); `build-publish-image`
+// fans out over them into one build+publish job per image. Melange-built images
+// build their apk first (privileged), then apko publish. Adding a future
+// melange+apko image needs no CI change.
 
-const detect = scriptFromFile(path.join(__dirname, "detect.nu"));
+const detectScript = scriptFromFile(path.join(__dirname, "detect.nu"));
 const buildMelange = scriptFromFile(path.join(__dirname, "build-melange.nu"));
 const publishScript = scriptFromFile(path.join(__dirname, "publish.nu"));
 
-// Tekton Chains build subjects: each published image@digest is written here, and
-// Chains records them as subjects in the run's SLSA provenance.
-const images = new Result({
-  name: "IMAGES",
-  description: "Published images (image@digest), recorded as Tekton Chains subjects",
+// Array of changed-image units — one element per fan-out matrix cell.
+const units = new Result({ name: "units", type: "array" });
+
+export const detectChangedImages = new Task({
+  name: "detect-changed-images",
+  results: [units],
+  steps: [{ name: "detect", image: baseImage, script: detectScript }],
 });
 
-export const publishChangedImages = new Task({
-  name: "publish-changed-images",
-  statusReporter,
-  results: [images],
+// The unit string (config,tag,lock,melange) this matrix cell builds/publishes.
+const unitParam = new Param({ name: "unit" });
+
+// Per-cell published image@digest (Tekton Chains subject; the matrix aggregates
+// these into an array on the pipeline task).
+const image = new Result({ name: "IMAGE", description: "Published image@digest" });
+
+export const buildPublishImage = new Task({
+  name: "build-publish-image",
+  params: [unitParam],
+  fanOut: { over: units, as: unitParam },
+  results: [image],
   volumes: [dockerConfigVolume],
   stepTemplate: {
     computeResources: {
-      // Kubernetes sums every step container's request even though steps run
-      // sequentially — keep it small so the pod fits the shared amd64 worker.
-      requests: { cpu: "150m", memory: "256Mi" },
-      // melange builds Go from source when a melange.yaml changed — give headroom.
+      // Cells run as separate pods; keep requests small so several fit the worker.
+      requests: { cpu: "100m", memory: "256Mi" },
+      // melange builds Go from source for melange images — give headroom.
       limits: { cpu: "4", memory: "4Gi" },
     },
   },
   steps: [
-    // Decide what to build/publish (writes to-build.txt + to-publish.tsv). base
-    // provides git + nushell.
-    { name: "detect", image: baseImage, script: detect },
     {
-      // Only privileged step: melange's bubblewrap runner needs it. No-op when
-      // nothing melange-based changed. privileged requires allowPrivilegeEscalation
-      // (the secure-by-default stepTemplate sets it false, which K8s rejects).
+      // Only privileged step: melange's bubblewrap runner needs it. No-op for
+      // Wolfi images. privileged requires allowPrivilegeEscalation (the secure
+      // default sets it false, which K8s rejects alongside privileged).
       name: "build-melange",
       image: melangeImage,
       securityContext: { privileged: true, runAsUser: 0, runAsNonRoot: false, allowPrivilegeEscalation: true },
