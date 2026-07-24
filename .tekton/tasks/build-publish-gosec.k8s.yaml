@@ -183,6 +183,7 @@ spec:
         $"($__tek_worst)" | save -f /tekton/home/.exit-code
         exit $__tek_rc
       securityContext:
+        allowPrivilegeEscalation: true
         privileged: true
         runAsNonRoot: false
         runAsUser: 0

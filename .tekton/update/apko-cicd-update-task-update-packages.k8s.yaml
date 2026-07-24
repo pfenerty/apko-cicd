@@ -106,6 +106,7 @@ spec:
         }
         log "Lock files regenerated."
       securityContext:
+        allowPrivilegeEscalation: true
         privileged: true
         runAsNonRoot: false
         runAsUser: 0
