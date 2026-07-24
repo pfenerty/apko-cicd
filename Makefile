@@ -20,7 +20,7 @@ endef
 $(eval $(call IMAGE,base,base/apko.yaml,base:stable))
 
 # ── Tools ────────────────────────────────────────────────────────────────────
-$(eval $(call IMAGE,tools-syft,tools/syft/apko.yaml,syft:1.48.0))
+$(eval $(call IMAGE,tools-syft,tools/syft/apko.yaml,syft:1.49.0))
 $(eval $(call IMAGE,tools-grype,tools/grype/apko.yaml,grype:0.116.0))
 $(eval $(call IMAGE,tools-oras,tools/oras/apko.yaml,oras:1.3.3))
 $(eval $(call IMAGE,tools-apko,tools/apko/apko.yaml,apko:1.2.27))
@@ -40,7 +40,7 @@ $(eval $(call IMAGE,tools-gosec-go1.23,tools/gosec/1.23.yaml,gosec:2.28.0-go1.23
 $(eval $(call IMAGE,tools-gosec-go1.24,tools/gosec/1.24.yaml,gosec:2.28.0-go1.24))
 $(eval $(call IMAGE,tools-gosec-go1.25,tools/gosec/1.25.yaml,gosec:2.28.0-go1.25))
 $(eval $(call IMAGE,tools-gosec-go1.26,tools/gosec/1.26.yaml,gosec:2.28.0-go1.26))
-$(eval $(call IMAGE,tools-gcloud,tools/gcloud/apko.yaml,gcloud:576.0.0))
+$(eval $(call IMAGE,tools-gcloud,tools/gcloud/apko.yaml,gcloud:577.0.0))
 
 # gosec has no Wolfi package — build the apk with melange first, then the apko
 # configs above consume it from ./packages via the @local repository.
