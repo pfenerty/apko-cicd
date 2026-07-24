@@ -8,7 +8,8 @@
 git config --global --add safe.directory $(workspaces.workspace.path)
 
 # This step runs on the apko image, so `apko` is already on PATH.
-let rows = (open to-publish.tsv | lines | where {|l| ($l | str trim) | is-not-empty})
+# --raw: nushell would otherwise auto-parse a .tsv into a table; we want the lines.
+let rows = (open --raw to-publish.tsv | lines | where {|l| ($l | str trim) | is-not-empty})
 if ($rows | is-empty) {
   log "Nothing to publish."
   "" | save -f $(results.IMAGES.path)

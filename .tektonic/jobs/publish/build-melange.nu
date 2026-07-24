@@ -6,7 +6,7 @@
 
 git config --global --add safe.directory $(workspaces.workspace.path)
 
-let to_build = (open to-build.txt | lines | where {|l| ($l | str trim) | is-not-empty})
+let to_build = (open --raw to-build.txt | lines | where {|l| ($l | str trim) | is-not-empty})
 if ($to_build | is-empty) {
   log "No melange packages to build."
   return
