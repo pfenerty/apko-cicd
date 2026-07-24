@@ -25,16 +25,21 @@ export const detectChangedImages = new Task({
 const unitParam = new Param({ name: "unit" });
 
 // Per-cell published image@digest. MUST be named IMAGES (plural) — that is the
-// Tekton Chains type-hint it recognizes to sign the image and record it (with the
-// git source from git-clone) as a subject in the SLSA provenance. A singular
-// "IMAGE" is ignored by Chains → unsigned, no provenance.
+// Tekton Chains type-hint it recognizes to sign the image and record it as a
+// subject in the SLSA provenance. A singular "IMAGE" is ignored by Chains.
 const image = new Result({ name: "IMAGES", description: "Published image@digest (Tekton Chains subject)" });
+
+// With enable-deep-inspection, Chains builds each image's provenance from the cell
+// TaskRun that produced it — so the git source (normally on the git-clone TaskRun)
+// must be re-emitted here to appear as a resolvedDependency in the attestation.
+const gitUrl = new Result({ name: "CHAINS-GIT_URL", description: "Source repo URL (Chains git material)" });
+const gitCommit = new Result({ name: "CHAINS-GIT_COMMIT", description: "Source commit (Chains git material)" });
 
 export const buildPublishImage = new Task({
   name: "build-publish-image",
   params: [unitParam],
   fanOut: { over: units, as: unitParam },
-  results: [image],
+  results: [image, gitUrl, gitCommit],
   volumes: [dockerConfigVolume],
   stepTemplate: {
     computeResources: {

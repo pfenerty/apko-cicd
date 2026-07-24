@@ -49,4 +49,10 @@ if $out.exit_code != 0 {
 let digest_lines = ($out.stdout | lines | where {|l| $l =~ '@sha256:'})
 let digest_ref = (if ($digest_lines | is-empty) { $image } else { $digest_lines | last | str trim })
 $digest_ref | save -f $(results.IMAGES.path)
+
+# Re-emit the git source (read from the cloned workspace) so Chains records it as a
+# resolvedDependency in THIS image's provenance (deep-inspection scopes provenance
+# to this cell TaskRun, not the git-clone task).
+(^git -C $(workspaces.workspace.path) config --get remote.origin.url | str trim) | save -f $(results.CHAINS-GIT_URL.path)
+(^git -C $(workspaces.workspace.path) rev-parse HEAD | str trim) | save -f $(results.CHAINS-GIT_COMMIT.path)
 log $"Published ($image)."
