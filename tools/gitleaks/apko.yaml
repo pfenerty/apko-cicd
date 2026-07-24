@@ -1,0 +1,11 @@
+include: base/apko.yaml
+
+contents:
+    packages:
+        - gitleaks
+
+annotations:
+    org.opencontainers.image.title: Gitleaks
+    org.opencontainers.image.description: Secrets scanner for git repositories and filesystems
+    org.opencontainers.image.version: 8.30.1
+    org.opencontainers.image.base.name: ghcr.io/pfenerty/apko-cicd/base:stable

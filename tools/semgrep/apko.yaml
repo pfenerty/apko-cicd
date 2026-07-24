@@ -1,0 +1,11 @@
+include: base/apko.yaml
+
+contents:
+    packages:
+        - semgrep
+
+annotations:
+    org.opencontainers.image.title: Semgrep
+    org.opencontainers.image.description: Static analysis (SAST) engine for finding bugs and security issues across many languages
+    org.opencontainers.image.version: 1.165.0
+    org.opencontainers.image.base.name: ghcr.io/pfenerty/apko-cicd/base:stable
