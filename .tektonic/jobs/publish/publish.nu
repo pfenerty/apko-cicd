@@ -30,12 +30,19 @@ let melange = $"($config | path dirname)/melange.yaml"
 # use their committed lockfile when present.
 let use_lock = ((not ($melange | path exists)) and ($lock | path exists))
 
+# Git source, read from the cloned workspace. Used for the OCI
+# org.opencontainers.image.revision annotation (which ocidex reads for git
+# metadata) and re-emitted as the Chains git material below.
+let url = (^git -C $(workspaces.workspace.path) config --get remote.origin.url | str trim)
+let commit = (^git -C $(workspaces.workspace.path) rev-parse HEAD | str trim)
+let rev_ann = $"org.opencontainers.image.revision:($commit)"
+
 let image = $"ghcr.io/pfenerty/apko-cicd/($tag)"
 let args = (
   if $use_lock {
-    ["publish" "--sbom-path" "dist" "--lockfile" $lock $config $image]
+    ["publish" "--sbom-path" "dist" "--lockfile" $lock "--annotations" $rev_ann $config $image]
   } else {
-    ["publish" "--sbom-path" "dist" $config $image]
+    ["publish" "--sbom-path" "dist" "--annotations" $rev_ann $config $image]
   }
 )
 log $"[publish] ($config) → ($image)"
@@ -50,9 +57,9 @@ let digest_lines = ($out.stdout | lines | where {|l| $l =~ '@sha256:'})
 let digest_ref = (if ($digest_lines | is-empty) { $image } else { $digest_lines | last | str trim })
 $digest_ref | save -f $(results.IMAGES.path)
 
-# Re-emit the git source (read from the cloned workspace) so Chains records it as a
-# resolvedDependency in THIS image's provenance (deep-inspection scopes provenance
-# to this cell TaskRun, not the git-clone task).
-(^git -C $(workspaces.workspace.path) config --get remote.origin.url | str trim) | save -f $(results.CHAINS-GIT_URL.path)
-(^git -C $(workspaces.workspace.path) rev-parse HEAD | str trim) | save -f $(results.CHAINS-GIT_COMMIT.path)
+# Re-emit the git source so Chains records it as a resolvedDependency in THIS
+# image's provenance (deep-inspection scopes provenance to this cell TaskRun, not
+# the git-clone task).
+$url | save -f $(results.CHAINS-GIT_URL.path)
+$commit | save -f $(results.CHAINS-GIT_COMMIT.path)
 log $"Published ($image)."
