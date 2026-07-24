@@ -110,9 +110,13 @@ def update_makefile(config_rel: str, old_ver: str, new_ver: str) -> None:
 
 def update_annotation(yaml_path: Path, old_ver: str, new_ver: str) -> None:
     content = yaml_path.read_text()
-    updated = content.replace(
-        f"org.opencontainers.image.version: {old_ver}",
-        f"org.opencontainers.image.version: {new_ver}",
+    # Match the version with or without surrounding quotes, preserving them —
+    # otherwise a quoted annotation (e.g. `version: "0.46.1"`) silently never
+    # updates and drifts from the Makefile tag.
+    updated = re.sub(
+        rf'(org\.opencontainers\.image\.version:\s*)"?{re.escape(old_ver)}"?',
+        rf'\g<1>{new_ver}',
+        content,
     )
     if updated != content:
         yaml_path.write_text(updated)

@@ -6,7 +6,7 @@ set -e
 # into the workspace (writable via fsGroup) so the build step can use it.
 # $(workspaces.workspace.path) is a Tekton variable; the $(...) command
 # substitutions are evaluated by the shell at runtime.
-MELANGE_VERSION=$(grep 'image.version' tools/melange/apko.yaml | awk '{print $NF}' | tr -d '[:space:]')
+MELANGE_VERSION=$(grep 'image.version' tools/melange/apko.yaml | awk '{print $NF}' | tr -d '[:space:]"')
 echo "Fetching melange ${MELANGE_VERSION}"
 TMPDIR=$(mktemp -d)
 MELANGE_URL="https://github.com/chainguard-dev/melange/releases/download/v${MELANGE_VERSION}/melange_${MELANGE_VERSION}_linux_amd64.tar.gz"

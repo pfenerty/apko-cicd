@@ -4,7 +4,7 @@ set -e
 # apko binary matching tools/apko/apko.yaml into the workspace (writable via fsGroup)
 # so the publish step can use it. $(workspaces.workspace.path) is a Tekton variable;
 # the $(...) command substitutions are evaluated by the shell at runtime.
-APKO_VERSION=$(grep 'image.version' tools/apko/apko.yaml | awk '{print $NF}' | tr -d '[:space:]')
+APKO_VERSION=$(grep 'image.version' tools/apko/apko.yaml | awk '{print $NF}' | tr -d '[:space:]"')
 echo "Fetching apko ${APKO_VERSION}"
 TMPDIR=$(mktemp -d)
 APKO_URL="https://github.com/chainguard-dev/apko/releases/download/v${APKO_VERSION}/apko_${APKO_VERSION}_linux_amd64.tar.gz"
