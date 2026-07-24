@@ -19,7 +19,10 @@ export const updatePackages = new Task({
   name: "update-packages",
   stepTemplate: {
     computeResources: {
-      requests: { cpu: "500m", memory: "512Mi" },
+      // Steps run sequentially, but Kubernetes sums every step container's request
+      // when scheduling. Keep the request small so the pod fits on the shared amd64
+      // worker; the melange build still bursts to the limit (4 cores).
+      requests: { cpu: "200m", memory: "512Mi" },
       limits: { cpu: "4", memory: "4Gi" },
     },
   },

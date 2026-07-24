@@ -23,8 +23,10 @@ export const buildPublishGosec = new Task({
   volumes: [dockerConfigVolume],
   stepTemplate: {
     computeResources: {
-      requests: { cpu: "500m", memory: "512Mi" },
-      // melange builds Go from source for two arches — give it headroom.
+      // Steps run sequentially, but Kubernetes sums every step container's request
+      // when scheduling. Keep the request small so the pod fits on the shared amd64
+      // worker; the melange build still bursts to the limit (4 cores).
+      requests: { cpu: "200m", memory: "512Mi" },
       limits: { cpu: "4", memory: "4Gi" },
     },
   },
