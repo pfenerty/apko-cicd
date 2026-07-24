@@ -19,6 +19,9 @@ const pushPipeline = new GitPipeline({
     ],
   },
   cloneDepth: 2,
+  // A full [rebuild-all] fans out to ~50 cells that largely serialize on the single
+  // amd64 build node, exceeding Tekton's default 1h PipelineRun timeout.
+  timeout: "3h",
   tasks: [detectChangedImages, buildPublishImage],
 });
 
