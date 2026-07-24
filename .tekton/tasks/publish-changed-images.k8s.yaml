@@ -82,7 +82,7 @@ spec:
         let __tek_worst = ([$__tek_prev $__tek_rc] | math max)
         $"($__tek_worst)" | save -f /tekton/home/.exit-code
         exit $__tek_rc
-    - image: ghcr.io/pfenerty/apko-cicd/melange:0.56.3
+    - image: ghcr.io/pfenerty/apko-cicd/melange:0.54.0
       name: build-melange
       onError: continue
       script: |-
@@ -136,7 +136,7 @@ spec:
     - env:
         - name: DOCKER_CONFIG
           value: /tmp/docker-auth
-      image: ghcr.io/pfenerty/apko-cicd/apko:1.2.27
+      image: ghcr.io/pfenerty/apko-cicd/apko:1.2.25
       name: publish
       onError: continue
       script: |-
