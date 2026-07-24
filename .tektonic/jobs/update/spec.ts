@@ -31,7 +31,9 @@ export const updatePackages = new Task({
       image: baseImage,
       // melange's bubblewrap runner needs elevated privileges (see gosec task).
       // VALIDATE IN-CLUSTER against the node's user-namespace policy.
-      securityContext: { privileged: true, runAsUser: 0, runAsNonRoot: false },
+      // privileged requires allowPrivilegeEscalation:true — must override the
+      // secure-by-default stepTemplate (which sets it false), or the pod is rejected.
+      securityContext: { privileged: true, runAsUser: 0, runAsNonRoot: false, allowPrivilegeEscalation: true },
       script: regenLockfiles,
     },
     {

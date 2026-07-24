@@ -49,7 +49,9 @@ export const buildPublishGosec = new Task({
       // its build sandbox — the secure-by-default stepTemplate drops all caps.
       // VALIDATE IN-CLUSTER: this may need tuning to the node's user-namespace
       // policy (e.g. specific caps instead of full privileged) on the Talos cluster.
-      securityContext: { privileged: true, runAsUser: 0, runAsNonRoot: false },
+      // privileged requires allowPrivilegeEscalation:true — must override the
+      // secure-by-default stepTemplate (which sets it false), or the pod is rejected.
+      securityContext: { privileged: true, runAsUser: 0, runAsNonRoot: false, allowPrivilegeEscalation: true },
       volumeMounts: [
         {
           name: "docker-config",
