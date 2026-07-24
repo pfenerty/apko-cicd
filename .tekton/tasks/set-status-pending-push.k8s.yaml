@@ -1,7 +1,7 @@
 apiVersion: tekton.dev/v1
 kind: Task
 metadata:
-  name: apko-cicd-set-status-pending
+  name: apko-cicd-set-status-pending-push
   namespace: apko-cicd-ci
 spec:
   params:
