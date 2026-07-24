@@ -4,7 +4,8 @@
 # Makefile IMAGE macro, and publishes with apko — using --lockfile for Wolfi
 # images and the freshly-built local @local repo for melange images. Emits the
 # image@digest for Tekton Chains. $(workspaces.workspace.path), $(params.unit),
-# $(context.taskRun.name), and $(results.IMAGE.path) are Tekton variables.
+# $(context.taskRun.name), and $(results.IMAGES.path) are Tekton variables
+# (Tekton validates $(...) refs in the whole script, comments included).
 
 git config --global --add safe.directory $(workspaces.workspace.path)
 
