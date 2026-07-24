@@ -1,7 +1,7 @@
 apiVersion: tekton.dev/v1
 kind: Task
 metadata:
-  name: apko-cicd-set-status-pending
+  name: apko-cicd-set-status-pending-push
   namespace: apko-cicd-ci
 spec:
   params:
@@ -48,32 +48,5 @@ spec:
           log "status-pending [publish-changed-images]: done"
         } catch { |e|
           log $"status-pending [publish-changed-images]: error: ($e.msg)"
-          exit 1
-        }
-    - env:
-        - name: GITHUB_TOKEN
-          valueFrom:
-            secretKeyRef:
-              key: token
-              name: github-pipeline-token
-      image: ghcr.io/pfenerty/apko-cicd/base:stable
-      name: pending-build-publish-gosec
-      script: |-
-        #!/usr/bin/env nu
-        def log [msg: string] { print $"[(date now | format date '%H:%M:%S')] ($msg)" }
-        let url = $"https://api.github.com/repos/$(params.repo-full-name)/statuses/$(params.revision)"
-        let body = { state: "pending", context: "build-publish-gosec", description: "Running" }
-
-        log $"status-pending [build-publish-gosec]: POST ($url)"
-        log $"status-pending [build-publish-gosec]: body: ($body | to json -r)"
-
-        try {
-          http post $url $body -t application/json -H [
-            Authorization $"token ($env.GITHUB_TOKEN)"
-            Accept "application/vnd.github+json"
-          ]
-          log "status-pending [build-publish-gosec]: done"
-        } catch { |e|
-          log $"status-pending [build-publish-gosec]: error: ($e.msg)"
           exit 1
         }

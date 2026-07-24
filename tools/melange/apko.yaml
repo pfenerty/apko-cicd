@@ -3,6 +3,9 @@ include: base/apko.yaml
 contents:
     packages:
         - melange
+        # bubblewrap is melange's default build sandbox runner; bundle it so the
+        # image can build packages in CI without an extra apk install.
+        - bubblewrap
 
 annotations:
     org.opencontainers.image.title: Melange

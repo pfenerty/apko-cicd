@@ -16,10 +16,10 @@ spec:
   stepTemplate:
     computeResources:
       limits:
-        cpu: "2"
-        memory: 1Gi
+        cpu: "4"
+        memory: 4Gi
       requests:
-        cpu: 200m
+        cpu: 150m
         memory: 256Mi
     securityContext:
       allowPrivilegeEscalation: false
@@ -29,89 +29,157 @@ spec:
     workingDir: $(workspaces.workspace.path)
   steps:
     - image: ghcr.io/pfenerty/apko-cicd/base:stable
-      name: fetch-apko
+      name: detect
       onError: continue
       script: |-
-        #!/bin/sh
-        log() { printf '[%s] %s\n' "$(date +%H:%M:%S)" "$*"; }
-        (
-        set -e
-        # base:stable runs as nonroot (uid 1001) so `apk add` is unavailable — download the
-        # apko binary matching tools/apko/apko.yaml into the workspace (writable via fsGroup)
-        # so the publish step can use it. $(workspaces.workspace.path) is a Tekton variable;
-        # the $(...) command substitutions are evaluated by the shell at runtime.
-        APKO_VERSION=$(grep 'image.version' tools/apko/apko.yaml | awk '{print $NF}' | tr -d '[:space:]"')
-        echo "Fetching apko ${APKO_VERSION}"
-        TMPDIR=$(mktemp -d)
-        APKO_URL="https://github.com/chainguard-dev/apko/releases/download/v${APKO_VERSION}/apko_${APKO_VERSION}_linux_amd64.tar.gz"
-        curl -fsSL "${APKO_URL}" | tar xz -C "${TMPDIR}"
-        mv "${TMPDIR}"/apko_*/apko "$(workspaces.workspace.path)/apko"
-        chmod +x "$(workspaces.workspace.path)/apko"
-        rm -rf "${TMPDIR}"
+        #!/usr/bin/env nu
+        def log [msg: string] { print $"[(date now | format date '%H:%M:%S')] ($msg)" }
+        def main [] {
+        # Decide which images to (re)publish this push. An image (any Makefile IMAGE
+        # entry) is selected when its apko config, its lock file, or a sibling
+        # melange.yaml changed in the last commit. Writes two files for later steps:
+        #   to-build.txt   — unique melange.yaml files to build first (empty ⇒ Wolfi-only)
+        #   to-publish.tsv — one `config<TAB>tag<TAB>lockfile-or-empty` row per image
+        # $(workspaces.workspace.path) is a Tekton variable substituted before nu runs.
+
+        git config --global --add safe.directory $(workspaces.workspace.path)
+
+        let changed = (git diff --name-only HEAD~1 HEAD | lines)
+
+        # All images declared by the Makefile IMAGE macro.
+        let images = (
+          open --raw Makefile
+          | lines
+          | each {|l| $l | parse --regex 'call IMAGE,(?P<target>[^,]+),(?P<config>[^,]+),(?P<tag>[^)]+)'}
+          | flatten
         )
-        __tek_rc=$?
-        __tek_prev=$(cat /tekton/home/.exit-code 2>/dev/null || echo 0)
-        if [ "$__tek_rc" -gt "$__tek_prev" ]; then __tek_prev="$__tek_rc"; fi
-        printf '%s' "$__tek_prev" > /tekton/home/.exit-code
-        exit "$__tek_rc"
+
+        mut to_publish = []
+        mut to_build = []
+        for img in $images {
+          let config = $img.config
+          let lock = ($config | str replace --regex '\.yaml$' '.lock.json')
+          let melange = $"($config | path dirname)/melange.yaml"
+          # config / lock / melange are the trigger files; ones that don't exist can never
+          # appear in the diff, so membership is enough (no existence check needed here).
+          if ([$config, $lock, $melange] | any {|t| $t in $changed}) {
+            let is_melange = ($melange | path exists)
+            # Melange-built images are published from the freshly-built local repo with no
+            # lockfile (a rebuilt apk would not match a pinned hash); Wolfi images use
+            # their committed lockfile when present.
+            let lock_field = (if $is_melange { "" } else if ($lock | path exists) { $lock } else { "" })
+            $to_publish = ($to_publish | append $"($config)\t($img.tag)\t($lock_field)")
+            if $is_melange { $to_build = ($to_build | append $melange) }
+          }
+        }
+
+        ($to_build | uniq | str join (char nl)) | save -f to-build.txt
+        ($to_publish | str join (char nl)) | save -f to-publish.tsv
+        log $"($to_publish | length) image\(s\) to publish; ($to_build | uniq | length) melange package\(s\) to build."
+        }
+        let __tek_rc = (try { main; 0 } catch { |e| print $"error: ($e.msg)"; 1 })
+        let __tek_prev = (try { open --raw /tekton/home/.exit-code | str trim | into int } catch { 0 })
+        let __tek_worst = ([$__tek_prev $__tek_rc] | math max)
+        $"($__tek_worst)" | save -f /tekton/home/.exit-code
+        exit $__tek_rc
+    - image: ghcr.io/pfenerty/apko-cicd/melange:0.56.3
+      name: build-melange
+      onError: continue
+      script: |-
+        #!/usr/bin/env nu
+        def log [msg: string] { print $"[(date now | format date '%H:%M:%S')] ($msg)" }
+        def main [] {
+        # Build each melange package selected by the detect step into ./packages, so the
+        # apko configs that consume it via the @local repo can be published. This is the
+        # only privileged step — melange's bubblewrap runner needs bwrap + root. It is a
+        # no-op for Wolfi-only pushes. $(workspaces.workspace.path) is a Tekton variable.
+
+        git config --global --add safe.directory $(workspaces.workspace.path)
+
+        let to_build = (open to-build.txt | lines | where {|l| ($l | str trim) | is-not-empty})
+        if ($to_build | is-empty) {
+          log "No melange packages to build."
+          return
+        }
+
+        # This step runs on the melange image, so `melange` is already on PATH. Ensure
+        # bwrap is present for melange's bubblewrap runner (a no-op once the image ships
+        # it); this step runs as root so apk works.
+        ^apk add --no-cache bubblewrap
+
+        # One ephemeral signing key for every build; apko reads the pubkey in the same run,
+        # so nothing is persisted. Only amd64 is built (no cross-arch emulation available).
+        if not ("local-melange.rsa" | path exists) {
+          ^melange keygen local-melange.rsa
+        }
+
+        for m in $to_build {
+          log $"[melange] building ($m)"
+          let out = (^melange build $m --arch amd64 --signing-key local-melange.rsa --out-dir packages | complete)
+          print $out.stderr
+          if $out.exit_code != 0 {
+            error make {msg: $"melange build failed for ($m)"}
+          }
+        }
+        log $"Built ($to_build | length) melange package\(s\)."
+        }
+        let __tek_rc = (try { main; 0 } catch { |e| print $"error: ($e.msg)"; 1 })
+        let __tek_prev = (try { open --raw /tekton/home/.exit-code | str trim | into int } catch { 0 })
+        let __tek_worst = ([$__tek_prev $__tek_rc] | math max)
+        $"($__tek_worst)" | save -f /tekton/home/.exit-code
+        exit $__tek_rc
+      securityContext:
+        allowPrivilegeEscalation: true
+        privileged: true
+        runAsNonRoot: false
+        runAsUser: 0
     - env:
         - name: DOCKER_CONFIG
           value: /tmp/docker-auth
-      image: ghcr.io/pfenerty/apko-cicd/base:stable
+      image: ghcr.io/pfenerty/apko-cicd/apko:1.2.27
       name: publish
       onError: continue
       script: |-
         #!/usr/bin/env nu
         def log [msg: string] { print $"[(date now | format date '%H:%M:%S')] ($msg)" }
         def main [] {
-        # Publish apko images whose *.lock.json changed in the last commit, and record the
-        # published image@digest references for Tekton Chains provenance.
-        # $(workspaces.workspace.path) and $(results.IMAGES.path) are Tekton variables,
-        # substituted into the script before nushell runs.
+        # Publish each image selected by the detect step (to-publish.tsv). Wolfi images
+        # use their committed lockfile; melange-built images have an empty lock field and
+        # are published from the local @local repo built by the build-melange step.
+        # Records each image@digest for Tekton Chains. $(workspaces.workspace.path) and
+        # $(results.IMAGES.path) are Tekton variables substituted before nu runs.
 
         git config --global --add safe.directory $(workspaces.workspace.path)
 
-        let apko = "$(workspaces.workspace.path)/apko"
-
-        let changed = (
-          git diff --name-only HEAD~1 HEAD
-          | lines
-          | where {|f| $f | str ends-with ".lock.json"}
-        )
-
-        if ($changed | is-empty) {
-          log "No lock files changed — nothing to publish."
+        # This step runs on the apko image, so `apko` is already on PATH.
+        let rows = (open to-publish.tsv | lines | where {|l| ($l | str trim) | is-not-empty})
+        if ($rows | is-empty) {
+          log "Nothing to publish."
+          "" | save -f $(results.IMAGES.path)
           return
         }
 
         mkdir dist
         mut published = []
-        for lockfile in $changed {
-          let yaml = ($lockfile | str replace --regex '\.lock\.json$' '.yaml')
-
-          # Find the image tag from the Makefile IMAGE macro that references this yaml.
-          let matches = (
-            open --raw Makefile
-            | lines
-            | where {|l| $l | str contains $",($yaml),"}
-          )
-          if ($matches | is-empty) {
-            log $"[skip] no IMAGE macro for ($yaml)"
-            continue
-          }
-
-          let tag = (
-            $matches.0
-            | parse --regex 'call IMAGE,[^,]+,[^,]+,(?P<tag>[^)]+)'
-            | get tag.0
-          )
+        for row in $rows {
+          let parts = ($row | split row "\t")
+          let config = $parts.0
+          let tag = $parts.1
+          let lock = ($parts | get 2? | default "")
           let image = $"ghcr.io/pfenerty/apko-cicd/($tag)"
 
-          log $"[publish] ($yaml) → ($image)"
-          let out = (^$apko publish --sbom-path dist --lockfile $lockfile $yaml $image | complete)
+          let args = (
+            if ($lock | is-empty) {
+              ["publish" "--sbom-path" "dist" $config $image]
+            } else {
+              ["publish" "--sbom-path" "dist" "--lockfile" $lock $config $image]
+            }
+          )
+          log $"[publish] ($config) → ($image)"
+          let out = (^apko ...$args | complete)
           print $out.stderr
           if $out.exit_code != 0 {
-            error make {msg: $"apko publish failed for ($yaml)"}
+            error make {msg: $"apko publish failed for ($config)"}
           }
 
           # apko prints the published digest reference (image@sha256:...) on stdout.
@@ -166,6 +234,7 @@ spec:
         } catch { |e|
           log $"report-status [publish-changed-images]: error: ($e.msg)"
         }
+        exit $exit_code
   volumes:
     - name: docker-config
       secret:
