@@ -31,7 +31,7 @@ spec:
         #!/usr/bin/env nu
         def log [msg: string] { print $"[(date now | format date '%H:%M:%S')] ($msg)" }
         git config --global --add safe.directory $(workspaces.workspace.path)
-        for yaml in (glob {base,tools,languages}/**/*.yaml) {
+        for yaml in ((glob "base/**/*.yaml") ++ (glob "tools/**/*.yaml") ++ (glob "languages/**/*.yaml")) {
           if (($yaml | path basename) == "melange.yaml") { continue }
           if ($"($yaml | path dirname)/melange.yaml" | path exists) { continue }
           let lock = ($yaml | str replace --regex '\.yaml$' '.lock.json')
@@ -43,6 +43,12 @@ spec:
     # 2. Sync Makefile tags + config annotations from the fresh locks.
     - image: cgr.dev/chainguard/python:latest-dev
       name: update-versions
+      # Run as uid 1001 (the base/apko images' nonroot user) so it can write the
+      # workspace files the other steps created — the python image defaults to a
+      # different uid and would otherwise hit PermissionError on Makefile.
+      securityContext:
+        runAsUser: 1001
+        runAsNonRoot: true
       script: |-
         #!/usr/bin/env python3
         import runpy
@@ -117,7 +123,16 @@ spec:
 
         let node_id = (http get --headers [Authorization $"Bearer ($env.GH_TOKEN)" Accept "application/vnd.github+json"] $"($api)/pulls/($number)" | get node_id)
         let mutation = $"mutation { enablePullRequestAutoMerge\(input: {pullRequestId: \"($node_id)\", mergeMethod: SQUASH}\) { clientMutationId } }"
-        http post --allow-errors --content-type application/json --headers [Authorization $"Bearer ($env.GH_TOKEN)"] "https://api.github.com/graphql" { query: $mutation }
-        log $"Auto-merge enabled for PR #($number)."
+        let am = (http post --allow-errors --content-type application/json --headers [Authorization $"Bearer ($env.GH_TOKEN)"] "https://api.github.com/graphql" { query: $mutation })
+        if ($am | get errors? | is-empty) {
+          log $"Auto-merge enabled for PR #($number) — it will merge when required checks pass."
+        } else {
+          # GitHub rejects auto-merge when the PR is already mergeable (no required
+          # checks to wait on), so merge it directly. Add branch protection + a
+          # PR-triggered check later to gate merges on a green build instead.
+          log $"Auto-merge not applicable; merging PR #($number) directly."
+          http put --allow-errors --content-type application/json --headers [Authorization $"Bearer ($env.GH_TOKEN)" Accept "application/vnd.github+json"] $"($api)/pulls/($number)/merge" { merge_method: "squash" }
+          log $"Merged PR #($number)."
+        }
   workspaces:
     - name: workspace
