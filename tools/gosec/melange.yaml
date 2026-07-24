@@ -4,7 +4,7 @@
 # ./packages, never pushed); the resulting images publish to
 # ghcr.io/pfenerty/apko-cicd/gosec:<version>-go1.2x. Any change under tools/gosec/
 # triggers the matrix publish workflow — one fan-out job per image — to (re)build
-# and republish these images, signed + attested (with git provenance) via Tekton Chains.
+# and republish these images, signed + attested (with git provenance) via Tekton Chains, with git revision annotations.
 #
 # The version pin below is NOT tracked by scripts/update-versions.py (that script
 # only follows Wolfi package versions via apko lock). Bump `version` +
