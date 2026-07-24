@@ -1,6 +1,8 @@
 # gosec is not published as a Wolfi package, so we build it ourselves with
 # melange and consume the resulting apk from the versioned apko configs in this
-# directory (see tools/gosec/1.2x.yaml).
+# directory (see tools/gosec/1.2x.yaml). The apk is ephemeral (built into
+# ./packages, never pushed); the resulting images publish to
+# ghcr.io/pfenerty/apko-cicd/gosec:<version>-go1.2x.
 #
 # The version pin below is NOT tracked by scripts/update-versions.py (that script
 # only follows Wolfi package versions via apko lock). Bump `version` +
