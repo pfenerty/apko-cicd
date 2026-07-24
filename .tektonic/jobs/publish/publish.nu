@@ -47,5 +47,5 @@ if $out.exit_code != 0 {
 # apko prints the published digest reference (image@sha256:...) on stdout.
 let digest_lines = ($out.stdout | lines | where {|l| $l =~ '@sha256:'})
 let digest_ref = (if ($digest_lines | is-empty) { $image } else { $digest_lines | last | str trim })
-$digest_ref | save -f $(results.IMAGE.path)
+$digest_ref | save -f $(results.IMAGES.path)
 log $"Published ($image)."

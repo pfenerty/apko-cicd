@@ -24,9 +24,11 @@ export const detectChangedImages = new Task({
 // The unit string (config,tag,lock,melange) this matrix cell builds/publishes.
 const unitParam = new Param({ name: "unit" });
 
-// Per-cell published image@digest (Tekton Chains subject; the matrix aggregates
-// these into an array on the pipeline task).
-const image = new Result({ name: "IMAGE", description: "Published image@digest" });
+// Per-cell published image@digest. MUST be named IMAGES (plural) — that is the
+// Tekton Chains type-hint it recognizes to sign the image and record it (with the
+// git source from git-clone) as a subject in the SLSA provenance. A singular
+// "IMAGE" is ignored by Chains → unsigned, no provenance.
+const image = new Result({ name: "IMAGES", description: "Published image@digest (Tekton Chains subject)" });
 
 export const buildPublishImage = new Task({
   name: "build-publish-image",
