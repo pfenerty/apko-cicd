@@ -11,6 +11,10 @@ git config --global --add safe.directory $(workspaces.workspace.path)
 
 let changed = (git diff --name-only HEAD~1 HEAD | lines)
 
+# A [rebuild-all] marker in the commit message rebuilds every image regardless of
+# the diff — e.g. `git commit --allow-empty -m "chore: rebuild all [rebuild-all]"`.
+let force_all = ((^git log -1 --format=%B HEAD | str trim) | str contains "[rebuild-all]")
+
 let images = (
   open --raw Makefile
   | lines
@@ -23,7 +27,7 @@ for img in $images {
   let config = $img.config
   let lock = ($config | str replace --regex '\.yaml$' '.lock.json')
   let melange = $"($config | path dirname)/melange.yaml"
-  if ([$config, $lock, $melange] | any {|t| $t in $changed}) {
+  if ($force_all or ([$config, $lock, $melange] | any {|t| $t in $changed})) {
     $units = ($units | append $config)
   }
 }
