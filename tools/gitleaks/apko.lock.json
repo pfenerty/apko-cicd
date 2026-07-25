@@ -1,14 +1,15 @@
 {
   "version": "v1",
   "config": {
-    "name": "tools/gitleaks/apko.yaml",
+    "name": "/workspace/workspace/tools/gitleaks/apko.yaml",
     "checksum": "sha256-muv86vFHUdmWJ5HTxNOhsheh1MiScZC/w0xcJrH0DC0="
   },
   "contents": {
     "keyring": [
       {
         "name": "packages.wolfi.dev/os/wolfi-signing.rsa.pub",
-        "url": "https://packages.wolfi.dev/os/wolfi-signing.rsa.pub"
+        "url": "https://packages.wolfi.dev/os/wolfi-signing.rsa.pub",
+        "content": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA5qQUHmzqX9oa/RS3OSgL\nYTYB1mzvVmnWC0JXsAafdgRkavJ9xRhsXMKXWPKMghZw6UnkxuxQCZlB9UhaFqed\nX7SWfQ8qRgECFmdGUjoeV7P3VUkg17RU0mUKsXZZF/2mU+jCGyk5eweKcLWrk6bn\nlNNF1vBJ9EXbHdfvbQsA5GfLku5tJhqRJ4FVQAGCw+1JoSKu+o3q+6xP7z6kMfR9\ncp54FSj48rTJUibbAv+cPtZ3AnbpjdyarV7SYMfxp14Q/KR0CJYDihG3CFoU+TaM\ndr7LUrgXaYw7m7g8hA2PY1jF8aqDqVFjVu/csPKnKVQSqNHfm4C4gljwT6TDVhPe\n6xKSGKfAUNvHx2RIqSsZJCh68Af+VnfuimbHMYzGhzV4/efihpJlYsDnOXJj/PeY\nSbEIYG2yoI3AYvDFyFX2OAOtQ9d4TPs4zS4aDg4R3UseXLib46FX3ZTfIi1/W0IO\neC3AFU5mK+02jq+7swcGbgzem30dFA/B3n8NQExJjF2WlGNJxFw2WnJQqKIkIh0s\nkm5jaxJ28xYgik+bEgxy1LsilKTowdkbEPRKv36JGdap4dOEGR+LwZsM+ontF1AO\nwY6tvwtZKJWhgj7ES3BdtiC1GA2htFnP90lA7KnKbSMOxwWtSCH8spitdPdzgI8G\nSxrOb0SZs6ZFAxYYe3GlvS0CAwEAAQ==\n-----END PUBLIC KEY-----\n"
       }
     ],
     "build_repositories": [],
@@ -464,25 +465,6 @@
         "checksum": "Q1m4CRD8lCkRLk/whYIwa2UQuA8uk="
       },
       {
-        "name": "sqlite-libs",
-        "url": "https://packages.wolfi.dev/os/x86_64/sqlite-libs-3.53.3-r1.apk",
-        "version": "3.53.3-r1",
-        "architecture": "x86_64",
-        "signature": {
-          "range": "",
-          "checksum": ""
-        },
-        "control": {
-          "range": "bytes=0-5175",
-          "checksum": "sha1-sFj+lgA2MA7BdvVhNDj8lBfDGn4="
-        },
-        "data": {
-          "range": "bytes=5176-978392",
-          "checksum": "sha256-9cMqdm1RmP6Ewo8LiF00V3hJ4l6i4PPkQ4+mtgoR5rg="
-        },
-        "checksum": "Q1sFj+lgA2MA7BdvVhNDj8lBfDGn4="
-      },
-      {
         "name": "ncurses-terminfo-base",
         "url": "https://packages.wolfi.dev/os/x86_64/ncurses-terminfo-base-6.6.20260718-r0.apk",
         "version": "6.6.20260718-r0",
@@ -538,6 +520,25 @@
           "checksum": "sha256-b8Pq+h8UH9KT10SqvwjnKyZNJ1p5qhjdXy2Yn63jtNw="
         },
         "checksum": "Q11WRlY3do45L9jnu5YAoRTSTcimY="
+      },
+      {
+        "name": "sqlite-libs",
+        "url": "https://packages.wolfi.dev/os/x86_64/sqlite-libs-3.53.4-r0.apk",
+        "version": "3.53.4-r0",
+        "architecture": "x86_64",
+        "signature": {
+          "range": "",
+          "checksum": ""
+        },
+        "control": {
+          "range": "bytes=0-5297",
+          "checksum": "sha1-x8+xdfUz1lcwo4swX+n/QBhifHc="
+        },
+        "data": {
+          "range": "bytes=5298-978595",
+          "checksum": "sha256-YoBymbCMq42aqTuMRnLY3jUw1feoxwpptIrll5q34hM="
+        },
+        "checksum": "Q1x8+xdfUz1lcwo4swX+n/QBhifHc="
       },
       {
         "name": "libxcrypt",
@@ -1452,25 +1453,6 @@
         "checksum": "Q1eTjamri3iEKViuf7vgYABxgQZlQ="
       },
       {
-        "name": "sqlite-libs",
-        "url": "https://packages.wolfi.dev/os/aarch64/sqlite-libs-3.53.3-r1.apk",
-        "version": "3.53.3-r1",
-        "architecture": "aarch64",
-        "signature": {
-          "range": "",
-          "checksum": ""
-        },
-        "control": {
-          "range": "bytes=0-5214",
-          "checksum": "sha1-JuNMbskB61OqBDjPbvmXSVUh9to="
-        },
-        "data": {
-          "range": "bytes=5215-934629",
-          "checksum": "sha256-FqoGHrKhDXEKrQyHFqLU25b+VqvbMafJ32ucCgiuZxg="
-        },
-        "checksum": "Q1JuNMbskB61OqBDjPbvmXSVUh9to="
-      },
-      {
         "name": "ncurses-terminfo-base",
         "url": "https://packages.wolfi.dev/os/aarch64/ncurses-terminfo-base-6.6.20260718-r0.apk",
         "version": "6.6.20260718-r0",
@@ -1526,6 +1508,25 @@
           "checksum": "sha256-Pd3fAHN5e0AoYd6JXSxqwO+GjdDeuhkunLpUAR4uCS0="
         },
         "checksum": "Q12ElnZowSoKaA2mqerRlzwYmdEXc="
+      },
+      {
+        "name": "sqlite-libs",
+        "url": "https://packages.wolfi.dev/os/aarch64/sqlite-libs-3.53.4-r0.apk",
+        "version": "3.53.4-r0",
+        "architecture": "aarch64",
+        "signature": {
+          "range": "",
+          "checksum": ""
+        },
+        "control": {
+          "range": "bytes=0-5341",
+          "checksum": "sha1-AMFLle1JKeQNNeRKUGYcWhq5DzE="
+        },
+        "data": {
+          "range": "bytes=5342-933911",
+          "checksum": "sha256-glRAS8qRM3OYd5AYsxoy2sgYLZ0kd70Jt+CJG30j6hg="
+        },
+        "checksum": "Q1AMFLle1JKeQNNeRKUGYcWhq5DzE="
       },
       {
         "name": "libxcrypt",
