@@ -42,7 +42,7 @@ $(eval $(call IMAGE,tools-gosec-go1.23,tools/gosec/1.23.yaml,gosec:2.28.0-go1.23
 $(eval $(call IMAGE,tools-gosec-go1.24,tools/gosec/1.24.yaml,gosec:2.28.0-go1.24))
 $(eval $(call IMAGE,tools-gosec-go1.25,tools/gosec/1.25.yaml,gosec:2.28.0-go1.25))
 $(eval $(call IMAGE,tools-gosec-go1.26,tools/gosec/1.26.yaml,gosec:2.28.0-go1.26))
-$(eval $(call IMAGE,tools-gcloud,tools/gcloud/apko.yaml,gcloud:577.0.0))
+$(eval $(call IMAGE,tools-gcloud,tools/gcloud/apko.yaml,gcloud:578.0.0))
 
 # gosec has no Wolfi package — build the apk with melange first, then the apko
 # configs above consume it from ./packages via the @local repository.

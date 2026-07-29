@@ -789,22 +789,22 @@
       },
       {
         "name": "openssh-client",
-        "url": "https://packages.wolfi.dev/os/x86_64/openssh-client-10.4_p1-r1.apk",
-        "version": "10.4_p1-r1",
+        "url": "https://packages.wolfi.dev/os/x86_64/openssh-client-10.4_p1-r2.apk",
+        "version": "10.4_p1-r2",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-9404",
-          "checksum": "sha1-QhtLQevqYI7GDMvFJZVGwkhE9i4="
+          "range": "bytes=0-9522",
+          "checksum": "sha1-m6dwIDpjAIcZJeSNfNgJsrrXCGE="
         },
         "data": {
-          "range": "bytes=9405-1235444",
-          "checksum": "sha256-o1kKYZz6Y5RiAn4R3dMHyDXQdA1Zi5OBYqxHZWlbaxU="
+          "range": "bytes=9523-1235562",
+          "checksum": "sha256-N0FRfEqlRbtlnoNDNd6K9qoQ+DTI3rEh9nl+NpaUjaA="
         },
-        "checksum": "Q1QhtLQevqYI7GDMvFJZVGwkhE9i4="
+        "checksum": "Q1m6dwIDpjAIcZJeSNfNgJsrrXCGE="
       },
       {
         "name": "gitleaks",
@@ -1777,22 +1777,22 @@
       },
       {
         "name": "openssh-client",
-        "url": "https://packages.wolfi.dev/os/aarch64/openssh-client-10.4_p1-r1.apk",
-        "version": "10.4_p1-r1",
+        "url": "https://packages.wolfi.dev/os/aarch64/openssh-client-10.4_p1-r2.apk",
+        "version": "10.4_p1-r2",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-9433",
-          "checksum": "sha1-71zxeloUUd7Bfg3koDYWxDJUzi0="
+          "range": "bytes=0-9556",
+          "checksum": "sha1-gBjkU9u0yHQEfbuXeqan5DRYtzw="
         },
         "data": {
-          "range": "bytes=9434-1181581",
-          "checksum": "sha256-SiBSml8iNl2Kd8LovHKDFd7B3twUkENeMlIm3y9fWi8="
+          "range": "bytes=9557-1182492",
+          "checksum": "sha256-9hbERmq5vpdQdL2QU1zxkCU9MTgZ9F6ylboIdoNY/zQ="
         },
-        "checksum": "Q171zxeloUUd7Bfg3koDYWxDJUzi0="
+        "checksum": "Q1gBjkU9u0yHQEfbuXeqan5DRYtzw="
       },
       {
         "name": "gitleaks",
