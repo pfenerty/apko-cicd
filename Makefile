@@ -20,8 +20,8 @@ endef
 $(eval $(call IMAGE,base,base/apko.yaml,base:stable))
 
 # ── Tools ────────────────────────────────────────────────────────────────────
-$(eval $(call IMAGE,tools-syft,tools/syft/apko.yaml,syft:1.49.0))
-$(eval $(call IMAGE,tools-grype,tools/grype/apko.yaml,grype:0.116.0))
+$(eval $(call IMAGE,tools-syft,tools/syft/apko.yaml,syft:1.50.0))
+$(eval $(call IMAGE,tools-grype,tools/grype/apko.yaml,grype:0.116.1))
 $(eval $(call IMAGE,tools-gitleaks,tools/gitleaks/apko.yaml,gitleaks:8.30.1))
 $(eval $(call IMAGE,tools-semgrep,tools/semgrep/apko.yaml,semgrep:1.165.0))
 $(eval $(call IMAGE,tools-oras,tools/oras/apko.yaml,oras:1.3.3))
