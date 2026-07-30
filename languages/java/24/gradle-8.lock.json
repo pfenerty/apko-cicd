@@ -390,22 +390,22 @@
       },
       {
         "name": "libnghttp2-14",
-        "url": "https://packages.wolfi.dev/os/x86_64/libnghttp2-14-1.69.0-r0.apk",
-        "version": "1.69.0-r0",
+        "url": "https://packages.wolfi.dev/os/x86_64/libnghttp2-14-1.70.0-r0.apk",
+        "version": "1.70.0-r0",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-7102",
-          "checksum": "sha1-g6bzH9P+JXiqOWC3Ofkeg+Ae4mk="
+          "range": "bytes=0-7842",
+          "checksum": "sha1-oTGgB4pr72iGCLLfY3KYCTBIH0U="
         },
         "data": {
-          "range": "bytes=7103-108752",
-          "checksum": "sha256-5i2EksNuAPwDuvelewjfjmuqaZAczZZgtce3L4MaPZY="
+          "range": "bytes=7843-109942",
+          "checksum": "sha256-zKfEV91QdeDg5sTa63wO6BJOav6geQ6NW+pLNs7bHV8="
         },
-        "checksum": "Q1g6bzH9P+JXiqOWC3Ofkeg+Ae4mk="
+        "checksum": "Q1oTGgB4pr72iGCLLfY3KYCTBIH0U="
       },
       {
         "name": "ngtcp2",
@@ -1777,22 +1777,22 @@
       },
       {
         "name": "libnghttp2-14",
-        "url": "https://packages.wolfi.dev/os/aarch64/libnghttp2-14-1.69.0-r0.apk",
-        "version": "1.69.0-r0",
+        "url": "https://packages.wolfi.dev/os/aarch64/libnghttp2-14-1.70.0-r0.apk",
+        "version": "1.70.0-r0",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-7147",
-          "checksum": "sha1-mP91txpr44vM1/eCYJLijo/QsSA="
+          "range": "bytes=0-7898",
+          "checksum": "sha1-eys+zPstMQJgZC/0HiyuLzp0/E8="
         },
         "data": {
-          "range": "bytes=7148-105255",
-          "checksum": "sha256-Lfze80E7KAtq7gMx2SJFT3AYMG0q759nd4aegte3sx0="
+          "range": "bytes=7899-106506",
+          "checksum": "sha256-1magBA4dY5g4MH6RA/WVpAPN4tRNWFEdn6kGKajqlNg="
         },
-        "checksum": "Q1mP91txpr44vM1/eCYJLijo/QsSA="
+        "checksum": "Q1eys+zPstMQJgZC/0HiyuLzp0/E8="
       },
       {
         "name": "ngtcp2",
