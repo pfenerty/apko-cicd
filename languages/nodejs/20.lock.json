@@ -884,22 +884,22 @@
       },
       {
         "name": "npm",
-        "url": "https://packages.wolfi.dev/os/x86_64/npm-12.0.1-r2.apk",
-        "version": "12.0.1-r2",
+        "url": "https://packages.wolfi.dev/os/x86_64/npm-12.0.2-r0.apk",
+        "version": "12.0.2-r0",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-7335",
-          "checksum": "sha1-vzHD/dxXLRtjsxQjwmMJqCAycus="
+          "range": "bytes=0-7341",
+          "checksum": "sha1-XG9/i377656rpL5Trl8TvjDXiZE="
         },
         "data": {
-          "range": "bytes=7336-2199724",
-          "checksum": "sha256-vlE96sX4M3Qxm8pq4xGDgnHmxvMpVsI4RvP9xpUMdtE="
+          "range": "bytes=7342-2199610",
+          "checksum": "sha256-vXrWWWVO7RC83IRss3of9fqoKFHI5Cf3jOnsd9ANZ3c="
         },
-        "checksum": "Q1vzHD/dxXLRtjsxQjwmMJqCAycus="
+        "checksum": "Q1XG9/i377656rpL5Trl8TvjDXiZE="
       },
       {
         "name": "http-parser",
@@ -1948,22 +1948,22 @@
       },
       {
         "name": "npm",
-        "url": "https://packages.wolfi.dev/os/aarch64/npm-12.0.1-r2.apk",
-        "version": "12.0.1-r2",
+        "url": "https://packages.wolfi.dev/os/aarch64/npm-12.0.2-r0.apk",
+        "version": "12.0.2-r0",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-7370",
-          "checksum": "sha1-IJNYryVKEyAGcrbm47wb6KTnA+Q="
+          "range": "bytes=0-7371",
+          "checksum": "sha1-/hlgIuzbdWms/kGMAlLlEwYX8U0="
         },
         "data": {
-          "range": "bytes=7371-2199760",
-          "checksum": "sha256-tfcdhy2+blIFcw1Pe7VGx5EpNxhARNNAVhE2QbX0SEI="
+          "range": "bytes=7372-2199673",
+          "checksum": "sha256-Cwi3mk0RXrtcoDpfhfwLsSaCHbzmXi0owxX5oxPijDo="
         },
-        "checksum": "Q1IJNYryVKEyAGcrbm47wb6KTnA+Q="
+        "checksum": "Q1/hlgIuzbdWms/kGMAlLlEwYX8U0="
       },
       {
         "name": "http-parser",

@@ -2,7 +2,7 @@
   "version": "v1",
   "config": {
     "name": "/workspace/workspace/tools/apko/apko.yaml",
-    "checksum": "sha256-qJa11CiC3colv5fRG3g8BnwUt/1XfDE47WLV62x4j0o="
+    "checksum": "sha256-3XtvVgQm9A++5HsOpqZFuRP1tpJsyQZPNTg7H6drmhs="
   },
   "contents": {
     "keyring": [
@@ -67,22 +67,22 @@
       },
       {
         "name": "apko",
-        "url": "https://packages.wolfi.dev/os/x86_64/apko-1.2.29-r0.apk",
-        "version": "1.2.29-r0",
+        "url": "https://packages.wolfi.dev/os/x86_64/apko-1.2.30-r0.apk",
+        "version": "1.2.30-r0",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-5911",
-          "checksum": "sha1-6o3aV3ijPhgi7AsrgytYocIx/Gw="
+          "range": "bytes=0-5912",
+          "checksum": "sha1-iyyoSA2Heaz3dnLbLFrXMFNe1pM="
         },
         "data": {
-          "range": "bytes=5912-11905757",
-          "checksum": "sha256-78xAaIlI9o7FJparDvaAhEkGk3RboGZS0eVqbRwqXa8="
+          "range": "bytes=5913-11941998",
+          "checksum": "sha256-YCLFEXcnOPkcNoX99T+jwS7gkncUiSZrUVtXydyawRw="
         },
-        "checksum": "Q16o3aV3ijPhgi7AsrgytYocIx/Gw="
+        "checksum": "Q1iyyoSA2Heaz3dnLbLFrXMFNe1pM="
       },
       {
         "name": "ld-linux",
@@ -979,22 +979,22 @@
       },
       {
         "name": "apko",
-        "url": "https://packages.wolfi.dev/os/aarch64/apko-1.2.29-r0.apk",
-        "version": "1.2.29-r0",
+        "url": "https://packages.wolfi.dev/os/aarch64/apko-1.2.30-r0.apk",
+        "version": "1.2.30-r0",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-5951",
-          "checksum": "sha1-Zlx0KIVZMHWkc0fWIm2ROcwKz8c="
+          "range": "bytes=0-5950",
+          "checksum": "sha1-eprNvMM6ouGZrI7L/YKkvqvtS3s="
         },
         "data": {
-          "range": "bytes=5952-10809246",
-          "checksum": "sha256-Z0pmTDgWjNIusRbH+CEaaiO8wMG3BJjGML175BKJ3hs="
+          "range": "bytes=5951-10849647",
+          "checksum": "sha256-Hj/2cOexhHztj7KCbvjH2hHK+Et6+YwjZG0pJVOoPFo="
         },
-        "checksum": "Q1Zlx0KIVZMHWkc0fWIm2ROcwKz8c="
+        "checksum": "Q1eprNvMM6ouGZrI7L/YKkvqvtS3s="
       },
       {
         "name": "libgcc",
