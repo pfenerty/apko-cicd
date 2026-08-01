@@ -389,25 +389,6 @@
         "checksum": "Q1tbcfWTcB2Hi5yOQk/wNzWTpD9AM="
       },
       {
-        "name": "libnghttp2-14",
-        "url": "https://packages.wolfi.dev/os/x86_64/libnghttp2-14-1.70.0-r0.apk",
-        "version": "1.70.0-r0",
-        "architecture": "x86_64",
-        "signature": {
-          "range": "",
-          "checksum": ""
-        },
-        "control": {
-          "range": "bytes=0-7842",
-          "checksum": "sha1-oTGgB4pr72iGCLLfY3KYCTBIH0U="
-        },
-        "data": {
-          "range": "bytes=7843-109942",
-          "checksum": "sha256-zKfEV91QdeDg5sTa63wO6BJOav6geQ6NW+pLNs7bHV8="
-        },
-        "checksum": "Q1oTGgB4pr72iGCLLfY3KYCTBIH0U="
-      },
-      {
         "name": "ngtcp2",
         "url": "https://packages.wolfi.dev/os/x86_64/ngtcp2-1.25.0-r0.apk",
         "version": "1.25.0-r0",
@@ -444,6 +425,25 @@
           "checksum": "sha256-GtMaz7tc+6/gw51/jRq2trQH8bshZpL66etBeg87OHE="
         },
         "checksum": "Q1d+xgnhv2qmmnyUpkIEMLv/Ccfts="
+      },
+      {
+        "name": "libnghttp2-14",
+        "url": "https://packages.wolfi.dev/os/x86_64/libnghttp2-14-1.70.0-r2.apk",
+        "version": "1.70.0-r2",
+        "architecture": "x86_64",
+        "signature": {
+          "range": "",
+          "checksum": ""
+        },
+        "control": {
+          "range": "bytes=0-7811",
+          "checksum": "sha1-oQRHF/5LZECCttiyB7bVkXopPYI="
+        },
+        "data": {
+          "range": "bytes=7812-109901",
+          "checksum": "sha256-V3N73ehpJfQwWvL71PSF24KE3IpdRb9HTZFSCgr+yeM="
+        },
+        "checksum": "Q1oQRHF/5LZECCttiyB7bVkXopPYI="
       },
       {
         "name": "gdbm",
@@ -731,42 +731,23 @@
         "checksum": "Q1m5iqPzPggZn/SxFmGCMhO07SYSY="
       },
       {
-        "name": "bash",
-        "url": "https://packages.wolfi.dev/os/x86_64/bash-5.3-r12.apk",
-        "version": "5.3-r12",
-        "architecture": "x86_64",
-        "signature": {
-          "range": "",
-          "checksum": ""
-        },
-        "control": {
-          "range": "bytes=0-7927",
-          "checksum": "sha1-MiP/OfvIiKKAeeYZwZ9TEZUMUes="
-        },
-        "data": {
-          "range": "bytes=7928-761775",
-          "checksum": "sha256-6a67wARX0cxLzVwnkqQBX1Pn8IgVa9uq95jAGW5nEeM="
-        },
-        "checksum": "Q1MiP/OfvIiKKAeeYZwZ9TEZUMUes="
-      },
-      {
         "name": "go-1.26",
-        "url": "https://packages.wolfi.dev/os/x86_64/go-1.26-1.26.5-r1.apk",
-        "version": "1.26.5-r1",
+        "url": "https://packages.wolfi.dev/os/x86_64/go-1.26-1.26.5-r2.apk",
+        "version": "1.26.5-r2",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-7888",
-          "checksum": "sha1-3ju4KwBbgbf++Q4Y4J4jCvM2vI4="
+          "range": "bytes=0-7896",
+          "checksum": "sha1-dR+k3VFqHF21KotvSRNBuv5k2KQ="
         },
         "data": {
-          "range": "bytes=7889-57370682",
-          "checksum": "sha256-jKrUNVuZDOQZkWgIQ2Cv2H0Wmxu3tmkX7+lwZvf8jvM="
+          "range": "bytes=7897-57370369",
+          "checksum": "sha256-XgJCkpqmaVUn/cS7COpBw/yXmnCovxD0yRjWhipCKec="
         },
-        "checksum": "Q13ju4KwBbgbf++Q4Y4J4jCvM2vI4="
+        "checksum": "Q1dR+k3VFqHF21KotvSRNBuv5k2KQ="
       },
       {
         "name": "govulncheck",
@@ -1339,25 +1320,6 @@
         "checksum": "Q1EK76kEmltO+dsdniSBoSyGDps8g="
       },
       {
-        "name": "libnghttp2-14",
-        "url": "https://packages.wolfi.dev/os/aarch64/libnghttp2-14-1.70.0-r0.apk",
-        "version": "1.70.0-r0",
-        "architecture": "aarch64",
-        "signature": {
-          "range": "",
-          "checksum": ""
-        },
-        "control": {
-          "range": "bytes=0-7898",
-          "checksum": "sha1-eys+zPstMQJgZC/0HiyuLzp0/E8="
-        },
-        "data": {
-          "range": "bytes=7899-106506",
-          "checksum": "sha256-1magBA4dY5g4MH6RA/WVpAPN4tRNWFEdn6kGKajqlNg="
-        },
-        "checksum": "Q1eys+zPstMQJgZC/0HiyuLzp0/E8="
-      },
-      {
         "name": "ngtcp2",
         "url": "https://packages.wolfi.dev/os/aarch64/ngtcp2-1.25.0-r0.apk",
         "version": "1.25.0-r0",
@@ -1394,6 +1356,25 @@
           "checksum": "sha256-ij7mAZJowteCp2WSpbbgRHBrOgQgSAOzkQJnpjb2xoQ="
         },
         "checksum": "Q1YxX5T6R79BRPOcEnMqh9dQy7E3c="
+      },
+      {
+        "name": "libnghttp2-14",
+        "url": "https://packages.wolfi.dev/os/aarch64/libnghttp2-14-1.70.0-r2.apk",
+        "version": "1.70.0-r2",
+        "architecture": "aarch64",
+        "signature": {
+          "range": "",
+          "checksum": ""
+        },
+        "control": {
+          "range": "bytes=0-7855",
+          "checksum": "sha1-2lzskXoKg5Uw3hFtfKA6PGGWhTw="
+        },
+        "data": {
+          "range": "bytes=7856-106457",
+          "checksum": "sha256-hPP6EZF0ui4f+zAlPYlIRSJc0ZgzXKfH7vehpUAvVxE="
+        },
+        "checksum": "Q12lzskXoKg5Uw3hFtfKA6PGGWhTw="
       },
       {
         "name": "gdbm",
@@ -1681,42 +1662,23 @@
         "checksum": "Q1AIOKYIDILguXGd0g/TIHnqRskgA="
       },
       {
-        "name": "bash",
-        "url": "https://packages.wolfi.dev/os/aarch64/bash-5.3-r12.apk",
-        "version": "5.3-r12",
-        "architecture": "aarch64",
-        "signature": {
-          "range": "",
-          "checksum": ""
-        },
-        "control": {
-          "range": "bytes=0-7959",
-          "checksum": "sha1-2dQcmgQpMxdFXBxE1gM2ittt310="
-        },
-        "data": {
-          "range": "bytes=7960-751569",
-          "checksum": "sha256-J8ZRuHXuFbZkZgkqoyaVV+y4hToTsQMuUV2qDsYkYks="
-        },
-        "checksum": "Q12dQcmgQpMxdFXBxE1gM2ittt310="
-      },
-      {
         "name": "go-1.26",
-        "url": "https://packages.wolfi.dev/os/aarch64/go-1.26-1.26.5-r1.apk",
-        "version": "1.26.5-r1",
+        "url": "https://packages.wolfi.dev/os/aarch64/go-1.26-1.26.5-r2.apk",
+        "version": "1.26.5-r2",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-7922",
-          "checksum": "sha1-Cl9julhlqzKC1rUIKE7QiAWRZXs="
+          "range": "bytes=0-7927",
+          "checksum": "sha1-OL2BDDWs/RPKRUMUpkiML1UOAuw="
         },
         "data": {
-          "range": "bytes=7923-53982600",
-          "checksum": "sha256-0FMIXWwD5vPTPrheOHNYEDxr839SAsTDcspIMGMrc5c="
+          "range": "bytes=7928-53982359",
+          "checksum": "sha256-AXzKyK7qn7mXNb22YoMhFoJNABiX/+v8dvDgVAZ2P+c="
         },
-        "checksum": "Q1Cl9julhlqzKC1rUIKE7QiAWRZXs="
+        "checksum": "Q1OL2BDDWs/RPKRUMUpkiML1UOAuw="
       },
       {
         "name": "govulncheck",
