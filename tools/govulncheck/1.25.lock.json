@@ -599,22 +599,22 @@
       },
       {
         "name": "cyrus-sasl-heimdal-libs",
-        "url": "https://packages.wolfi.dev/os/x86_64/cyrus-sasl-heimdal-libs-2.1.28-r53.apk",
-        "version": "2.1.28-r53",
+        "url": "https://packages.wolfi.dev/os/x86_64/cyrus-sasl-heimdal-libs-2.1.28-r54.apk",
+        "version": "2.1.28-r54",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-10514",
-          "checksum": "sha1-4adHe8xGUKGxuRMQ2Sq+rpoZjq4="
+          "range": "bytes=0-10521",
+          "checksum": "sha1-pxMdknpbKHP0//I2ps885ZNaajY="
         },
         "data": {
-          "range": "bytes=10515-217335",
-          "checksum": "sha256-qbOv7u6YAzzBKBl60O5VeB7pOGG94EqSTZPqFy0z0HU="
+          "range": "bytes=10522-217336",
+          "checksum": "sha256-SaD3M1tquLyiTz+HEyQEct1spbdWEGEkRvTndhZQyVE="
         },
-        "checksum": "Q14adHe8xGUKGxuRMQ2Sq+rpoZjq4="
+        "checksum": "Q1pxMdknpbKHP0//I2ps885ZNaajY="
       },
       {
         "name": "libldap-2.6",
@@ -903,22 +903,22 @@
       },
       {
         "name": "pkgconf",
-        "url": "https://packages.wolfi.dev/os/x86_64/pkgconf-3.0.4-r0.apk",
-        "version": "3.0.4-r0",
+        "url": "https://packages.wolfi.dev/os/x86_64/pkgconf-3.0.5-r0.apk",
+        "version": "3.0.5-r0",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-7682",
-          "checksum": "sha1-Ew/jAv9ai3ILAqlqvSDRVg18xeg="
+          "range": "bytes=0-7675",
+          "checksum": "sha1-60p29Z5EoILz6grQv8S1kEqz4W4="
         },
         "data": {
-          "range": "bytes=7683-147619",
-          "checksum": "sha256-14ZWJp9vWddr1eJK9Mg/ZA2FvmBZYu/L8fmWBlZQiNE="
+          "range": "bytes=7676-151627",
+          "checksum": "sha256-K1fPv2eI8VNjQ0vgbBeKNQBiqkHqWOsl2nwLcYOwmS8="
         },
-        "checksum": "Q1Ew/jAv9ai3ILAqlqvSDRVg18xeg="
+        "checksum": "Q160p29Z5EoILz6grQv8S1kEqz4W4="
       },
       {
         "name": "gmp",
@@ -1967,22 +1967,22 @@
       },
       {
         "name": "cyrus-sasl-heimdal-libs",
-        "url": "https://packages.wolfi.dev/os/aarch64/cyrus-sasl-heimdal-libs-2.1.28-r53.apk",
-        "version": "2.1.28-r53",
+        "url": "https://packages.wolfi.dev/os/aarch64/cyrus-sasl-heimdal-libs-2.1.28-r54.apk",
+        "version": "2.1.28-r54",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-10560",
-          "checksum": "sha1-yy0fYvhnPYBBcz23A3bKts+vWAM="
+          "range": "bytes=0-10567",
+          "checksum": "sha1-rXC/i3XGAO0q5r96sagHo9rmRcU="
         },
         "data": {
-          "range": "bytes=10561-240754",
-          "checksum": "sha256-Ku1f1U1isKuV0+6pjNSap0lq0/H9Ul28BIytzNOR/CI="
+          "range": "bytes=10568-240739",
+          "checksum": "sha256-JRLzdkwgpbQHBdv8wSZXMpsmvwI4JFiePpLtW9DO18Y="
         },
-        "checksum": "Q1yy0fYvhnPYBBcz23A3bKts+vWAM="
+        "checksum": "Q1rXC/i3XGAO0q5r96sagHo9rmRcU="
       },
       {
         "name": "libldap-2.6",
@@ -2271,22 +2271,22 @@
       },
       {
         "name": "pkgconf",
-        "url": "https://packages.wolfi.dev/os/aarch64/pkgconf-3.0.4-r0.apk",
-        "version": "3.0.4-r0",
+        "url": "https://packages.wolfi.dev/os/aarch64/pkgconf-3.0.5-r0.apk",
+        "version": "3.0.5-r0",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-7716",
-          "checksum": "sha1-+p7BDQ2cv4x6ZGBF73HiiEUHkvU="
+          "range": "bytes=0-7710",
+          "checksum": "sha1-tbe9mgvOrq/G3W248CJCiOU3XV8="
         },
         "data": {
-          "range": "bytes=7717-144022",
-          "checksum": "sha256-CyfTyLW4DyspzKIEjaEPJ0ZIk74VAqaR3No8Kicbnmo="
+          "range": "bytes=7711-147316",
+          "checksum": "sha256-xB2fBqgXDnri2zeeErUQ+rO/EznLjgRT70U8ygcIh14="
         },
-        "checksum": "Q1+p7BDQ2cv4x6ZGBF73HiiEUHkvU="
+        "checksum": "Q1tbe9mgvOrq/G3W248CJCiOU3XV8="
       },
       {
         "name": "gmp",
