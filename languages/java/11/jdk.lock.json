@@ -599,22 +599,22 @@
       },
       {
         "name": "cyrus-sasl-heimdal-libs",
-        "url": "https://packages.wolfi.dev/os/x86_64/cyrus-sasl-heimdal-libs-2.1.28-r53.apk",
-        "version": "2.1.28-r53",
+        "url": "https://packages.wolfi.dev/os/x86_64/cyrus-sasl-heimdal-libs-2.1.28-r54.apk",
+        "version": "2.1.28-r54",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-10514",
-          "checksum": "sha1-4adHe8xGUKGxuRMQ2Sq+rpoZjq4="
+          "range": "bytes=0-10521",
+          "checksum": "sha1-pxMdknpbKHP0//I2ps885ZNaajY="
         },
         "data": {
-          "range": "bytes=10515-217335",
-          "checksum": "sha256-qbOv7u6YAzzBKBl60O5VeB7pOGG94EqSTZPqFy0z0HU="
+          "range": "bytes=10522-217336",
+          "checksum": "sha256-SaD3M1tquLyiTz+HEyQEct1spbdWEGEkRvTndhZQyVE="
         },
-        "checksum": "Q14adHe8xGUKGxuRMQ2Sq+rpoZjq4="
+        "checksum": "Q1pxMdknpbKHP0//I2ps885ZNaajY="
       },
       {
         "name": "libldap-2.6",
@@ -1967,22 +1967,22 @@
       },
       {
         "name": "cyrus-sasl-heimdal-libs",
-        "url": "https://packages.wolfi.dev/os/aarch64/cyrus-sasl-heimdal-libs-2.1.28-r53.apk",
-        "version": "2.1.28-r53",
+        "url": "https://packages.wolfi.dev/os/aarch64/cyrus-sasl-heimdal-libs-2.1.28-r54.apk",
+        "version": "2.1.28-r54",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-10560",
-          "checksum": "sha1-yy0fYvhnPYBBcz23A3bKts+vWAM="
+          "range": "bytes=0-10567",
+          "checksum": "sha1-rXC/i3XGAO0q5r96sagHo9rmRcU="
         },
         "data": {
-          "range": "bytes=10561-240754",
-          "checksum": "sha256-Ku1f1U1isKuV0+6pjNSap0lq0/H9Ul28BIytzNOR/CI="
+          "range": "bytes=10568-240739",
+          "checksum": "sha256-JRLzdkwgpbQHBdv8wSZXMpsmvwI4JFiePpLtW9DO18Y="
         },
-        "checksum": "Q1yy0fYvhnPYBBcz23A3bKts+vWAM="
+        "checksum": "Q1rXC/i3XGAO0q5r96sagHo9rmRcU="
       },
       {
         "name": "libldap-2.6",
