@@ -883,23 +883,23 @@
         "checksum": "Q1PvNs1ILxOMrR493LUTNXL8Vo7k0="
       },
       {
-        "name": "npm",
-        "url": "https://packages.wolfi.dev/os/x86_64/npm-12.0.2-r0.apk",
-        "version": "12.0.2-r0",
+        "name": "npm-12",
+        "url": "https://packages.wolfi.dev/os/x86_64/npm-12-12.0.2-r1.apk",
+        "version": "12.0.2-r1",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-7341",
-          "checksum": "sha1-XG9/i377656rpL5Trl8TvjDXiZE="
+          "range": "bytes=0-7441",
+          "checksum": "sha1-QGDuloCdRwTiLifdAlFXQI8U6Ss="
         },
         "data": {
-          "range": "bytes=7342-2199610",
-          "checksum": "sha256-vXrWWWVO7RC83IRss3of9fqoKFHI5Cf3jOnsd9ANZ3c="
+          "range": "bytes=7442-2199762",
+          "checksum": "sha256-UFeU/Bc+DoIuGVP/3ZU+SJhAoepV34pe7LA1Vxdwgow="
         },
-        "checksum": "Q1XG9/i377656rpL5Trl8TvjDXiZE="
+        "checksum": "Q1QGDuloCdRwTiLifdAlFXQI8U6Ss="
       },
       {
         "name": "http-parser",
@@ -1947,23 +1947,23 @@
         "checksum": "Q1WahIclqNdroOULAGuQrbVxwRnCo="
       },
       {
-        "name": "npm",
-        "url": "https://packages.wolfi.dev/os/aarch64/npm-12.0.2-r0.apk",
-        "version": "12.0.2-r0",
+        "name": "npm-12",
+        "url": "https://packages.wolfi.dev/os/aarch64/npm-12-12.0.2-r1.apk",
+        "version": "12.0.2-r1",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-7371",
-          "checksum": "sha1-/hlgIuzbdWms/kGMAlLlEwYX8U0="
+          "range": "bytes=0-7479",
+          "checksum": "sha1-3oQaDOnSkyhClvotSBx5mw7YvVU="
         },
         "data": {
-          "range": "bytes=7372-2199673",
-          "checksum": "sha256-Cwi3mk0RXrtcoDpfhfwLsSaCHbzmXi0owxX5oxPijDo="
+          "range": "bytes=7480-2199801",
+          "checksum": "sha256-1R4W7jWvI7GsqubSjWPJk8kHwxeeRA2EIarUM/QUC1I="
         },
-        "checksum": "Q1/hlgIuzbdWms/kGMAlLlEwYX8U0="
+        "checksum": "Q13oQaDOnSkyhClvotSBx5mw7YvVU="
       },
       {
         "name": "http-parser",

@@ -1283,22 +1283,22 @@
       },
       {
         "name": "openjdk-17",
-        "url": "https://packages.wolfi.dev/os/x86_64/openjdk-17-17.0.19-r4.apk",
-        "version": "17.0.19-r4",
+        "url": "https://packages.wolfi.dev/os/x86_64/openjdk-17-17.0.20-r0.apk",
+        "version": "17.0.20-r0",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-11609",
-          "checksum": "sha1-/0U8/0H9g7XLS6WE9CF0R0CfC3c="
+          "range": "bytes=0-11707",
+          "checksum": "sha1-4co4g3syubnEZYu/WocN13V17kU="
         },
         "data": {
-          "range": "bytes=11610-75711631",
-          "checksum": "sha256-o9qWVoiYS1ljLd6+eogO9KniashznQw+Vhb/0kkGcKs="
+          "range": "bytes=11708-75674327",
+          "checksum": "sha256-D9Ld2tfy3KWUakTW8QSK6F0zKcxORmqBgQAOxSuk/Vc="
         },
-        "checksum": "Q1/0U8/0H9g7XLS6WE9CF0R0CfC3c="
+        "checksum": "Q14co4g3syubnEZYu/WocN13V17kU="
       },
       {
         "name": "openssl",
@@ -2670,22 +2670,22 @@
       },
       {
         "name": "openjdk-17",
-        "url": "https://packages.wolfi.dev/os/aarch64/openjdk-17-17.0.19-r4.apk",
-        "version": "17.0.19-r4",
+        "url": "https://packages.wolfi.dev/os/aarch64/openjdk-17-17.0.20-r0.apk",
+        "version": "17.0.20-r0",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-11635",
-          "checksum": "sha1-XNDGxE7PdsnDrloeJKXQI1hdTKg="
+          "range": "bytes=0-11733",
+          "checksum": "sha1-ZFw+JXHJaT6ZqvSUYK1YoGTyyXc="
         },
         "data": {
-          "range": "bytes=11636-74800060",
-          "checksum": "sha256-yJQYZ2R2t6huDsdTP8R/6kqSTdOv5DborQdxwDH77h8="
+          "range": "bytes=11734-74898174",
+          "checksum": "sha256-Kmf2HfYaReAXE0tVIjj41MIhQZkFfxi1ENHNBiYFRiA="
         },
-        "checksum": "Q1XNDGxE7PdsnDrloeJKXQI1hdTKg="
+        "checksum": "Q1ZFw+JXHJaT6ZqvSUYK1YoGTyyXc="
       },
       {
         "name": "openssl",
