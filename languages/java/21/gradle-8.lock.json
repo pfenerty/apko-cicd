@@ -1283,22 +1283,22 @@
       },
       {
         "name": "openjdk-21",
-        "url": "https://packages.wolfi.dev/os/x86_64/openjdk-21-21.0.11-r3.apk",
-        "version": "21.0.11-r3",
+        "url": "https://packages.wolfi.dev/os/x86_64/openjdk-21-21.0.12-r0.apk",
+        "version": "21.0.12-r0",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-11453",
-          "checksum": "sha1-+4g42CXowBHhbbOrogke62GFX+4="
+          "range": "bytes=0-11556",
+          "checksum": "sha1-njCe5dpvweLfCaeyjkzNuJ9vzp0="
         },
         "data": {
-          "range": "bytes=11454-82935017",
-          "checksum": "sha256-ZyPEGpswfDpmmLIFRGd7vsQz5oI2ziWUNp7EoSwv2TY="
+          "range": "bytes=11557-82910991",
+          "checksum": "sha256-h5XdLDLCpsahWA5Rufrb95H5eY4ZA/imTP2S0mmJKMk="
         },
-        "checksum": "Q1+4g42CXowBHhbbOrogke62GFX+4="
+        "checksum": "Q1njCe5dpvweLfCaeyjkzNuJ9vzp0="
       },
       {
         "name": "openssl",
@@ -2670,22 +2670,22 @@
       },
       {
         "name": "openjdk-21",
-        "url": "https://packages.wolfi.dev/os/aarch64/openjdk-21-21.0.11-r3.apk",
-        "version": "21.0.11-r3",
+        "url": "https://packages.wolfi.dev/os/aarch64/openjdk-21-21.0.12-r0.apk",
+        "version": "21.0.12-r0",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-11480",
-          "checksum": "sha1-lSEZqErGOKAcg7H3miYyv23E+RM="
+          "range": "bytes=0-11582",
+          "checksum": "sha1-zKVGRy9dp9vOhquuPBybvr+P+As="
         },
         "data": {
-          "range": "bytes=11481-81717828",
-          "checksum": "sha256-I/ZM7gT4FlGsHgWUSM/NDW/iKTLAxuv2YNJlvqn9JZg="
+          "range": "bytes=11583-81722044",
+          "checksum": "sha256-ZE6U5LvP99ca8xbZXOAZ2XnjRvhio2G+MXd/qUPsNdo="
         },
-        "checksum": "Q1lSEZqErGOKAcg7H3miYyv23E+RM="
+        "checksum": "Q1zKVGRy9dp9vOhquuPBybvr+P+As="
       },
       {
         "name": "openssl",

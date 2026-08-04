@@ -865,22 +865,22 @@
       },
       {
         "name": "linux-headers",
-        "url": "https://packages.wolfi.dev/os/x86_64/linux-headers-7.1.5-r0.apk",
-        "version": "7.1.5-r0",
+        "url": "https://packages.wolfi.dev/os/x86_64/linux-headers-7.1.6-r0.apk",
+        "version": "7.1.6-r0",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-5316",
-          "checksum": "sha1-oEbvQOfLITe0bONEQ90D+gEFO6w="
+          "range": "bytes=0-5311",
+          "checksum": "sha1-KDsLf/er0XR73lZ+psA7dvPJBo0="
         },
         "data": {
-          "range": "bytes=5317-2106680",
-          "checksum": "sha256-6+LMNfhgKcD9cvpJNyPyPiJXEYThMYM2u+Q3NpIZDow="
+          "range": "bytes=5312-2106688",
+          "checksum": "sha256-q4CX5785oH+Fy84poFc9Sh6IYbCPctVSSDgL9Gf3rh4="
         },
-        "checksum": "Q1oEbvQOfLITe0bONEQ90D+gEFO6w="
+        "checksum": "Q1KDsLf/er0XR73lZ+psA7dvPJBo0="
       },
       {
         "name": "glibc-dev",
@@ -2214,22 +2214,22 @@
       },
       {
         "name": "linux-headers",
-        "url": "https://packages.wolfi.dev/os/aarch64/linux-headers-7.1.5-r0.apk",
-        "version": "7.1.5-r0",
+        "url": "https://packages.wolfi.dev/os/aarch64/linux-headers-7.1.6-r0.apk",
+        "version": "7.1.6-r0",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-5344",
-          "checksum": "sha1-v2IWFEeG4jONpzBg5EC1KG4gHH4="
+          "range": "bytes=0-5343",
+          "checksum": "sha1-wKkrMSIlBjB621nAuPJpvTb147o="
         },
         "data": {
-          "range": "bytes=5345-2068970",
-          "checksum": "sha256-3UXujDRMvkq9ESWeBf8HbwGpX7zlEx/gbeNhUkKRqS8="
+          "range": "bytes=5344-2068983",
+          "checksum": "sha256-+Rxp5dMQpr/1Tdc9FpwKZx6ORbrrnv64vwSeSDqDW+c="
         },
-        "checksum": "Q1v2IWFEeG4jONpzBg5EC1KG4gHH4="
+        "checksum": "Q1wKkrMSIlBjB621nAuPJpvTb147o="
       },
       {
         "name": "glibc-dev",
