@@ -25,7 +25,7 @@ $(eval $(call IMAGE,tools-grype,tools/grype/apko.yaml,grype:0.116.1))
 $(eval $(call IMAGE,tools-gitleaks,tools/gitleaks/apko.yaml,gitleaks:8.30.1))
 $(eval $(call IMAGE,tools-semgrep,tools/semgrep/apko.yaml,semgrep:1.165.0))
 $(eval $(call IMAGE,tools-oras,tools/oras/apko.yaml,oras:1.3.3))
-$(eval $(call IMAGE,tools-apko,tools/apko/apko.yaml,apko:1.2.31))
+$(eval $(call IMAGE,tools-apko,tools/apko/apko.yaml,apko:1.2.33))
 $(eval $(call IMAGE,tools-melange,tools/melange/apko.yaml,melange:0.56.3))
 $(eval $(call IMAGE,tools-golangci-lint-go1.22,tools/golangci-lint/1.22.yaml,golangci-lint:2.12.2-go1.22))
 $(eval $(call IMAGE,tools-golangci-lint-go1.23,tools/golangci-lint/1.23.yaml,golangci-lint:2.12.2-go1.23))
@@ -42,7 +42,7 @@ $(eval $(call IMAGE,tools-gosec-go1.23,tools/gosec/1.23.yaml,gosec:2.28.0-go1.23
 $(eval $(call IMAGE,tools-gosec-go1.24,tools/gosec/1.24.yaml,gosec:2.28.0-go1.24))
 $(eval $(call IMAGE,tools-gosec-go1.25,tools/gosec/1.25.yaml,gosec:2.28.0-go1.25))
 $(eval $(call IMAGE,tools-gosec-go1.26,tools/gosec/1.26.yaml,gosec:2.28.0-go1.26))
-$(eval $(call IMAGE,tools-gcloud,tools/gcloud/apko.yaml,gcloud:578.0.0))
+$(eval $(call IMAGE,tools-gcloud,tools/gcloud/apko.yaml,gcloud:579.0.0))
 
 # gosec has no Wolfi package — build the apk with melange first, then the apko
 # configs above consume it from ./packages via the @local repository.
