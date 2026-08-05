@@ -1036,8 +1036,8 @@
       },
       {
         "name": "py3-pip-wheel",
-        "url": "https://packages.wolfi.dev/os/x86_64/py3-pip-wheel-26.2-r0.apk",
-        "version": "26.2-r0",
+        "url": "https://packages.wolfi.dev/os/x86_64/py3-pip-wheel-26.2.1-r0.apk",
+        "version": "26.2.1-r0",
         "architecture": "x86_64",
         "signature": {
           "range": "",
@@ -1045,13 +1045,13 @@
         },
         "control": {
           "range": "bytes=0-12667",
-          "checksum": "sha1-YodqZ19QzshSpcJgacg0INaXmzs="
+          "checksum": "sha1-gQS+ehIS8zQ88Ng2NSaEijR1clI="
         },
         "data": {
-          "range": "bytes=12668-1817433",
-          "checksum": "sha256-S+2l55/lZ95IVvTCOrnnr+zud5PhcjgepAt3uWrsbVs="
+          "range": "bytes=12668-1816390",
+          "checksum": "sha256-ej4LPj7g1gK7ItNg5VK29GcFzYmX4nJtzbFJ1AwsNkE="
         },
-        "checksum": "Q1YodqZ19QzshSpcJgacg0INaXmzs="
+        "checksum": "Q1gQS+ehIS8zQ88Ng2NSaEijR1clI="
       },
       {
         "name": "python-3.13-base",
@@ -2195,22 +2195,22 @@
       },
       {
         "name": "py3-pip-wheel",
-        "url": "https://packages.wolfi.dev/os/aarch64/py3-pip-wheel-26.2-r0.apk",
-        "version": "26.2-r0",
+        "url": "https://packages.wolfi.dev/os/aarch64/py3-pip-wheel-26.2.1-r0.apk",
+        "version": "26.2.1-r0",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-12693",
-          "checksum": "sha1-cadQap/A4pohYGh+36MCh1VunQU="
+          "range": "bytes=0-12692",
+          "checksum": "sha1-xwWcn4OClkWTFcGhRPgGlj4In8I="
         },
         "data": {
-          "range": "bytes=12694-1817461",
-          "checksum": "sha256-821xcjSTaBu4+eGG7C6YB0VrNLL+pXKigseR0Z+pRUQ="
+          "range": "bytes=12693-1816419",
+          "checksum": "sha256-yFYvnVmH6mf8r4afXPGPPCPtL9oBZa8nRhPwyIvieL8="
         },
-        "checksum": "Q1cadQap/A4pohYGh+36MCh1VunQU="
+        "checksum": "Q1xwWcn4OClkWTFcGhRPgGlj4In8I="
       },
       {
         "name": "python-3.13-base",
