@@ -1055,22 +1055,22 @@
       },
       {
         "name": "python-3.13-base",
-        "url": "https://packages.wolfi.dev/os/x86_64/python-3.13-base-3.13.14-r3.apk",
-        "version": "3.13.14-r3",
+        "url": "https://packages.wolfi.dev/os/x86_64/python-3.13-base-3.13.15-r0.apk",
+        "version": "3.13.15-r0",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-12645",
-          "checksum": "sha1-4Aw688+giKShAullragXWl8v3VU="
+          "range": "bytes=0-12648",
+          "checksum": "sha1-rc9SXb5hp8ZObfSAKNC9jmxdaVk="
         },
         "data": {
-          "range": "bytes=12646-12156663",
-          "checksum": "sha256-erane18NysVc5IeNi88XZ/Ngg1ifSOT8pH1O6lq0cIc="
+          "range": "bytes=12649-12176068",
+          "checksum": "sha256-pfyRk45ng0P0+Pkr4bS9HtzQTagQO4rXIlnFmSgU5FA="
         },
-        "checksum": "Q14Aw688+giKShAullragXWl8v3VU="
+        "checksum": "Q1rc9SXb5hp8ZObfSAKNC9jmxdaVk="
       },
       {
         "name": "semgrep",
@@ -2214,22 +2214,22 @@
       },
       {
         "name": "python-3.13-base",
-        "url": "https://packages.wolfi.dev/os/aarch64/python-3.13-base-3.13.14-r3.apk",
-        "version": "3.13.14-r3",
+        "url": "https://packages.wolfi.dev/os/aarch64/python-3.13-base-3.13.15-r0.apk",
+        "version": "3.13.15-r0",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-12675",
-          "checksum": "sha1-Na3sSALaJ2a2+At1zuT2YH8bxuM="
+          "range": "bytes=0-12680",
+          "checksum": "sha1-zoH/hmOnJHbY2cQeatcAw5PkVOg="
         },
         "data": {
-          "range": "bytes=12676-11847458",
-          "checksum": "sha256-4zEBHTOpYFaTBCUQpgrQg0rvfHbnHbIv9eiD/WLqjyE="
+          "range": "bytes=12681-11898101",
+          "checksum": "sha256-DTmWmmldC8cpDKPsQ8VleKvCPXXcK+EqcNj86+u7Whk="
         },
-        "checksum": "Q1Na3sSALaJ2a2+At1zuT2YH8bxuM="
+        "checksum": "Q1zoH/hmOnJHbY2cQeatcAw5PkVOg="
       },
       {
         "name": "semgrep",
