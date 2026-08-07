@@ -618,22 +618,22 @@
       },
       {
         "name": "libldap-2.6",
-        "url": "https://packages.wolfi.dev/os/x86_64/libldap-2.6-2.6.13-r6.apk",
-        "version": "2.6.13-r6",
+        "url": "https://packages.wolfi.dev/os/x86_64/libldap-2.6-2.6.14-r0.apk",
+        "version": "2.6.14-r0",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-14192",
-          "checksum": "sha1-trU9nxVoY3AxePUas6C+ld6l4ZQ="
+          "range": "bytes=0-14174",
+          "checksum": "sha1-ZNAisf6KH5qXv6KSAZwq1Ny425Y="
         },
         "data": {
-          "range": "bytes=14193-264649",
-          "checksum": "sha256-7oG2zL8ZJgm8G2DrpfwBghhzu31usqGZwT7jD4rAPs4="
+          "range": "bytes=14175-264765",
+          "checksum": "sha256-BANSUf6/PWq+0UtMNpaBJHRYEOzPAHhIsnb+d0/b4gY="
         },
-        "checksum": "Q1trU9nxVoY3AxePUas6C+ld6l4ZQ="
+        "checksum": "Q1ZNAisf6KH5qXv6KSAZwq1Ny425Y="
       },
       {
         "name": "libcurl-openssl4",
@@ -1986,22 +1986,22 @@
       },
       {
         "name": "libldap-2.6",
-        "url": "https://packages.wolfi.dev/os/aarch64/libldap-2.6-2.6.13-r6.apk",
-        "version": "2.6.13-r6",
+        "url": "https://packages.wolfi.dev/os/aarch64/libldap-2.6-2.6.14-r0.apk",
+        "version": "2.6.14-r0",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-14237",
-          "checksum": "sha1-N8pbKhyII+6N5TPdZRYUD0r2Z0k="
+          "range": "bytes=0-14221",
+          "checksum": "sha1-jglcaD1Nh5VxKYXmLpFlmsO+Ffs="
         },
         "data": {
-          "range": "bytes=14238-245839",
-          "checksum": "sha256-mHLLkfuVbtIsEkQyzRGFlm68q0vMTMIRl2+0GecXusg="
+          "range": "bytes=14222-245767",
+          "checksum": "sha256-kYY2pjVS+br9pGbOofa9PWDQFvonHGLHEn5l2h2735w="
         },
-        "checksum": "Q1N8pbKhyII+6N5TPdZRYUD0r2Z0k="
+        "checksum": "Q1jglcaD1Nh5VxKYXmLpFlmsO+Ffs="
       },
       {
         "name": "libcurl-openssl4",

@@ -2,7 +2,7 @@
   "version": "v1",
   "config": {
     "name": "/workspace/workspace/tools/apko/apko.yaml",
-    "checksum": "sha256-JSjML9MJePeXcD/9NEV8lq5VLW0GztTA2+8t7UbvrdY="
+    "checksum": "sha256-d3LYoNTNEMXjchR2/WIrTSdWf9jjAJooLRlB2qiW+EQ="
   },
   "contents": {
     "keyring": [
@@ -67,22 +67,22 @@
       },
       {
         "name": "apko",
-        "url": "https://packages.wolfi.dev/os/x86_64/apko-1.2.34-r0.apk",
-        "version": "1.2.34-r0",
+        "url": "https://packages.wolfi.dev/os/x86_64/apko-1.2.35-r0.apk",
+        "version": "1.2.35-r0",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-5907",
-          "checksum": "sha1-CroAIM3IR81+9Sdl4b4nP6hwFSY="
+          "range": "bytes=0-5906",
+          "checksum": "sha1-Ijot1CzOy3Kb+YvyOvRzr3YJufU="
         },
         "data": {
-          "range": "bytes=5908-11932523",
-          "checksum": "sha256-ahLLjjN7nhpRAd1Jd3u4jHt+KMiPVmaOjbUwO/tEFmE="
+          "range": "bytes=5907-11932352",
+          "checksum": "sha256-sJZSNqYSqCw79lSLcn8/sebgX9S8Y3/PZkDonCrREBs="
         },
-        "checksum": "Q1CroAIM3IR81+9Sdl4b4nP6hwFSY="
+        "checksum": "Q1Ijot1CzOy3Kb+YvyOvRzr3YJufU="
       },
       {
         "name": "ld-linux",
@@ -637,22 +637,22 @@
       },
       {
         "name": "libldap-2.6",
-        "url": "https://packages.wolfi.dev/os/x86_64/libldap-2.6-2.6.13-r6.apk",
-        "version": "2.6.13-r6",
+        "url": "https://packages.wolfi.dev/os/x86_64/libldap-2.6-2.6.14-r0.apk",
+        "version": "2.6.14-r0",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-14192",
-          "checksum": "sha1-trU9nxVoY3AxePUas6C+ld6l4ZQ="
+          "range": "bytes=0-14174",
+          "checksum": "sha1-ZNAisf6KH5qXv6KSAZwq1Ny425Y="
         },
         "data": {
-          "range": "bytes=14193-264649",
-          "checksum": "sha256-7oG2zL8ZJgm8G2DrpfwBghhzu31usqGZwT7jD4rAPs4="
+          "range": "bytes=14175-264765",
+          "checksum": "sha256-BANSUf6/PWq+0UtMNpaBJHRYEOzPAHhIsnb+d0/b4gY="
         },
-        "checksum": "Q1trU9nxVoY3AxePUas6C+ld6l4ZQ="
+        "checksum": "Q1ZNAisf6KH5qXv6KSAZwq1Ny425Y="
       },
       {
         "name": "libcurl-openssl4",
@@ -979,22 +979,22 @@
       },
       {
         "name": "apko",
-        "url": "https://packages.wolfi.dev/os/aarch64/apko-1.2.34-r0.apk",
-        "version": "1.2.34-r0",
+        "url": "https://packages.wolfi.dev/os/aarch64/apko-1.2.35-r0.apk",
+        "version": "1.2.35-r0",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-5947",
-          "checksum": "sha1-p5ov9O7ff1sCqGOFz376+afU5DU="
+          "range": "bytes=0-5943",
+          "checksum": "sha1-Le62ti+U4xVCO+lPBirshNckHMk="
         },
         "data": {
-          "range": "bytes=5948-10842348",
-          "checksum": "sha256-u7bQQfgb2j+2YamgFm5tN9RIbQy2fqjkpIfCqvXHo3Y="
+          "range": "bytes=5944-10857030",
+          "checksum": "sha256-1hqHe80g6ss1jLwUWIwnOiKcl4B73uZJk3Qop5OcLN0="
         },
-        "checksum": "Q1p5ov9O7ff1sCqGOFz376+afU5DU="
+        "checksum": "Q1Le62ti+U4xVCO+lPBirshNckHMk="
       },
       {
         "name": "libgcc",
@@ -1549,22 +1549,22 @@
       },
       {
         "name": "libldap-2.6",
-        "url": "https://packages.wolfi.dev/os/aarch64/libldap-2.6-2.6.13-r6.apk",
-        "version": "2.6.13-r6",
+        "url": "https://packages.wolfi.dev/os/aarch64/libldap-2.6-2.6.14-r0.apk",
+        "version": "2.6.14-r0",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-14237",
-          "checksum": "sha1-N8pbKhyII+6N5TPdZRYUD0r2Z0k="
+          "range": "bytes=0-14221",
+          "checksum": "sha1-jglcaD1Nh5VxKYXmLpFlmsO+Ffs="
         },
         "data": {
-          "range": "bytes=14238-245839",
-          "checksum": "sha256-mHLLkfuVbtIsEkQyzRGFlm68q0vMTMIRl2+0GecXusg="
+          "range": "bytes=14222-245767",
+          "checksum": "sha256-kYY2pjVS+br9pGbOofa9PWDQFvonHGLHEn5l2h2735w="
         },
-        "checksum": "Q1N8pbKhyII+6N5TPdZRYUD0r2Z0k="
+        "checksum": "Q1jglcaD1Nh5VxKYXmLpFlmsO+Ffs="
       },
       {
         "name": "libcurl-openssl4",
