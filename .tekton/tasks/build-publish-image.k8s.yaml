@@ -80,7 +80,7 @@ spec:
     - env:
         - name: DOCKER_CONFIG
           value: /tmp/docker-auth
-      image: ghcr.io/pfenerty/apko-cicd/apko:1.2.34
+      image: ghcr.io/pfenerty/apko-cicd/apko:1.2.35
       name: publish
       script: |-
         #!/usr/bin/env nu
