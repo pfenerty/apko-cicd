@@ -48,22 +48,22 @@
       },
       {
         "name": "ca-certificates-bundle",
-        "url": "https://packages.wolfi.dev/os/x86_64/ca-certificates-bundle-20260413-r0.apk",
-        "version": "20260413-r0",
+        "url": "https://packages.wolfi.dev/os/x86_64/ca-certificates-bundle-20260413-r1.apk",
+        "version": "20260413-r1",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-7872",
-          "checksum": "sha1-KyCdEL20IKE+B7DKW97GLXu2QLM="
+          "range": "bytes=0-8322",
+          "checksum": "sha1-u3xyVyewNfx7ZzTDikWdOlY9Tt8="
         },
         "data": {
-          "range": "bytes=7873-137518",
-          "checksum": "sha256-foyxNKCWc3UQM3Kq5on+Gt/2d+HlzCUl+1lqiaviWE8="
+          "range": "bytes=8323-137882",
+          "checksum": "sha256-FfsoSAq28t7qTE1H+hPbrozu3BjgGiACoDMkS37a2G0="
         },
-        "checksum": "Q1KyCdEL20IKE+B7DKW97GLXu2QLM="
+        "checksum": "Q1u3xyVyewNfx7ZzTDikWdOlY9Tt8="
       },
       {
         "name": "ld-linux",
@@ -1093,41 +1093,41 @@
       },
       {
         "name": "ca-certificates",
-        "url": "https://packages.wolfi.dev/os/x86_64/ca-certificates-20260413-r0.apk",
-        "version": "20260413-r0",
+        "url": "https://packages.wolfi.dev/os/x86_64/ca-certificates-20260413-r1.apk",
+        "version": "20260413-r1",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-7927",
-          "checksum": "sha1-ycWYiWrbH6W7qc5N6LWXFAVKJDQ="
+          "range": "bytes=0-8383",
+          "checksum": "sha1-SMMF1znEfX3msuZX+W3Om98XvA8="
         },
         "data": {
-          "range": "bytes=7928-168423",
-          "checksum": "sha256-2YIggIanJYS0c4ctNFJg6u/jWPJN88GljXROCMn8Wag="
+          "range": "bytes=8384-169010",
+          "checksum": "sha256-r9QTurySkBmCbMIR7DPoX2+6K0UwT3eORRWHz5o3kco="
         },
-        "checksum": "Q1ycWYiWrbH6W7qc5N6LWXFAVKJDQ="
+        "checksum": "Q1SMMF1znEfX3msuZX+W3Om98XvA8="
       },
       {
         "name": "java-cacerts",
-        "url": "https://packages.wolfi.dev/os/x86_64/java-cacerts-20260413-r0.apk",
-        "version": "20260413-r0",
+        "url": "https://packages.wolfi.dev/os/x86_64/java-cacerts-20260413-r1.apk",
+        "version": "20260413-r1",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-7875",
-          "checksum": "sha1-NTWPuAz0/iC1u6z9OAklgzTY2Tk="
+          "range": "bytes=0-8328",
+          "checksum": "sha1-sUQYFOAOt85aKMSqEMTCFEZtqZ0="
         },
         "data": {
-          "range": "bytes=7876-126741",
-          "checksum": "sha256-EtVMGZK7sa37bfyGohJEmyBT5kHR91BpfMSYWIFBSL0="
+          "range": "bytes=8329-127150",
+          "checksum": "sha256-wbe57v/350NwWhlw96+88iyRLFh6YL6/BkHeLxr7asQ="
         },
-        "checksum": "Q1NTWPuAz0/iC1u6z9OAklgzTY2Tk="
+        "checksum": "Q1sUQYFOAOt85aKMSqEMTCFEZtqZ0="
       },
       {
         "name": "alsa-lib",
@@ -1416,22 +1416,22 @@
       },
       {
         "name": "ca-certificates-bundle",
-        "url": "https://packages.wolfi.dev/os/aarch64/ca-certificates-bundle-20260413-r0.apk",
-        "version": "20260413-r0",
+        "url": "https://packages.wolfi.dev/os/aarch64/ca-certificates-bundle-20260413-r1.apk",
+        "version": "20260413-r1",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-7907",
-          "checksum": "sha1-YLGEH8o/PNCjR8sxoxh//AGpOgQ="
+          "range": "bytes=0-8359",
+          "checksum": "sha1-30PaFA+RvZD2YLXY2QbAzVN5nnY="
         },
         "data": {
-          "range": "bytes=7908-137552",
-          "checksum": "sha256-1NKuKrCJxco8aTxdlzNkEjM/4HyDXmO6sGOfSTiu8aE="
+          "range": "bytes=8360-137919",
+          "checksum": "sha256-SgPmQtM21VNroXR9zooX8TGHE4flXvMfOlliGiBr7f4="
         },
-        "checksum": "Q1YLGEH8o/PNCjR8sxoxh//AGpOgQ="
+        "checksum": "Q130PaFA+RvZD2YLXY2QbAzVN5nnY="
       },
       {
         "name": "libgcc",
@@ -2461,41 +2461,41 @@
       },
       {
         "name": "ca-certificates",
-        "url": "https://packages.wolfi.dev/os/aarch64/ca-certificates-20260413-r0.apk",
-        "version": "20260413-r0",
+        "url": "https://packages.wolfi.dev/os/aarch64/ca-certificates-20260413-r1.apk",
+        "version": "20260413-r1",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-7959",
-          "checksum": "sha1-9Yym4KtWNZnGdnKcM8Xxh4CAZ+I="
+          "range": "bytes=0-8415",
+          "checksum": "sha1-ZB9QAXOC51kVRtoS/Tjptfx3s3U="
         },
         "data": {
-          "range": "bytes=7960-173274",
-          "checksum": "sha256-rQKm2wT8/aZg17bKaHlJxRQG70fe4jEX2Lm9ACjBsGk="
+          "range": "bytes=8416-173700",
+          "checksum": "sha256-dXzOSfiQsP3pIHOSv9YoYDU/54e3rUMkJ/AQcq2pNCg="
         },
-        "checksum": "Q19Yym4KtWNZnGdnKcM8Xxh4CAZ+I="
+        "checksum": "Q1ZB9QAXOC51kVRtoS/Tjptfx3s3U="
       },
       {
         "name": "java-cacerts",
-        "url": "https://packages.wolfi.dev/os/aarch64/java-cacerts-20260413-r0.apk",
-        "version": "20260413-r0",
+        "url": "https://packages.wolfi.dev/os/aarch64/java-cacerts-20260413-r1.apk",
+        "version": "20260413-r1",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-7914",
-          "checksum": "sha1-943EBMV4J5qG0/oJ/Oyeqvq920I="
+          "range": "bytes=0-8369",
+          "checksum": "sha1-ZK7jFMq3TOPBziPslMCltPgeICU="
         },
         "data": {
-          "range": "bytes=7915-126791",
-          "checksum": "sha256-K5d5sJWesrHYhsAbFLl0jDtDXund15d6bqYPM4Yu17o="
+          "range": "bytes=8370-127203",
+          "checksum": "sha256-FBSPW/OendJGYHXI/cK/hglxJMfODm9deawSYjl0lYU="
         },
-        "checksum": "Q1943EBMV4J5qG0/oJ/Oyeqvq920I="
+        "checksum": "Q1ZK7jFMq3TOPBziPslMCltPgeICU="
       },
       {
         "name": "alsa-lib",
