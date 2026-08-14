@@ -1,0 +1,12 @@
+include: base/apko.yaml
+
+contents:
+    packages:
+        - kyverno-cli-1.18
+        - helm-4
+
+annotations:
+    org.opencontainers.image.title: Kyverno CLI
+    org.opencontainers.image.description: Kubernetes policy engine CLI, bundled with Helm for rendering charts before validation
+    org.opencontainers.image.version: 1.18.1
+    org.opencontainers.image.base.name: ghcr.io/pfenerty/apko-cicd/base:stable
