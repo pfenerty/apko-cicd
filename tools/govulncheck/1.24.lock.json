@@ -2,7 +2,7 @@
   "version": "v1",
   "config": {
     "name": "/workspace/workspace/tools/govulncheck/1.24.yaml",
-    "checksum": "sha256-cEqPFn0PQLryP+OhBxAKNGAEIP4p1rXQvMiIQzBeTBU="
+    "checksum": "sha256-wBgUzEdaNxQXNPuRXY6Wd8zZ80dwnJrkOx6FgTPXYLw="
   },
   "contents": {
     "keyring": [
@@ -1188,22 +1188,22 @@
       },
       {
         "name": "govulncheck",
-        "url": "https://packages.wolfi.dev/os/x86_64/govulncheck-1.6.0-r0.apk",
-        "version": "1.6.0-r0",
+        "url": "https://packages.wolfi.dev/os/x86_64/govulncheck-1.7.0-r0.apk",
+        "version": "1.7.0-r0",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-5576",
-          "checksum": "sha1-xHZHdkZ3Ah9X8mruVeXOHgOcc/8="
+          "range": "bytes=0-5571",
+          "checksum": "sha1-4FzgZwmQodmmz1cvqRRkOJ5xwm8="
         },
         "data": {
-          "range": "bytes=5577-4720199",
-          "checksum": "sha256-J7Imo6iCWBnmCuEi3SlnIKIJvOELE0LfsALfgOk5OFI="
+          "range": "bytes=5572-4716249",
+          "checksum": "sha256-pKsU2e0bLf8dHSSqiJ2J3xWLzbhgex5FeMHWufUdSUo="
         },
-        "checksum": "Q1xHZHdkZ3Ah9X8mruVeXOHgOcc/8="
+        "checksum": "Q14FzgZwmQodmmz1cvqRRkOJ5xwm8="
       },
       {
         "name": "http-parser",
@@ -1245,22 +1245,22 @@
       },
       {
         "name": "libgit2",
-        "url": "https://packages.wolfi.dev/os/x86_64/libgit2-1.9.6-r0.apk",
-        "version": "1.9.6-r0",
+        "url": "https://packages.wolfi.dev/os/x86_64/libgit2-1.9.7-r0.apk",
+        "version": "1.9.7-r0",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-7536",
-          "checksum": "sha1-FqQwJUGi9MgJ5oBtwa20CG20z58="
+          "range": "bytes=0-7471",
+          "checksum": "sha1-LpvprUmZnJDc1/LvdYThW07NNsY="
         },
         "data": {
-          "range": "bytes=7537-1557957",
-          "checksum": "sha256-g0zVzwnA8/MFw18T6x2XdKoiZKN3OwJwIEYjJINnHfI="
+          "range": "bytes=7472-1557844",
+          "checksum": "sha256-hkzbdULIpy64VFqoNVrahbWY//mhoQX7NGj1VOA7l7o="
         },
-        "checksum": "Q1FqQwJUGi9MgJ5oBtwa20CG20z58="
+        "checksum": "Q1LpvprUmZnJDc1/LvdYThW07NNsY="
       },
       {
         "name": "nushell",
@@ -2556,22 +2556,22 @@
       },
       {
         "name": "govulncheck",
-        "url": "https://packages.wolfi.dev/os/aarch64/govulncheck-1.6.0-r0.apk",
-        "version": "1.6.0-r0",
+        "url": "https://packages.wolfi.dev/os/aarch64/govulncheck-1.7.0-r0.apk",
+        "version": "1.7.0-r0",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-5606",
-          "checksum": "sha1-MWq+2LYyy0qdmrCuym0YZZrm4SI="
+          "range": "bytes=0-5601",
+          "checksum": "sha1-LqsSv7QnaLQf005ZZlV5IRtC3aY="
         },
         "data": {
-          "range": "bytes=5607-4232584",
-          "checksum": "sha256-OD4WJu+I3OfN2V70T30I09m3w2GaYnWiAahsPaHWjRw="
+          "range": "bytes=5602-4237612",
+          "checksum": "sha256-USHRv5ls7Q1qsMijBQwaGjlZaGlNAyl76esJ2rj+16M="
         },
-        "checksum": "Q1MWq+2LYyy0qdmrCuym0YZZrm4SI="
+        "checksum": "Q1LqsSv7QnaLQf005ZZlV5IRtC3aY="
       },
       {
         "name": "http-parser",
@@ -2613,22 +2613,22 @@
       },
       {
         "name": "libgit2",
-        "url": "https://packages.wolfi.dev/os/aarch64/libgit2-1.9.6-r0.apk",
-        "version": "1.9.6-r0",
+        "url": "https://packages.wolfi.dev/os/aarch64/libgit2-1.9.7-r0.apk",
+        "version": "1.9.7-r0",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-7567",
-          "checksum": "sha1-HopR7qZhr0T9MKBq7jL49c1Gq4w="
+          "range": "bytes=0-7495",
+          "checksum": "sha1-QsNjBys4h918Yyrf99MQKihF0I0="
         },
         "data": {
-          "range": "bytes=7568-1449731",
-          "checksum": "sha256-IBa1/oZ5NUMeIYJv9vRaHjn+US4K5oijOCK2NvIEl7k="
+          "range": "bytes=7496-1449729",
+          "checksum": "sha256-GvBLFNo9HS/vfCfX8T69Ap9FRZrirXl0ybZ+jzLqCg0="
         },
-        "checksum": "Q1HopR7qZhr0T9MKBq7jL49c1Gq4w="
+        "checksum": "Q1QsNjBys4h918Yyrf99MQKihF0I0="
       },
       {
         "name": "nushell",

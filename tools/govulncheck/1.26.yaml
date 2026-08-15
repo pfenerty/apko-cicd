@@ -7,5 +7,5 @@ contents:
 annotations:
     org.opencontainers.image.title: govulncheck (Go 1.26)
     org.opencontainers.image.description: Go vulnerability scanner on Go 1.26
-    org.opencontainers.image.version: "1.6.0"
+    org.opencontainers.image.version: 1.7.0
     org.opencontainers.image.base.name: ghcr.io/pfenerty/apko-cicd/golang:1.26
