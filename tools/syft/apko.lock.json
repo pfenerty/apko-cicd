@@ -770,22 +770,22 @@
       },
       {
         "name": "libgit2",
-        "url": "https://packages.wolfi.dev/os/x86_64/libgit2-1.9.6-r0.apk",
-        "version": "1.9.6-r0",
+        "url": "https://packages.wolfi.dev/os/x86_64/libgit2-1.9.7-r0.apk",
+        "version": "1.9.7-r0",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-7536",
-          "checksum": "sha1-FqQwJUGi9MgJ5oBtwa20CG20z58="
+          "range": "bytes=0-7471",
+          "checksum": "sha1-LpvprUmZnJDc1/LvdYThW07NNsY="
         },
         "data": {
-          "range": "bytes=7537-1557957",
-          "checksum": "sha256-g0zVzwnA8/MFw18T6x2XdKoiZKN3OwJwIEYjJINnHfI="
+          "range": "bytes=7472-1557844",
+          "checksum": "sha256-hkzbdULIpy64VFqoNVrahbWY//mhoQX7NGj1VOA7l7o="
         },
-        "checksum": "Q1FqQwJUGi9MgJ5oBtwa20CG20z58="
+        "checksum": "Q1LpvprUmZnJDc1/LvdYThW07NNsY="
       },
       {
         "name": "nushell",
@@ -827,22 +827,22 @@
       },
       {
         "name": "syft",
-        "url": "https://packages.wolfi.dev/os/x86_64/syft-1.51.0-r0.apk",
-        "version": "1.51.0-r0",
+        "url": "https://packages.wolfi.dev/os/x86_64/syft-1.51.0-r1.apk",
+        "version": "1.51.0-r1",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-6850",
-          "checksum": "sha1-JWagHU4k5ea4L7d/o5KpUIp44zA="
+          "range": "bytes=0-6895",
+          "checksum": "sha1-6LoIRrjbzLJY1M4sCr3ogDDQRT0="
         },
         "data": {
-          "range": "bytes=6851-31510719",
-          "checksum": "sha256-kpo5VyQ3LAoPo995UBdr3ljgg6Rn9/m1pxO8rYIIFAs="
+          "range": "bytes=6896-31564790",
+          "checksum": "sha256-VhepuwbH7LLJgRo/jfYJtwSn9LA5tnabniSdZck/1AU="
         },
-        "checksum": "Q1JWagHU4k5ea4L7d/o5KpUIp44zA="
+        "checksum": "Q16LoIRrjbzLJY1M4sCr3ogDDQRT0="
       },
       {
         "name": "wolfi-keys",
@@ -1682,22 +1682,22 @@
       },
       {
         "name": "libgit2",
-        "url": "https://packages.wolfi.dev/os/aarch64/libgit2-1.9.6-r0.apk",
-        "version": "1.9.6-r0",
+        "url": "https://packages.wolfi.dev/os/aarch64/libgit2-1.9.7-r0.apk",
+        "version": "1.9.7-r0",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-7567",
-          "checksum": "sha1-HopR7qZhr0T9MKBq7jL49c1Gq4w="
+          "range": "bytes=0-7495",
+          "checksum": "sha1-QsNjBys4h918Yyrf99MQKihF0I0="
         },
         "data": {
-          "range": "bytes=7568-1449731",
-          "checksum": "sha256-IBa1/oZ5NUMeIYJv9vRaHjn+US4K5oijOCK2NvIEl7k="
+          "range": "bytes=7496-1449729",
+          "checksum": "sha256-GvBLFNo9HS/vfCfX8T69Ap9FRZrirXl0ybZ+jzLqCg0="
         },
-        "checksum": "Q1HopR7qZhr0T9MKBq7jL49c1Gq4w="
+        "checksum": "Q1QsNjBys4h918Yyrf99MQKihF0I0="
       },
       {
         "name": "nushell",
@@ -1739,22 +1739,22 @@
       },
       {
         "name": "syft",
-        "url": "https://packages.wolfi.dev/os/aarch64/syft-1.51.0-r0.apk",
-        "version": "1.51.0-r0",
+        "url": "https://packages.wolfi.dev/os/aarch64/syft-1.51.0-r1.apk",
+        "version": "1.51.0-r1",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-6881",
-          "checksum": "sha1-jBwm3N+o/D/JOnnpHXM0+VragUw="
+          "range": "bytes=0-6919",
+          "checksum": "sha1-06mR/MtpusTHNLARTaAL60c/uaI="
         },
         "data": {
-          "range": "bytes=6882-28809950",
-          "checksum": "sha256-N7O8aQ/bOMRwOttccozEOTUmPdXFCrcVRmf7XS+/86c="
+          "range": "bytes=6920-28857297",
+          "checksum": "sha256-Vj/30sx/Tqnvu5jTXDdztOCi/TUEi62BQDfKqX81r04="
         },
-        "checksum": "Q1jBwm3N+o/D/JOnnpHXM0+VragUw="
+        "checksum": "Q106mR/MtpusTHNLARTaAL60c/uaI="
       },
       {
         "name": "wolfi-keys",

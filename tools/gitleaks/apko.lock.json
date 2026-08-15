@@ -808,22 +808,22 @@
       },
       {
         "name": "gitleaks",
-        "url": "https://packages.wolfi.dev/os/x86_64/gitleaks-8.30.1-r20.apk",
-        "version": "8.30.1-r20",
+        "url": "https://packages.wolfi.dev/os/x86_64/gitleaks-8.30.1-r21.apk",
+        "version": "8.30.1-r21",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-8209",
-          "checksum": "sha1-lAlHi3QWMP8o0Y5dgRvXQHR1LUg="
+          "range": "bytes=0-8236",
+          "checksum": "sha1-PpY0SptEJRlxpj+0T1tc6uKXTrI="
         },
         "data": {
-          "range": "bytes=8210-7202761",
-          "checksum": "sha256-lGBEBGyIj13vplXARCrnfk/UOaj/TMJVnoQEBzuYhEo="
+          "range": "bytes=8237-7207801",
+          "checksum": "sha256-K1PUEH3/nfA/WyYHrbQ1U+WCdYiFLmkp8dRvQ63QcKk="
         },
-        "checksum": "Q1lAlHi3QWMP8o0Y5dgRvXQHR1LUg="
+        "checksum": "Q1PpY0SptEJRlxpj+0T1tc6uKXTrI="
       },
       {
         "name": "http-parser",
@@ -865,22 +865,22 @@
       },
       {
         "name": "libgit2",
-        "url": "https://packages.wolfi.dev/os/x86_64/libgit2-1.9.6-r0.apk",
-        "version": "1.9.6-r0",
+        "url": "https://packages.wolfi.dev/os/x86_64/libgit2-1.9.7-r0.apk",
+        "version": "1.9.7-r0",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-7536",
-          "checksum": "sha1-FqQwJUGi9MgJ5oBtwa20CG20z58="
+          "range": "bytes=0-7471",
+          "checksum": "sha1-LpvprUmZnJDc1/LvdYThW07NNsY="
         },
         "data": {
-          "range": "bytes=7537-1557957",
-          "checksum": "sha256-g0zVzwnA8/MFw18T6x2XdKoiZKN3OwJwIEYjJINnHfI="
+          "range": "bytes=7472-1557844",
+          "checksum": "sha256-hkzbdULIpy64VFqoNVrahbWY//mhoQX7NGj1VOA7l7o="
         },
-        "checksum": "Q1FqQwJUGi9MgJ5oBtwa20CG20z58="
+        "checksum": "Q1LpvprUmZnJDc1/LvdYThW07NNsY="
       },
       {
         "name": "nushell",
@@ -1796,22 +1796,22 @@
       },
       {
         "name": "gitleaks",
-        "url": "https://packages.wolfi.dev/os/aarch64/gitleaks-8.30.1-r20.apk",
-        "version": "8.30.1-r20",
+        "url": "https://packages.wolfi.dev/os/aarch64/gitleaks-8.30.1-r21.apk",
+        "version": "8.30.1-r21",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-8241",
-          "checksum": "sha1-eC3qzG7ayNET+Nnf1Kohh8AQ1bE="
+          "range": "bytes=0-8268",
+          "checksum": "sha1-zWA24dOVtDrVfSHJI/+cPJgGqhM="
         },
         "data": {
-          "range": "bytes=8242-6508063",
-          "checksum": "sha256-YJdYCSSd1QBQNAXYoVld7jDRKgRtL1nr9jkhwG1DAf0="
+          "range": "bytes=8269-6536603",
+          "checksum": "sha256-FYxtynFXg8aXCd7XASDpUzDoQNfUuX5vYhEpdxAPZmw="
         },
-        "checksum": "Q1eC3qzG7ayNET+Nnf1Kohh8AQ1bE="
+        "checksum": "Q1zWA24dOVtDrVfSHJI/+cPJgGqhM="
       },
       {
         "name": "http-parser",
@@ -1853,22 +1853,22 @@
       },
       {
         "name": "libgit2",
-        "url": "https://packages.wolfi.dev/os/aarch64/libgit2-1.9.6-r0.apk",
-        "version": "1.9.6-r0",
+        "url": "https://packages.wolfi.dev/os/aarch64/libgit2-1.9.7-r0.apk",
+        "version": "1.9.7-r0",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-7567",
-          "checksum": "sha1-HopR7qZhr0T9MKBq7jL49c1Gq4w="
+          "range": "bytes=0-7495",
+          "checksum": "sha1-QsNjBys4h918Yyrf99MQKihF0I0="
         },
         "data": {
-          "range": "bytes=7568-1449731",
-          "checksum": "sha256-IBa1/oZ5NUMeIYJv9vRaHjn+US4K5oijOCK2NvIEl7k="
+          "range": "bytes=7496-1449729",
+          "checksum": "sha256-GvBLFNo9HS/vfCfX8T69Ap9FRZrirXl0ybZ+jzLqCg0="
         },
-        "checksum": "Q1HopR7qZhr0T9MKBq7jL49c1Gq4w="
+        "checksum": "Q1QsNjBys4h918Yyrf99MQKihF0I0="
       },
       {
         "name": "nushell",

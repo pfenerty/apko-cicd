@@ -770,22 +770,22 @@
       },
       {
         "name": "libgit2",
-        "url": "https://packages.wolfi.dev/os/x86_64/libgit2-1.9.6-r0.apk",
-        "version": "1.9.6-r0",
+        "url": "https://packages.wolfi.dev/os/x86_64/libgit2-1.9.7-r0.apk",
+        "version": "1.9.7-r0",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-7536",
-          "checksum": "sha1-FqQwJUGi9MgJ5oBtwa20CG20z58="
+          "range": "bytes=0-7471",
+          "checksum": "sha1-LpvprUmZnJDc1/LvdYThW07NNsY="
         },
         "data": {
-          "range": "bytes=7537-1557957",
-          "checksum": "sha256-g0zVzwnA8/MFw18T6x2XdKoiZKN3OwJwIEYjJINnHfI="
+          "range": "bytes=7472-1557844",
+          "checksum": "sha256-hkzbdULIpy64VFqoNVrahbWY//mhoQX7NGj1VOA7l7o="
         },
-        "checksum": "Q1FqQwJUGi9MgJ5oBtwa20CG20z58="
+        "checksum": "Q1LpvprUmZnJDc1/LvdYThW07NNsY="
       },
       {
         "name": "nushell",
@@ -1017,22 +1017,22 @@
       },
       {
         "name": "libuuid",
-        "url": "https://packages.wolfi.dev/os/x86_64/libuuid-2.42.2-r2.apk",
-        "version": "2.42.2-r2",
+        "url": "https://packages.wolfi.dev/os/x86_64/libuuid-2.42.2-r3.apk",
+        "version": "2.42.2-r3",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-8544",
-          "checksum": "sha1-rIyZlMsFPQptRrJBgEV3d5q4GyY="
+          "range": "bytes=0-8563",
+          "checksum": "sha1-pms+1bXDk0H01cRFiUgbTk+X9Ic="
         },
         "data": {
-          "range": "bytes=8545-63078",
-          "checksum": "sha256-BthQWI6Dc6wAEq1j2lB5F2I9KM2+KPmLtGNN1kCBmmI="
+          "range": "bytes=8564-63098",
+          "checksum": "sha256-Y7wEE4OSx8JVo2Vo2XKK+QsS8klVZXtObABSaC7d5N8="
         },
-        "checksum": "Q1rIyZlMsFPQptRrJBgEV3d5q4GyY="
+        "checksum": "Q1pms+1bXDk0H01cRFiUgbTk+X9Ic="
       },
       {
         "name": "py3-pip-wheel",
@@ -1055,22 +1055,22 @@
       },
       {
         "name": "python-3.13-base",
-        "url": "https://packages.wolfi.dev/os/x86_64/python-3.13-base-3.13.15-r0.apk",
-        "version": "3.13.15-r0",
+        "url": "https://packages.wolfi.dev/os/x86_64/python-3.13-base-3.13.15-r1.apk",
+        "version": "3.13.15-r1",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-12648",
-          "checksum": "sha1-rc9SXb5hp8ZObfSAKNC9jmxdaVk="
+          "range": "bytes=0-11794",
+          "checksum": "sha1-2lgo/pKZfVZias909DWGMGmlvtI="
         },
         "data": {
-          "range": "bytes=12649-12176068",
-          "checksum": "sha256-pfyRk45ng0P0+Pkr4bS9HtzQTagQO4rXIlnFmSgU5FA="
+          "range": "bytes=11795-12154718",
+          "checksum": "sha256-zhw5TNPgDEvPLDDL5ArDQZyK+iQhzPC1ottDB8OhsMI="
         },
-        "checksum": "Q1rc9SXb5hp8ZObfSAKNC9jmxdaVk="
+        "checksum": "Q12lgo/pKZfVZias909DWGMGmlvtI="
       },
       {
         "name": "semgrep",
@@ -1929,22 +1929,22 @@
       },
       {
         "name": "libgit2",
-        "url": "https://packages.wolfi.dev/os/aarch64/libgit2-1.9.6-r0.apk",
-        "version": "1.9.6-r0",
+        "url": "https://packages.wolfi.dev/os/aarch64/libgit2-1.9.7-r0.apk",
+        "version": "1.9.7-r0",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-7567",
-          "checksum": "sha1-HopR7qZhr0T9MKBq7jL49c1Gq4w="
+          "range": "bytes=0-7495",
+          "checksum": "sha1-QsNjBys4h918Yyrf99MQKihF0I0="
         },
         "data": {
-          "range": "bytes=7568-1449731",
-          "checksum": "sha256-IBa1/oZ5NUMeIYJv9vRaHjn+US4K5oijOCK2NvIEl7k="
+          "range": "bytes=7496-1449729",
+          "checksum": "sha256-GvBLFNo9HS/vfCfX8T69Ap9FRZrirXl0ybZ+jzLqCg0="
         },
-        "checksum": "Q1HopR7qZhr0T9MKBq7jL49c1Gq4w="
+        "checksum": "Q1QsNjBys4h918Yyrf99MQKihF0I0="
       },
       {
         "name": "nushell",
@@ -2176,22 +2176,22 @@
       },
       {
         "name": "libuuid",
-        "url": "https://packages.wolfi.dev/os/aarch64/libuuid-2.42.2-r2.apk",
-        "version": "2.42.2-r2",
+        "url": "https://packages.wolfi.dev/os/aarch64/libuuid-2.42.2-r3.apk",
+        "version": "2.42.2-r3",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-8589",
-          "checksum": "sha1-hw7p/FFKbQraxikEaCV1P8RmyRc="
+          "range": "bytes=0-8610",
+          "checksum": "sha1-nc76l9cgKXiJrfGtrEOUYbnpjKo="
         },
         "data": {
-          "range": "bytes=8590-61506",
-          "checksum": "sha256-iBMesMZD5rDomdOb8fFzS17FIR+TwScurjz12diWLh4="
+          "range": "bytes=8611-61523",
+          "checksum": "sha256-VbTyzVX8YtVkUFYB0V1XGA1xkOeCBXDqG/ZCEOBL1q4="
         },
-        "checksum": "Q1hw7p/FFKbQraxikEaCV1P8RmyRc="
+        "checksum": "Q1nc76l9cgKXiJrfGtrEOUYbnpjKo="
       },
       {
         "name": "py3-pip-wheel",
@@ -2214,22 +2214,22 @@
       },
       {
         "name": "python-3.13-base",
-        "url": "https://packages.wolfi.dev/os/aarch64/python-3.13-base-3.13.15-r0.apk",
-        "version": "3.13.15-r0",
+        "url": "https://packages.wolfi.dev/os/aarch64/python-3.13-base-3.13.15-r1.apk",
+        "version": "3.13.15-r1",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-12680",
-          "checksum": "sha1-zoH/hmOnJHbY2cQeatcAw5PkVOg="
+          "range": "bytes=0-11830",
+          "checksum": "sha1-7rLcoJdIhx05O8PNXiSmv1pO7a0="
         },
         "data": {
-          "range": "bytes=12681-11898101",
-          "checksum": "sha256-DTmWmmldC8cpDKPsQ8VleKvCPXXcK+EqcNj86+u7Whk="
+          "range": "bytes=11831-11895405",
+          "checksum": "sha256-uxZkoqkI4tiTgLBjYWMp8NaAUDw0+N4lER0qdp2uC6c="
         },
-        "checksum": "Q1zoH/hmOnJHbY2cQeatcAw5PkVOg="
+        "checksum": "Q17rLcoJdIhx05O8PNXiSmv1pO7a0="
       },
       {
         "name": "semgrep",
