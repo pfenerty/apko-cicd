@@ -770,22 +770,22 @@
       },
       {
         "name": "libedit",
-        "url": "https://packages.wolfi.dev/os/x86_64/libedit-3.1-r17.apk",
-        "version": "3.1-r17",
+        "url": "https://packages.wolfi.dev/os/x86_64/libedit-3.1-r18.apk",
+        "version": "3.1-r18",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-5303",
-          "checksum": "sha1-oW50tq89p1M8UMWWI4BtukWKXzU="
+          "range": "bytes=0-5172",
+          "checksum": "sha1-YnsyUyjEBeiPgRpGOhg25MHuz4g="
         },
         "data": {
-          "range": "bytes=5304-116491",
-          "checksum": "sha256-AAk8yOeI7ThYRNCmZx/Ppdmq0xfc3j62qzirOGji79k="
+          "range": "bytes=5173-116393",
+          "checksum": "sha256-IKJlSh2RJ3enNjo6s+VuUuXpor3KwtQA1tVaY2cjyT4="
         },
-        "checksum": "Q1oW50tq89p1M8UMWWI4BtukWKXzU="
+        "checksum": "Q1YnsyUyjEBeiPgRpGOhg25MHuz4g="
       },
       {
         "name": "openssh-client",
@@ -1758,22 +1758,22 @@
       },
       {
         "name": "libedit",
-        "url": "https://packages.wolfi.dev/os/aarch64/libedit-3.1-r17.apk",
-        "version": "3.1-r17",
+        "url": "https://packages.wolfi.dev/os/aarch64/libedit-3.1-r18.apk",
+        "version": "3.1-r18",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-5344",
-          "checksum": "sha1-fonnZIP5/0v7uIbPBWaxwIvyitg="
+          "range": "bytes=0-5216",
+          "checksum": "sha1-YLafM+zEG6PmdLJdnCYfzivBASM="
         },
         "data": {
-          "range": "bytes=5345-117560",
-          "checksum": "sha256-AyOjEbrFjlqLk19So80uGzXBuq5QkCyKzNQllCJwW58="
+          "range": "bytes=5217-117439",
+          "checksum": "sha256-VvbfRMszjPqPbb8ynlWOKokpr+f+tM5O3DdZDEsRGdo="
         },
-        "checksum": "Q1fonnZIP5/0v7uIbPBWaxwIvyitg="
+        "checksum": "Q1YLafM+zEG6PmdLJdnCYfzivBASM="
       },
       {
         "name": "openssh-client",
