@@ -257,41 +257,41 @@
       },
       {
         "name": "libcrypto3",
-        "url": "https://packages.wolfi.dev/os/x86_64/libcrypto3-3.6.3-r4.apk",
-        "version": "3.6.3-r4",
+        "url": "https://packages.wolfi.dev/os/x86_64/libcrypto3-3.6.3-r5.apk",
+        "version": "3.6.3-r5",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-11066",
-          "checksum": "sha1-q1tmKlM5V4hYJDAT4mFLNXfTWWs="
+          "range": "bytes=0-11120",
+          "checksum": "sha1-Owan7JJqqV7bcXcmimjJC9Nsxpg="
         },
         "data": {
-          "range": "bytes=11067-2440291",
-          "checksum": "sha256-PiuIGCXSaU+bBWb7Rt3pX07C96fH1RTr6tjAH5fG8w4="
+          "range": "bytes=11121-2439662",
+          "checksum": "sha256-2N5XjyaMruE8xdyhMSBnEssjH98387qJARQsW9FYfVQ="
         },
-        "checksum": "Q1q1tmKlM5V4hYJDAT4mFLNXfTWWs="
+        "checksum": "Q1Owan7JJqqV7bcXcmimjJC9Nsxpg="
       },
       {
         "name": "libssl3",
-        "url": "https://packages.wolfi.dev/os/x86_64/libssl3-3.6.3-r4.apk",
-        "version": "3.6.3-r4",
+        "url": "https://packages.wolfi.dev/os/x86_64/libssl3-3.6.3-r5.apk",
+        "version": "3.6.3-r5",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-11072",
-          "checksum": "sha1-M9icugKTo/ba2jkEhvIqVsM+I6Q="
+          "range": "bytes=0-11129",
+          "checksum": "sha1-o3m1w5zIUp5iykPPjkz0YWnu1jw="
         },
         "data": {
-          "range": "bytes=11073-524372",
-          "checksum": "sha256-KxEyQDoGJz5m4sfmFhkIPZQIKu4/8uy+1ADalqU/Sd8="
+          "range": "bytes=11130-524661",
+          "checksum": "sha256-XLnVrVKzZsNUOxdfTFzRJl7aTCF4zrCE99jDfmCxR68="
         },
-        "checksum": "Q1M9icugKTo/ba2jkEhvIqVsM+I6Q="
+        "checksum": "Q1o3m1w5zIUp5iykPPjkz0YWnu1jw="
       },
       {
         "name": "krb5-libs",
@@ -1283,22 +1283,22 @@
       },
       {
         "name": "openssl",
-        "url": "https://packages.wolfi.dev/os/x86_64/openssl-3.6.3-r4.apk",
-        "version": "3.6.3-r4",
+        "url": "https://packages.wolfi.dev/os/x86_64/openssl-3.6.3-r5.apk",
+        "version": "3.6.3-r5",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-11087",
-          "checksum": "sha1-Jd1+eHs2CRaTg8eBnVD4L7RGE8w="
+          "range": "bytes=0-11140",
+          "checksum": "sha1-CMLg5jW/oNa2peR+7dVoc7OPrNY="
         },
         "data": {
-          "range": "bytes=11088-475480",
-          "checksum": "sha256-LPjsyUly/OxEpxmwBKgwyarKjeIxcacBb+C3FLFPdD0="
+          "range": "bytes=11141-475590",
+          "checksum": "sha256-xvfFdc1EUy1cqj3w68JKuvrGSBMXrxQwF63FVdpv/t0="
         },
-        "checksum": "Q1Jd1+eHs2CRaTg8eBnVD4L7RGE8w="
+        "checksum": "Q1CMLg5jW/oNa2peR+7dVoc7OPrNY="
       },
       {
         "name": "wolfi-keys",
@@ -1625,41 +1625,41 @@
       },
       {
         "name": "libcrypto3",
-        "url": "https://packages.wolfi.dev/os/aarch64/libcrypto3-3.6.3-r4.apk",
-        "version": "3.6.3-r4",
+        "url": "https://packages.wolfi.dev/os/aarch64/libcrypto3-3.6.3-r5.apk",
+        "version": "3.6.3-r5",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-11099",
-          "checksum": "sha1-88jbUwNuj9Mr7G/E3aX/z/IBx4g="
+          "range": "bytes=0-11158",
+          "checksum": "sha1-E49iuEZ8hw6l753Lke53AgCHupM="
         },
         "data": {
-          "range": "bytes=11100-2210055",
-          "checksum": "sha256-MK/jMuPTbfdVNHY28GhDGhVWB44JPOAul53tJYPg4iA="
+          "range": "bytes=11159-2213869",
+          "checksum": "sha256-3L/LFIZs2BaNpUZwDtXEzVxmhpAPKK6+vA6ZBH//yIM="
         },
-        "checksum": "Q188jbUwNuj9Mr7G/E3aX/z/IBx4g="
+        "checksum": "Q1E49iuEZ8hw6l753Lke53AgCHupM="
       },
       {
         "name": "libssl3",
-        "url": "https://packages.wolfi.dev/os/aarch64/libssl3-3.6.3-r4.apk",
-        "version": "3.6.3-r4",
+        "url": "https://packages.wolfi.dev/os/aarch64/libssl3-3.6.3-r5.apk",
+        "version": "3.6.3-r5",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-11100",
-          "checksum": "sha1-ocHl0UPAPLJPDF61naDKMsbFs/Q="
+          "range": "bytes=0-11163",
+          "checksum": "sha1-JPdgm432y++L5tfi6T+GEQaQUl0="
         },
         "data": {
-          "range": "bytes=11101-489281",
-          "checksum": "sha256-bhHAsZFV5JlBTr3hltxuF6JYilEKQ+zqI/F4xuFtUn4="
+          "range": "bytes=11164-489736",
+          "checksum": "sha256-yTZY/EizgkVVYs6/tMTFyS77COWlNqfMaULI3QssCN0="
         },
-        "checksum": "Q1ocHl0UPAPLJPDF61naDKMsbFs/Q="
+        "checksum": "Q1JPdgm432y++L5tfi6T+GEQaQUl0="
       },
       {
         "name": "krb5-libs",
@@ -2651,22 +2651,22 @@
       },
       {
         "name": "openssl",
-        "url": "https://packages.wolfi.dev/os/aarch64/openssl-3.6.3-r4.apk",
-        "version": "3.6.3-r4",
+        "url": "https://packages.wolfi.dev/os/aarch64/openssl-3.6.3-r5.apk",
+        "version": "3.6.3-r5",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-11109",
-          "checksum": "sha1-oFKcS6rSO6NDn6KFBp/ypfj5IqM="
+          "range": "bytes=0-11169",
+          "checksum": "sha1-S6JttHcBjm5TVU5tAFWQQf453a0="
         },
         "data": {
-          "range": "bytes=11110-439072",
-          "checksum": "sha256-OQbaO5tUmYchLHFVMfcXAayg+ckQLkWwPl6zSRjFZm8="
+          "range": "bytes=11170-439213",
+          "checksum": "sha256-bxwTqb4E9hafM5y2bcv6bOESt2nmL1EpGRbnT1LxS4c="
         },
-        "checksum": "Q1oFKcS6rSO6NDn6KFBp/ypfj5IqM="
+        "checksum": "Q1S6JttHcBjm5TVU5tAFWQQf453a0="
       },
       {
         "name": "wolfi-keys",
