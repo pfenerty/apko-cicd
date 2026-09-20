@@ -13,7 +13,7 @@ export const baseImage = "ghcr.io/pfenerty/apko-cicd/base:stable";
 // the pipeline uses apko to publish, so it can't bootstrap from an unpublished
 // tag. They intentionally lag the Makefile's publish targets (which can be bumped
 // ahead of a successful publish); bump these deliberately once a newer tag is live.
-export const apkoImage = "ghcr.io/pfenerty/apko-cicd/apko:1.2.25";
+export const apkoImage = "ghcr.io/pfenerty/apko-cicd/apko:1.2.39";
 export const melangeImage = "ghcr.io/pfenerty/apko-cicd/melange:0.54.0";
 
 // Reports CI status back to GitHub. Requires a `github-pipeline-token` Secret
