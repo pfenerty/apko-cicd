@@ -50,6 +50,8 @@ The base image includes common tooling for CICD tasking: `git`, `curl`, `openssl
 | `golang` | `1.23` |
 | `golang` | `1.24` |
 | `golang` | `1.25` |
+| `golang` | `1.26` |
+| `golang` | `1.27` |
 
 ### Java
 

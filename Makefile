@@ -37,6 +37,7 @@ $(eval $(call IMAGE,tools-govulncheck-go1.23,tools/govulncheck/1.23.yaml,govulnc
 $(eval $(call IMAGE,tools-govulncheck-go1.24,tools/govulncheck/1.24.yaml,govulncheck:1.7.0-go1.24))
 $(eval $(call IMAGE,tools-govulncheck-go1.25,tools/govulncheck/1.25.yaml,govulncheck:1.7.0-go1.25))
 $(eval $(call IMAGE,tools-govulncheck-go1.26,tools/govulncheck/1.26.yaml,govulncheck:1.7.0-go1.26))
+$(eval $(call IMAGE,tools-govulncheck-go1.27,tools/govulncheck/1.27.yaml,govulncheck:1.9.0-go1.27))
 $(eval $(call IMAGE,tools-gosec-go1.22,tools/gosec/1.22.yaml,gosec:2.28.0-go1.22))
 $(eval $(call IMAGE,tools-gosec-go1.23,tools/gosec/1.23.yaml,gosec:2.28.0-go1.23))
 $(eval $(call IMAGE,tools-gosec-go1.24,tools/gosec/1.24.yaml,gosec:2.28.0-go1.24))
@@ -70,6 +71,7 @@ $(eval $(call IMAGE,golang-1.23,languages/golang/1.23.yaml,golang:1.23))
 $(eval $(call IMAGE,golang-1.24,languages/golang/1.24.yaml,golang:1.24))
 $(eval $(call IMAGE,golang-1.25,languages/golang/1.25.yaml,golang:1.25))
 $(eval $(call IMAGE,golang-1.26,languages/golang/1.26.yaml,golang:1.26))
+$(eval $(call IMAGE,golang-1.27,languages/golang/1.27.yaml,golang:1.27))
 
 # ── Java ─────────────────────────────────────────────────────────────────────
 $(eval $(call IMAGE,java-jdk-11,languages/java/11/jdk.yaml,jdk:11))
