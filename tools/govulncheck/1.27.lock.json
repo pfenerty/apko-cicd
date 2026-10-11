@@ -2,7 +2,7 @@
   "version": "v1",
   "config": {
     "name": "tools/govulncheck/1.27.yaml",
-    "checksum": "sha256-gfXZM9Bb9u9EOuSCcADXOIGGWTnT9XmBDkgT74mfivA="
+    "checksum": "sha256-gHDRJ70hLUZ+AQOcvmeTxQlrj99ucAEfwdhFWNRSI9U="
   },
   "contents": {
     "keyring": [
