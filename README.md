@@ -52,6 +52,11 @@ The base image includes common tooling for CICD tasking: `git`, `curl`, `openssl
 | `golang` | `1.25` |
 | `golang` | `1.26` |
 | `golang` | `1.27` |
+| `golang` | `1.27-cgo` |
+
+`1.27-cgo` adds gcc and glibc headers for cgo builds and `go test -race`, which needs cgo. It is
+about 3x the size of `1.27` (≈290MB vs ≈105MB), so use it only for the tasks that need it, with
+`CGO_ENABLED=1` set in the task env.
 
 ### Java
 

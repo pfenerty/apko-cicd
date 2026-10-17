@@ -72,6 +72,7 @@ $(eval $(call IMAGE,golang-1.24,languages/golang/1.24.yaml,golang:1.24))
 $(eval $(call IMAGE,golang-1.25,languages/golang/1.25.yaml,golang:1.25))
 $(eval $(call IMAGE,golang-1.26,languages/golang/1.26.yaml,golang:1.26))
 $(eval $(call IMAGE,golang-1.27,languages/golang/1.27.yaml,golang:1.27))
+$(eval $(call IMAGE,golang-1.27-cgo,languages/golang/1.27-cgo.yaml,golang:1.27-cgo))
 
 # ── Java ─────────────────────────────────────────────────────────────────────
 $(eval $(call IMAGE,java-jdk-11,languages/java/11/jdk.yaml,jdk:11))

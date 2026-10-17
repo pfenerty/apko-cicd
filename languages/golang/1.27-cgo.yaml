@@ -1,0 +1,17 @@
+include: base/apko.yaml
+
+# golang:1.27 plus a C toolchain, for cgo builds and `go test -race` (which
+# requires cgo on linux/amd64 and linux/arm64). A separate tag so every other
+# Go task keeps pulling the smaller golang:1.27. CGO_ENABLED is left unset:
+# consumers set CGO_ENABLED=1 in the task env. (apko-cicd-ajm)
+contents:
+    packages:
+        - go=~1.27
+        - gcc
+        - glibc-dev
+
+annotations:
+    org.opencontainers.image.title: Go 1.27 (cgo)
+    org.opencontainers.image.description: Go 1.27 CI/CD image with gcc and glibc headers for cgo and the race detector, based on Wolfi
+    org.opencontainers.image.version: "1.27"
+    org.opencontainers.image.base.name: ghcr.io/pfenerty/apko-cicd/base:stable
