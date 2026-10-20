@@ -108,4 +108,8 @@ clean:
 # ── Tekton (Pipelines as Code) ───────────────────────────────────────────────
 .PHONY: tekton-synth
 tekton-synth:
-	cd .tektonic && npm install && npx ts-node pipeline.ts
+	cd .tektonic && npm install && npm run synth
+
+.PHONY: tekton-check
+tekton-check:
+	cd .tektonic && npm ci && npm run check

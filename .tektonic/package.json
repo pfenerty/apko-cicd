@@ -1,17 +1,1 @@
-{
-  "name": "apko-cicd-ci",
-  "private": true,
-  "scripts": {
-    "synth": "ts-node pipeline.ts"
-  },
-  "dependencies": {
-    "@pfenerty/tektonic": "github:pfenerty/tektonic",
-    "cdk8s": "^2.68.0",
-    "constructs": "^10.3.0"
-  },
-  "devDependencies": {
-    "@types/node": "^26.0.0",
-    "ts-node": "^10.9.0",
-    "typescript": "~7.0.0"
-  }
-}
+{"name":"apko-cicd-ci","private":true,"scripts":{"synth":"tektonic synth","check":"tektonic check"},"dependencies":{"@tektonic-ci/core":"^2.4.0","@tektonic-ci/reporter-github":"^2.3.0"},"devDependencies":{"@types/node":"^26.0.0","tsx":"^4.19.0","typescript":"~7.0.0"},"tektonic":{"entry":"pipeline.ts","runner":"npx tsx"}}
