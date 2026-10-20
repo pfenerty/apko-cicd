@@ -1,5 +1,5 @@
 import type { TaskVolumeSpec } from "@tektonic-ci/core";
-import { GitHubStatusReporter } from "@tektonic-ci/reporter-github";
+import { GitHubStatusReporter, tektonDashboardUrl } from "@tektonic-ci/reporter-github";
 
 // base:stable provides /bin/sh, git, nushell, curl and tar — everything the
 // clone and publish steps invoke. It runs as nonroot (uid 1001).
@@ -18,9 +18,12 @@ export const apkoImage = "ghcr.io/pfenerty/apko-cicd/apko:1.2.39";
 export const melangeImage = "ghcr.io/pfenerty/apko-cicd/melange:0.54.0";
 
 // Reports CI status back to GitHub. Requires a `github-pipeline-token` Secret
-// (key `token`, scope repo:status) in the apko-cicd-ci namespace.
+// (key `token`, scope repo:status) in the apko-cicd-ci namespace. Each commit status
+// links to its TaskRun (pending and reconciled ones to the PipelineRun) on the
+// tailnet-only Tekton Dashboard that homelab runs.
 export const statusReporter = new GitHubStatusReporter({
   tokenSecretName: "github-pipeline-token",
+  detailsUrl: tektonDashboardUrl("https://tekton-dashboard.bear-velociraptor.ts.net"),
 });
 
 // ghcr.io push credentials, mounted into the publish step as a docker config.
