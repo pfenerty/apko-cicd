@@ -1,6 +1,6 @@
 import * as path from "path";
-import { Task, Param, Result, scriptFromFile } from "@pfenerty/tektonic";
-import { baseImage, apkoImage, melangeImage, dockerConfigVolume } from "../../shared";
+import { Task, Param, Result, scriptFromFile } from "@tektonic-ci/core";
+import { baseImage, apkoImage, melangeImage, dockerConfigVolume, statusReporter } from "../../shared";
 
 // Change-driven matrix publish. `detect` emits one unit per changed image (its
 // apko config, lock file, or sibling melange.yaml changed); `build-publish-image`
@@ -17,6 +17,7 @@ const units = new Result({ name: "units", type: "array" });
 
 export const detectChangedImages = new Task({
   name: "detect-changed-images",
+  statusReporter,
   results: [units],
   steps: [{ name: "detect", image: baseImage, script: detectScript }],
 });
@@ -37,6 +38,10 @@ const gitCommit = new Result({ name: "CHAINS-GIT_COMMIT", description: "Source c
 
 export const buildPublishImage = new Task({
   name: "build-publish-image",
+  // Every matrix cell reports the one build-publish-image context, so a cell finishing
+  // later can overwrite an earlier cell's red with green. The finally reconciler settles
+  // it: it reads the task's aggregate status, Failed if any cell failed, and re-posts red.
+  statusReporter,
   params: [unitParam],
   fanOut: { over: units, as: unitParam },
   results: [image, gitUrl, gitCommit],

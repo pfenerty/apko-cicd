@@ -5,7 +5,7 @@ metadata:
   namespace: apko-cicd-ci
   # NOTE: hand-authored. The current tektonic is all-in on Pipelines-as-Code and no
   # longer emits triggerless pipelines, so this daily package-update job (started by
-  # .tekton/update-packages-cronjob.yaml) is maintained directly as YAML.
+  # ci/update/update-packages-cronjob.yaml) is maintained directly as YAML.
 spec:
   stepTemplate:
     computeResources:

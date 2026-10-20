@@ -1,4 +1,4 @@
-import { GitPipeline, TektonicProject, TRIGGER_EVENTS } from "@pfenerty/tektonic";
+import { GitPipeline, TektonicProject, TRIGGER_EVENTS, DEFAULT_BASE_IMAGE } from "@tektonic-ci/core";
 
 import { detectChangedImages, buildPublishImage } from "./jobs/publish/spec";
 
@@ -32,10 +32,14 @@ new TektonicProject({
   outdir: "../.tekton",
   repoRelativePath: ".tekton",
   serviceAccountName: "default",
+  // tektonic 2.x defaults injected steps (git-clone, status reporting) to Docker Hub's
+  // sh+git image; the status steps are nushell, so keep the base image 1.x used.
+  injectedStepImage: DEFAULT_BASE_IMAGE,
   workspaceStorageSize: "2Gi",
   workspaceStorageClass: "local-path",
 });
 
-// NOTE: the daily package-update job (.tekton/update/) is a standalone Pipeline +
-// CronJob that is now hand-authored — the current tektonic is all-in on PAC and no
-// longer emits triggerless pipelines. It is not synthesized here.
+// NOTE: the daily package-update job (ci/update/) is a standalone Pipeline + CronJob that
+// is hand-authored: tektonic is all-in on PAC and no longer emits triggerless pipelines.
+// It lives outside .tekton/ because `tektonic synth` owns that directory and deletes any
+// file it did not emit. homelab's apko-cicd-update Flux Kustomization applies it.

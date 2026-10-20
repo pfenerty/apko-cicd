@@ -7,6 +7,10 @@ spec:
   params:
     - name: unit
       type: string
+    - name: repo-full-name
+      type: string
+    - name: revision
+      type: string
   results:
     - description: Published image@digest (Tekton Chains subject)
       name: IMAGES
@@ -32,11 +36,48 @@ spec:
           - ALL
     workingDir: $(workspaces.workspace.path)
   steps:
-    - image: ghcr.io/pfenerty/apko-cicd/melange:0.54.0
-      name: build-melange
+    - env:
+        - name: GITHUB_TOKEN
+          valueFrom:
+            secretKeyRef:
+              key: token
+              name: github-pipeline-token
+      image: ghcr.io/pfenerty/apko-cicd/base:stable
+      name: report-running
+      onError: continue
       script: |-
         #!/usr/bin/env nu
         def log [msg: string] { print $"[(date now | format date '%H:%M:%S')] ($msg)" }
+        def post-status [label: string, body: record]: nothing -> bool {
+          let url = $"https://api.github.com/repos/$(params.repo-full-name)/statuses/$(params.revision)"
+          log $"($label): POST ($url)"
+          log $"($label): body: ($body | to json -r)"
+          try {
+            http post $url $body -t application/json -H [
+              Authorization $"token ($env.GITHUB_TOKEN)"
+              Accept "application/vnd.github+json"
+            ]
+            log $"($label): done"
+            true
+          } catch { |e|
+            log $"($label): error: ($e.msg)"
+            false
+          }
+        }
+
+        try { date now | format date '%s' | save -f /tekton/home/.status-started-at } catch { |e| log $"report-running: cannot record start time: ($e.msg)" }
+
+        let body = { state: "pending", context: "build-publish-image", description: "Running" }
+        post-status "report-running [build-publish-image]" $body | ignore
+    - image: ghcr.io/pfenerty/apko-cicd/melange:0.54.0
+      name: build-melange
+      onError: continue
+      script: |-
+        #!/usr/bin/env nu
+        def log [msg: string] { print $"[(date now | format date '%H:%M:%S')] ($msg)" }
+        if not ("/tekton/home/.exit-code" | path exists) { try { "0" | save -f /tekton/home/.exit-code } }
+        try { ^chmod 0666 /tekton/home/.exit-code }
+        def main [] {
         # Per-image cell (matrix), melange step. The unit is the apko config path. Copies
         # the repo into a cell-unique subdir (isolating packages/ and dist/ from other
         # parallel cells on the shared RWO workspace) and, if the config has a sibling
@@ -72,6 +113,12 @@ spec:
         # This step runs as root; the publish step runs as nonroot (uid 1001). Hand the
         # cell over so publish can write dist/ and read the built packages/ + key.
         ^chown -R 1001:1001 $cell
+        }
+        let __tek_rc = (try { main; 0 } catch { |e| print $"error [build-publish-image/build-melange]: ($e.msg)"; 1 })
+        let __tek_prev = (try { open --raw /tekton/home/.exit-code | str trim | into int } catch { 0 })
+        let __tek_worst = ([$__tek_prev $__tek_rc] | math max)
+        $"($__tek_worst)" | save -f /tekton/home/.exit-code
+        exit $__tek_rc
       securityContext:
         allowPrivilegeEscalation: true
         privileged: true
@@ -82,9 +129,13 @@ spec:
           value: /tmp/docker-auth
       image: ghcr.io/pfenerty/apko-cicd/apko:1.2.39
       name: publish
+      onError: continue
       script: |-
         #!/usr/bin/env nu
         def log [msg: string] { print $"[(date now | format date '%H:%M:%S')] ($msg)" }
+        if not ("/tekton/home/.exit-code" | path exists) { try { "0" | save -f /tekton/home/.exit-code } }
+        try { ^chmod 0666 /tekton/home/.exit-code }
+        def main [] {
         # Per-image cell (matrix), publish step. The unit is the apko config path. Runs in
         # the cell subdir the melange step prepared, derives the image tag from the
         # Makefile IMAGE macro, and publishes with apko — using --lockfile for Wolfi
@@ -149,11 +200,86 @@ spec:
         $url | save -f $(results.CHAINS-GIT_URL.path)
         $commit | save -f $(results.CHAINS-GIT_COMMIT.path)
         log $"Published ($image)."
+        }
+        let __tek_rc = (try { main; 0 } catch { |e| print $"error [build-publish-image/publish]: ($e.msg)"; 1 })
+        let __tek_prev = (try { open --raw /tekton/home/.exit-code | str trim | into int } catch { 0 })
+        let __tek_worst = ([$__tek_prev $__tek_rc] | math max)
+        $"($__tek_worst)" | save -f /tekton/home/.exit-code
+        exit $__tek_rc
       volumeMounts:
         - mountPath: /tmp/docker-auth/config.json
           name: docker-config
           readOnly: true
           subPath: .dockerconfigjson
+    - env:
+        - name: GITHUB_TOKEN
+          valueFrom:
+            secretKeyRef:
+              key: token
+              name: github-pipeline-token
+      image: ghcr.io/pfenerty/apko-cicd/base:stable
+      name: report-status
+      script: |-
+        #!/usr/bin/env nu
+        def log [msg: string] { print $"[(date now | format date '%H:%M:%S')] ($msg)" }
+        def format-duration [secs: int]: nothing -> string {
+          let secs = ([$secs 0] | math max)
+          let h = $secs // 3600
+          let m = ($secs mod 3600) // 60
+          let s = $secs mod 60
+          let pad = { |n| $n | into string | fill -a right -w 2 -c '0' }
+          if $h > 0 {
+            $"($h)h(do $pad $m)m"
+          } else if $m > 0 {
+            $"($m)m(do $pad $s)s"
+          } else {
+            $"($s)s"
+          }
+        }
+
+        let contract_code = (try { open --raw /tekton/home/.exit-code | str trim | into int } catch { 1 })
+        # A step that never ran has no file; 0 keeps it out of the max.
+        let step_codes = ([{ name: "build-melange", path: "/tekton/steps/step-build-melange/exitCode" } { name: "publish", path: "/tekton/steps/step-publish/exitCode" }] | each { |s| { name: $s.name, code: (try { open --raw $s.path | str trim | into int } catch { 0 }) } })
+        let exit_code = ([$contract_code ...($step_codes | each { |s| $s.code })] | math max)
+        let state = if $exit_code == 0 { "success" } else { "failure" }
+        # Name the first step that failed, so the check says where without opening the logs.
+        let failed_steps = ($step_codes | where code != 0)
+        let result = if $exit_code == 0 {
+          "Passed"
+        } else if ($failed_steps | is-empty) {
+          $"Failed: exit ($exit_code)"
+        } else {
+          let first = ($failed_steps | first)
+          $"Failed: step ($first.name) exited ($first.code)"
+        }
+        # Only a start step records the start time; without one the description carries no duration.
+        let duration = (try { format-duration ((date now | format date '%s' | into int) - (open --raw /tekton/home/.status-started-at | str trim | into int)) } catch { null })
+        let desc = if $duration == null {
+          $result
+        } else if $exit_code == 0 {
+          $"Passed in ($duration)"
+        } else {
+          $"($result) \(($duration)\)"
+        }
+
+        log $"report-status [build-publish-image]: exit-code=($exit_code) state=($state)"
+
+        let url = $"https://api.github.com/repos/$(params.repo-full-name)/statuses/$(params.revision)"
+        let body = { state: $state, context: "build-publish-image", description: $desc }
+
+        log $"report-status [build-publish-image]: POST ($url)"
+        log $"report-status [build-publish-image]: body: ($body | to json -r)"
+
+        try {
+          http post $url $body -t application/json -H [
+            Authorization $"token ($env.GITHUB_TOKEN)"
+            Accept "application/vnd.github+json"
+          ]
+          log "report-status [build-publish-image]: done"
+        } catch { |e|
+          log $"report-status [build-publish-image]: error: ($e.msg)"
+        }
+        exit $exit_code
   volumes:
     - name: docker-config
       secret:
