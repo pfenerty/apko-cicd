@@ -28,6 +28,8 @@ spec:
             value: $(params.repo-full-name)
           - name: revision
             value: $(params.revision)
+          - name: pipeline-run-name
+            value: $(context.pipelineRun.name)
           - name: status-detect-changed-images
             value: $(tasks.detect-changed-images.status)
           - name: status-build-publish-image
@@ -57,6 +59,8 @@ spec:
             value: $(params.repo-full-name)
           - name: revision
             value: $(params.revision)
+          - name: pipeline-run-name
+            value: $(context.pipelineRun.name)
         runAfter:
           - git-clone
         taskRef:
@@ -80,6 +84,8 @@ spec:
             value: $(params.repo-full-name)
           - name: revision
             value: $(params.revision)
+          - name: pipeline-run-name
+            value: $(context.pipelineRun.name)
         runAfter:
           - set-status-pending-push
         taskRef:
@@ -98,6 +104,8 @@ spec:
             value: $(params.repo-full-name)
           - name: revision
             value: $(params.revision)
+          - name: pipeline-run-name
+            value: $(context.pipelineRun.name)
         runAfter:
           - detect-changed-images
           - set-status-pending-push
