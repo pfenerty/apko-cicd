@@ -789,22 +789,22 @@
       },
       {
         "name": "maven-3.9",
-        "url": "https://packages.wolfi.dev/os/x86_64/maven-3.9-3.9.16-r2.apk",
-        "version": "3.9.16-r2",
+        "url": "https://packages.wolfi.dev/os/x86_64/maven-3.9-3.9.16-r3.apk",
+        "version": "3.9.16-r3",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-6979",
-          "checksum": "sha1-0TeaGaFLFB2/gWSuA16OEGxufdY="
+          "range": "bytes=0-13712",
+          "checksum": "sha1-P9j1QrRYoYFUnv4TnSOTYhSyjuQ="
         },
         "data": {
-          "range": "bytes=6980-9469919",
-          "checksum": "sha256-X92jzrbTPNSMLEvoIH259WL8G4YIhWs/zXzRidhyat8="
+          "range": "bytes=13713-9447184",
+          "checksum": "sha256-LTu3/oR4zny0ddNinJvngQFsXLmatFzXw+QoPwb7Avo="
         },
-        "checksum": "Q10TeaGaFLFB2/gWSuA16OEGxufdY="
+        "checksum": "Q1P9j1QrRYoYFUnv4TnSOTYhSyjuQ="
       },
       {
         "name": "nushell",
@@ -2176,22 +2176,22 @@
       },
       {
         "name": "maven-3.9",
-        "url": "https://packages.wolfi.dev/os/aarch64/maven-3.9-3.9.16-r2.apk",
-        "version": "3.9.16-r2",
+        "url": "https://packages.wolfi.dev/os/aarch64/maven-3.9-3.9.16-r3.apk",
+        "version": "3.9.16-r3",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-7009",
-          "checksum": "sha1-CWMcgoNIph/j2+pjjSTXicAoJa8="
+          "range": "bytes=0-13736",
+          "checksum": "sha1-V8oELeqWlKkkK9cJeabWWpjzcFo="
         },
         "data": {
-          "range": "bytes=7010-9469949",
-          "checksum": "sha256-kGo5MUMqyzwLpNXpFNbgnyEbH+dFt9WQdE42fHOeaIg="
+          "range": "bytes=13737-9447201",
+          "checksum": "sha256-bsMk52VS0qO4XZDOpjatr+HSIXYcvFLxIkS27QNPc2I="
         },
-        "checksum": "Q1CWMcgoNIph/j2+pjjSTXicAoJa8="
+        "checksum": "Q1V8oELeqWlKkkK9cJeabWWpjzcFo="
       },
       {
         "name": "nushell",

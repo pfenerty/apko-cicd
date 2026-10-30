@@ -1036,22 +1036,22 @@
       },
       {
         "name": "py3-pip-wheel",
-        "url": "https://packages.wolfi.dev/os/x86_64/py3-pip-wheel-26.2.2-r0.apk",
-        "version": "26.2.2-r0",
+        "url": "https://packages.wolfi.dev/os/x86_64/py3-pip-wheel-26.2.2-r2.apk",
+        "version": "26.2.2-r2",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-14555",
-          "checksum": "sha1-MDc1dIGRthl39o3F3XxvmL1+gLo="
+          "range": "bytes=0-44166",
+          "checksum": "sha1-BWb5vwrbg4NJu9UjvsQh38ETTAc="
         },
         "data": {
-          "range": "bytes=14556-1815650",
-          "checksum": "sha256-PNIq69JzbX0jpUOrHVEz8CQf02vFsOBqQ5IYI0JLK/o="
+          "range": "bytes=44167-1845333",
+          "checksum": "sha256-5LSfrB89D8i4jrSFRgQTgjIeEzMr4yr2MRzYPqEME1Y="
         },
-        "checksum": "Q1MDc1dIGRthl39o3F3XxvmL1+gLo="
+        "checksum": "Q1BWb5vwrbg4NJu9UjvsQh38ETTAc="
       },
       {
         "name": "python-3.13-base",
@@ -2195,22 +2195,22 @@
       },
       {
         "name": "py3-pip-wheel",
-        "url": "https://packages.wolfi.dev/os/aarch64/py3-pip-wheel-26.2.2-r0.apk",
-        "version": "26.2.2-r0",
+        "url": "https://packages.wolfi.dev/os/aarch64/py3-pip-wheel-26.2.2-r2.apk",
+        "version": "26.2.2-r2",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-14583",
-          "checksum": "sha1-vKOt4ko5e9jTuB0ItMcnrfsMuBg="
+          "range": "bytes=0-44181",
+          "checksum": "sha1-IIJLbmzKSh5E82XTLoLHHgIvv5A="
         },
         "data": {
-          "range": "bytes=14584-1815670",
-          "checksum": "sha256-rMLESTmaLkdxyjPfT2dTJS7+5snSWGhsHeAskG4MhuQ="
+          "range": "bytes=44182-1845347",
+          "checksum": "sha256-EzS6zqRoO2bPK57b+8eGh7Tuw47us3RLqXRpCj7hqdc="
         },
-        "checksum": "Q1vKOt4ko5e9jTuB0ItMcnrfsMuBg="
+        "checksum": "Q1IIJLbmzKSh5E82XTLoLHHgIvv5A="
       },
       {
         "name": "python-3.13-base",
