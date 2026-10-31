@@ -789,22 +789,22 @@
       },
       {
         "name": "nushell",
-        "url": "https://packages.wolfi.dev/os/x86_64/nushell-0.116.1-r6.apk",
-        "version": "0.116.1-r6",
+        "url": "https://packages.wolfi.dev/os/x86_64/nushell-0.116.1-r7.apk",
+        "version": "0.116.1-r7",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-13040",
-          "checksum": "sha1-dXsR+x8b0znBHag5HuejA0TafhQ="
+          "range": "bytes=0-13042",
+          "checksum": "sha1-M1H6ZoQg21lhFe9YGaI+fgvWYCk="
         },
         "data": {
-          "range": "bytes=13041-28597656",
-          "checksum": "sha256-X94cGUDRWUR8Wz8AwkCeUGmFa0IVieKRa2AOiZ9JcxI="
+          "range": "bytes=13043-28579868",
+          "checksum": "sha256-AQKYZTvPlU/Q2+DenRTZ31jH0ShSatl3EftROSCnnrk="
         },
-        "checksum": "Q1dXsR+x8b0znBHag5HuejA0TafhQ="
+        "checksum": "Q1M1H6ZoQg21lhFe9YGaI+fgvWYCk="
       },
       {
         "name": "openssl-4.0",
@@ -1017,22 +1017,22 @@
       },
       {
         "name": "libuuid",
-        "url": "https://packages.wolfi.dev/os/x86_64/libuuid-2.42.4-r1.apk",
-        "version": "2.42.4-r1",
+        "url": "https://packages.wolfi.dev/os/x86_64/libuuid-2.42.4-r2.apk",
+        "version": "2.42.4-r2",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-12923",
-          "checksum": "sha1-Iw0G6iqM4Kw9TSzZtsXNj8sabmI="
+          "range": "bytes=0-18726",
+          "checksum": "sha1-RMgxwtEheWi8izRUHv/oGNNwqKA="
         },
         "data": {
-          "range": "bytes=12924-34163",
-          "checksum": "sha256-rgkEkFaGu7+m16HkWyZ4cl9r7uR+fQW6uuQvlfkIJcc="
+          "range": "bytes=18727-39967",
+          "checksum": "sha256-uGJbNiTtZNSh+oG//yOA+GNGTpfRQkVR8RV2ptFYEds="
         },
-        "checksum": "Q1Iw0G6iqM4Kw9TSzZtsXNj8sabmI="
+        "checksum": "Q1RMgxwtEheWi8izRUHv/oGNNwqKA="
       },
       {
         "name": "py3-pip-wheel",
@@ -1055,22 +1055,22 @@
       },
       {
         "name": "python-3.13-base",
-        "url": "https://packages.wolfi.dev/os/x86_64/python-3.13-base-3.13.17_git20261023-r1.apk",
-        "version": "3.13.17_git20261023-r1",
+        "url": "https://packages.wolfi.dev/os/x86_64/python-3.13-base-3.13.18_git20261030-r0.apk",
+        "version": "3.13.18_git20261030-r0",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-19733",
-          "checksum": "sha1-6TMTadzMzzAujUmQZsDAryqd5Mk="
+          "range": "bytes=0-19732",
+          "checksum": "sha1-yuZA9mpbE6eI8dMSydhUXWkgIhk="
         },
         "data": {
-          "range": "bytes=19734-12221156",
-          "checksum": "sha256-I6DwpWjYiOjDu2RD2MD3ZE/laQ5r/2bzjDX8F1zjLXI="
+          "range": "bytes=19733-12193398",
+          "checksum": "sha256-mUSycGL8YRjK0sqhJKc2K9xHy5g3wUImEqyj6hSqH6U="
         },
-        "checksum": "Q16TMTadzMzzAujUmQZsDAryqd5Mk="
+        "checksum": "Q1yuZA9mpbE6eI8dMSydhUXWkgIhk="
       },
       {
         "name": "semgrep",
@@ -1948,22 +1948,22 @@
       },
       {
         "name": "nushell",
-        "url": "https://packages.wolfi.dev/os/aarch64/nushell-0.116.1-r6.apk",
-        "version": "0.116.1-r6",
+        "url": "https://packages.wolfi.dev/os/aarch64/nushell-0.116.1-r7.apk",
+        "version": "0.116.1-r7",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-13065",
-          "checksum": "sha1-ZZFM9bqdEcLDNWUsk/udy314wrc="
+          "range": "bytes=0-13069",
+          "checksum": "sha1-z2fISKTqKtK44EPSOhOsEgsXMT4="
         },
         "data": {
-          "range": "bytes=13066-26644286",
-          "checksum": "sha256-2nLhtysLz4oc/o1306w9uzDTBuMFuEdSsHUK2t9WY78="
+          "range": "bytes=13070-26688654",
+          "checksum": "sha256-OqhaSO5NrGJ0RWvUdtqUiMiNSVR9v7QNysoogcmIQwM="
         },
-        "checksum": "Q1ZZFM9bqdEcLDNWUsk/udy314wrc="
+        "checksum": "Q1z2fISKTqKtK44EPSOhOsEgsXMT4="
       },
       {
         "name": "openssl-4.0",
@@ -2176,22 +2176,22 @@
       },
       {
         "name": "libuuid",
-        "url": "https://packages.wolfi.dev/os/aarch64/libuuid-2.42.4-r1.apk",
-        "version": "2.42.4-r1",
+        "url": "https://packages.wolfi.dev/os/aarch64/libuuid-2.42.4-r2.apk",
+        "version": "2.42.4-r2",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-12969",
-          "checksum": "sha1-ISncHZFvTPvNUa2mDkQM/Yqn1xU="
+          "range": "bytes=0-18765",
+          "checksum": "sha1-gRKPSbz5jnlOkE5J1kmDIF+6lxA="
         },
         "data": {
-          "range": "bytes=12970-33980",
-          "checksum": "sha256-KI8UrQdWY+qAAnOlDmEQvSK0xSW3fDH6IEBLwS2N1WM="
+          "range": "bytes=18766-39770",
+          "checksum": "sha256-srd+as1DmbyBwBPD1qvW+CMuFoKGL9w9HOIxH6VFC3Q="
         },
-        "checksum": "Q1ISncHZFvTPvNUa2mDkQM/Yqn1xU="
+        "checksum": "Q1gRKPSbz5jnlOkE5J1kmDIF+6lxA="
       },
       {
         "name": "py3-pip-wheel",
@@ -2214,22 +2214,22 @@
       },
       {
         "name": "python-3.13-base",
-        "url": "https://packages.wolfi.dev/os/aarch64/python-3.13-base-3.13.17_git20261023-r1.apk",
-        "version": "3.13.17_git20261023-r1",
+        "url": "https://packages.wolfi.dev/os/aarch64/python-3.13-base-3.13.18_git20261030-r0.apk",
+        "version": "3.13.18_git20261030-r0",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-19760",
-          "checksum": "sha1-D13sFowDn3UKrkzl3yWy7XPcC0s="
+          "range": "bytes=0-19764",
+          "checksum": "sha1-gH73Vn5Ty4TRl9WR7u7JTPe6dww="
         },
         "data": {
-          "range": "bytes=19761-11906114",
-          "checksum": "sha256-r8PCpxD0y8YQb0v1OzAuZZrq8QHr+SIkpUupocRETCA="
+          "range": "bytes=19765-11921196",
+          "checksum": "sha256-hRJm8i/+ENf/sw3wjzUn6LQ8DTzvriweK8GY3mXLVBU="
         },
-        "checksum": "Q1D13sFowDn3UKrkzl3yWy7XPcC0s="
+        "checksum": "Q1gH73Vn5Ty4TRl9WR7u7JTPe6dww="
       },
       {
         "name": "semgrep",
