@@ -238,22 +238,22 @@
       },
       {
         "name": "linux-pam",
-        "url": "https://packages.wolfi.dev/os/x86_64/linux-pam-1.7.3-r1.apk",
-        "version": "1.7.3-r1",
+        "url": "https://packages.wolfi.dev/os/x86_64/linux-pam-1.7.3-r3.apk",
+        "version": "1.7.3-r3",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-8798",
-          "checksum": "sha1-MCq2YqYgbkorvMCWB8Ql68MKMiw="
+          "range": "bytes=0-14516",
+          "checksum": "sha1-YJ3caxgPAouNPah2NmEiu+nGk20="
         },
         "data": {
-          "range": "bytes=8799-900683",
-          "checksum": "sha256-RlMyLVhro27WcGomteW+xDXH9LVZCWF40rzK4Ck2UQ0="
+          "range": "bytes=14517-550658",
+          "checksum": "sha256-VlREgiz9HXrrpzA19fNeGBcMbbuoDfxSqOeva18Nikw="
         },
-        "checksum": "Q1MCq2YqYgbkorvMCWB8Ql68MKMiw="
+        "checksum": "Q1YJ3caxgPAouNPah2NmEiu+nGk20="
       },
       {
         "name": "libcap",
@@ -903,22 +903,22 @@
       },
       {
         "name": "nushell",
-        "url": "https://packages.wolfi.dev/os/x86_64/nushell-0.116.1-r6.apk",
-        "version": "0.116.1-r6",
+        "url": "https://packages.wolfi.dev/os/x86_64/nushell-0.116.1-r7.apk",
+        "version": "0.116.1-r7",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-13040",
-          "checksum": "sha1-dXsR+x8b0znBHag5HuejA0TafhQ="
+          "range": "bytes=0-13042",
+          "checksum": "sha1-M1H6ZoQg21lhFe9YGaI+fgvWYCk="
         },
         "data": {
-          "range": "bytes=13041-28597656",
-          "checksum": "sha256-X94cGUDRWUR8Wz8AwkCeUGmFa0IVieKRa2AOiZ9JcxI="
+          "range": "bytes=13043-28579868",
+          "checksum": "sha256-AQKYZTvPlU/Q2+DenRTZ31jH0ShSatl3EftROSCnnrk="
         },
-        "checksum": "Q1dXsR+x8b0znBHag5HuejA0TafhQ="
+        "checksum": "Q1M1H6ZoQg21lhFe9YGaI+fgvWYCk="
       },
       {
         "name": "openssl-4.0",
@@ -1245,22 +1245,22 @@
       },
       {
         "name": "linux-pam",
-        "url": "https://packages.wolfi.dev/os/aarch64/linux-pam-1.7.3-r1.apk",
-        "version": "1.7.3-r1",
+        "url": "https://packages.wolfi.dev/os/aarch64/linux-pam-1.7.3-r3.apk",
+        "version": "1.7.3-r3",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-8818",
-          "checksum": "sha1-66Gf3YxEp1eRFVc3V3b4z75t7s4="
+          "range": "bytes=0-14539",
+          "checksum": "sha1-AQnz2S68tqhpEbg+apmr+mxmoeY="
         },
         "data": {
-          "range": "bytes=8819-972718",
-          "checksum": "sha256-lY99MCyB5AxtNNSRiT1JP+XEsOBkXsB+CHVp99G+CwQ="
+          "range": "bytes=14540-652337",
+          "checksum": "sha256-d1Ed53AsVGNpUXKJ4CoYH8+Izhjy/xVO6CSpFlzEnuU="
         },
-        "checksum": "Q166Gf3YxEp1eRFVc3V3b4z75t7s4="
+        "checksum": "Q1AQnz2S68tqhpEbg+apmr+mxmoeY="
       },
       {
         "name": "libcap",
@@ -1910,22 +1910,22 @@
       },
       {
         "name": "nushell",
-        "url": "https://packages.wolfi.dev/os/aarch64/nushell-0.116.1-r6.apk",
-        "version": "0.116.1-r6",
+        "url": "https://packages.wolfi.dev/os/aarch64/nushell-0.116.1-r7.apk",
+        "version": "0.116.1-r7",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-13065",
-          "checksum": "sha1-ZZFM9bqdEcLDNWUsk/udy314wrc="
+          "range": "bytes=0-13069",
+          "checksum": "sha1-z2fISKTqKtK44EPSOhOsEgsXMT4="
         },
         "data": {
-          "range": "bytes=13066-26644286",
-          "checksum": "sha256-2nLhtysLz4oc/o1306w9uzDTBuMFuEdSsHUK2t9WY78="
+          "range": "bytes=13070-26688654",
+          "checksum": "sha256-OqhaSO5NrGJ0RWvUdtqUiMiNSVR9v7QNysoogcmIQwM="
         },
-        "checksum": "Q1ZZFM9bqdEcLDNWUsk/udy314wrc="
+        "checksum": "Q1z2fISKTqKtK44EPSOhOsEgsXMT4="
       },
       {
         "name": "openssl-4.0",

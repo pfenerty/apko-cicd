@@ -751,22 +751,22 @@
       },
       {
         "name": "linux-headers",
-        "url": "https://packages.wolfi.dev/os/x86_64/linux-headers-7.3-r0.apk",
-        "version": "7.3-r0",
+        "url": "https://packages.wolfi.dev/os/x86_64/linux-headers-7.3.1-r0.apk",
+        "version": "7.3.1-r0",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-5417",
-          "checksum": "sha1-NZlIhUb4Ujyho8neYJnI0noNjcE="
+          "range": "bytes=0-11076",
+          "checksum": "sha1-vWVKRS3fDwDbT3xpmPWJvF1bZhA="
         },
         "data": {
-          "range": "bytes=5418-2136806",
-          "checksum": "sha256-zz130nm77nZbMDj9mqb/6GBU7Thvk1p/ISxCmNNsPl0="
+          "range": "bytes=11077-2142495",
+          "checksum": "sha256-qMeDc2izIm78p+lKxRLA7JUfTjbPhDoAHUPIA/hO4XQ="
         },
-        "checksum": "Q1NZlIhUb4Ujyho8neYJnI0noNjcE="
+        "checksum": "Q1vWVKRS3fDwDbT3xpmPWJvF1bZhA="
       },
       {
         "name": "glibc-2.44-dev",
@@ -1131,22 +1131,22 @@
       },
       {
         "name": "nushell",
-        "url": "https://packages.wolfi.dev/os/x86_64/nushell-0.116.1-r6.apk",
-        "version": "0.116.1-r6",
+        "url": "https://packages.wolfi.dev/os/x86_64/nushell-0.116.1-r7.apk",
+        "version": "0.116.1-r7",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-13040",
-          "checksum": "sha1-dXsR+x8b0znBHag5HuejA0TafhQ="
+          "range": "bytes=0-13042",
+          "checksum": "sha1-M1H6ZoQg21lhFe9YGaI+fgvWYCk="
         },
         "data": {
-          "range": "bytes=13041-28597656",
-          "checksum": "sha256-X94cGUDRWUR8Wz8AwkCeUGmFa0IVieKRa2AOiZ9JcxI="
+          "range": "bytes=13043-28579868",
+          "checksum": "sha256-AQKYZTvPlU/Q2+DenRTZ31jH0ShSatl3EftROSCnnrk="
         },
-        "checksum": "Q1dXsR+x8b0znBHag5HuejA0TafhQ="
+        "checksum": "Q1M1H6ZoQg21lhFe9YGaI+fgvWYCk="
       },
       {
         "name": "openssl-4.0",
@@ -1986,22 +1986,22 @@
       },
       {
         "name": "linux-headers",
-        "url": "https://packages.wolfi.dev/os/aarch64/linux-headers-7.3-r0.apk",
-        "version": "7.3-r0",
+        "url": "https://packages.wolfi.dev/os/aarch64/linux-headers-7.3.1-r0.apk",
+        "version": "7.3.1-r0",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-5443",
-          "checksum": "sha1-a46ACSeqUJdu7NY2qqSaJmKVNME="
+          "range": "bytes=0-11107",
+          "checksum": "sha1-CAWMLRiLOj2EGJgRkKEAblozRWE="
         },
         "data": {
-          "range": "bytes=5444-2096843",
-          "checksum": "sha256-ZCqU4RN7WVKIYTK1CE6T1EP6XeYSyUXBW+L5XAGXBuM="
+          "range": "bytes=11108-2102523",
+          "checksum": "sha256-hirLTm1yeGQ8yQyb4U+w3OZH/1NTNk3P7JsLWHq+RR8="
         },
-        "checksum": "Q1a46ACSeqUJdu7NY2qqSaJmKVNME="
+        "checksum": "Q1CAWMLRiLOj2EGJgRkKEAblozRWE="
       },
       {
         "name": "glibc-2.44-dev",
@@ -2366,22 +2366,22 @@
       },
       {
         "name": "nushell",
-        "url": "https://packages.wolfi.dev/os/aarch64/nushell-0.116.1-r6.apk",
-        "version": "0.116.1-r6",
+        "url": "https://packages.wolfi.dev/os/aarch64/nushell-0.116.1-r7.apk",
+        "version": "0.116.1-r7",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-13065",
-          "checksum": "sha1-ZZFM9bqdEcLDNWUsk/udy314wrc="
+          "range": "bytes=0-13069",
+          "checksum": "sha1-z2fISKTqKtK44EPSOhOsEgsXMT4="
         },
         "data": {
-          "range": "bytes=13066-26644286",
-          "checksum": "sha256-2nLhtysLz4oc/o1306w9uzDTBuMFuEdSsHUK2t9WY78="
+          "range": "bytes=13070-26688654",
+          "checksum": "sha256-OqhaSO5NrGJ0RWvUdtqUiMiNSVR9v7QNysoogcmIQwM="
         },
-        "checksum": "Q1ZZFM9bqdEcLDNWUsk/udy314wrc="
+        "checksum": "Q1z2fISKTqKtK44EPSOhOsEgsXMT4="
       },
       {
         "name": "openssl-4.0",

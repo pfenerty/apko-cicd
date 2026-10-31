@@ -789,22 +789,22 @@
       },
       {
         "name": "nushell",
-        "url": "https://packages.wolfi.dev/os/x86_64/nushell-0.116.1-r6.apk",
-        "version": "0.116.1-r6",
+        "url": "https://packages.wolfi.dev/os/x86_64/nushell-0.116.1-r7.apk",
+        "version": "0.116.1-r7",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-13040",
-          "checksum": "sha1-dXsR+x8b0znBHag5HuejA0TafhQ="
+          "range": "bytes=0-13042",
+          "checksum": "sha1-M1H6ZoQg21lhFe9YGaI+fgvWYCk="
         },
         "data": {
-          "range": "bytes=13041-28597656",
-          "checksum": "sha256-X94cGUDRWUR8Wz8AwkCeUGmFa0IVieKRa2AOiZ9JcxI="
+          "range": "bytes=13043-28579868",
+          "checksum": "sha256-AQKYZTvPlU/Q2+DenRTZ31jH0ShSatl3EftROSCnnrk="
         },
-        "checksum": "Q1dXsR+x8b0znBHag5HuejA0TafhQ="
+        "checksum": "Q1M1H6ZoQg21lhFe9YGaI+fgvWYCk="
       },
       {
         "name": "openssl-4.0",
@@ -1834,22 +1834,22 @@
       },
       {
         "name": "nushell",
-        "url": "https://packages.wolfi.dev/os/aarch64/nushell-0.116.1-r6.apk",
-        "version": "0.116.1-r6",
+        "url": "https://packages.wolfi.dev/os/aarch64/nushell-0.116.1-r7.apk",
+        "version": "0.116.1-r7",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-13065",
-          "checksum": "sha1-ZZFM9bqdEcLDNWUsk/udy314wrc="
+          "range": "bytes=0-13069",
+          "checksum": "sha1-z2fISKTqKtK44EPSOhOsEgsXMT4="
         },
         "data": {
-          "range": "bytes=13066-26644286",
-          "checksum": "sha256-2nLhtysLz4oc/o1306w9uzDTBuMFuEdSsHUK2t9WY78="
+          "range": "bytes=13070-26688654",
+          "checksum": "sha256-OqhaSO5NrGJ0RWvUdtqUiMiNSVR9v7QNysoogcmIQwM="
         },
-        "checksum": "Q1ZZFM9bqdEcLDNWUsk/udy314wrc="
+        "checksum": "Q1z2fISKTqKtK44EPSOhOsEgsXMT4="
       },
       {
         "name": "openssl-4.0",
