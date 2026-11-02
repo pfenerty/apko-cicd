@@ -2,7 +2,7 @@
   "version": "v1",
   "config": {
     "name": "/workspace/workspace/tools/apko/apko.yaml",
-    "checksum": "sha256-x4g1aTEeg/qbYxWZuBedObClWYWfZgtMjetqt3OV5kk="
+    "checksum": "sha256-tZk7+ul+MJkIfeMw+7NZriRh5eVKrhmAHskmm//+OSo="
   },
   "contents": {
     "keyring": [
@@ -67,22 +67,22 @@
       },
       {
         "name": "apko",
-        "url": "https://packages.wolfi.dev/os/x86_64/apko-1.4.14-r0.apk",
-        "version": "1.4.14-r0",
+        "url": "https://packages.wolfi.dev/os/x86_64/apko-1.4.15-r0.apk",
+        "version": "1.4.15-r0",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-16542",
-          "checksum": "sha1-IcVN87JJaQcJG6ZrJ3hE+55/qrE="
+          "range": "bytes=0-15647",
+          "checksum": "sha1-SyXVM8CLz9yWPXvScg+zl1UINaI="
         },
         "data": {
-          "range": "bytes=16543-12711752",
-          "checksum": "sha256-h8qUMDPXG4ZUaLiUpVf1XmJTYxqrWE4dKKXV7Xgu/7s="
+          "range": "bytes=15648-12710790",
+          "checksum": "sha256-fUasx3wCbostwg1VPw8KruooOTY4tsDK9zZ/GQSGi/g="
         },
-        "checksum": "Q1IcVN87JJaQcJG6ZrJ3hE+55/qrE="
+        "checksum": "Q1SyXVM8CLz9yWPXvScg+zl1UINaI="
       },
       {
         "name": "ld-linux-2.44",
@@ -979,22 +979,22 @@
       },
       {
         "name": "apko",
-        "url": "https://packages.wolfi.dev/os/aarch64/apko-1.4.14-r0.apk",
-        "version": "1.4.14-r0",
+        "url": "https://packages.wolfi.dev/os/aarch64/apko-1.4.15-r0.apk",
+        "version": "1.4.15-r0",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-16571",
-          "checksum": "sha1-B5KLUL2raKyXSHa3U1/eeeIPUIo="
+          "range": "bytes=0-15683",
+          "checksum": "sha1-TnzNB9Ea5n1JXe70NMuO1/KFhIs="
         },
         "data": {
-          "range": "bytes=16572-11533857",
-          "checksum": "sha256-2FDtzoORRbChdr+uTKKTgAxO0Ah1vBo+lS+JoI0LQ64="
+          "range": "bytes=15684-11517343",
+          "checksum": "sha256-CKs1q4y/BlDcFFtG/P56bcZ5DSJYGaZ8g2VJPrcLdwE="
         },
-        "checksum": "Q1B5KLUL2raKyXSHa3U1/eeeIPUIo="
+        "checksum": "Q1TnzNB9Ea5n1JXe70NMuO1/KFhIs="
       },
       {
         "name": "glibc-2.44-locale-posix",
