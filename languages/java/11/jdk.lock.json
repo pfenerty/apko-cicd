@@ -1416,22 +1416,22 @@
       },
       {
         "name": "openjdk-11",
-        "url": "https://packages.wolfi.dev/os/x86_64/openjdk-11-11.0.32.1-r6.apk",
-        "version": "11.0.32.1-r6",
+        "url": "https://packages.wolfi.dev/os/x86_64/openjdk-11-11.0.33-r0.apk",
+        "version": "11.0.33-r0",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-10667",
-          "checksum": "sha1-1519qSfzHJr2FTQO9s111HKrXE0="
+          "range": "bytes=0-18111",
+          "checksum": "sha1-VOR5W1kTgcZ2i2qAOiMT/Z4lzsI="
         },
         "data": {
-          "range": "bytes=10668-63123702",
-          "checksum": "sha256-XrVy64met3ZVvzQ1J9Kp1QyMjAG3DFs0f4TdV5yrtaU="
+          "range": "bytes=18112-63126579",
+          "checksum": "sha256-ZLwVcOFNjaBnZDIP60WyQ/HSVf1573efd9Aicd2nSRA="
         },
-        "checksum": "Q11519qSfzHJr2FTQO9s111HKrXE0="
+        "checksum": "Q1VOR5W1kTgcZ2i2qAOiMT/Z4lzsI="
       },
       {
         "name": "openssl-4.0",
@@ -1473,22 +1473,22 @@
       },
       {
         "name": "apk-tools",
-        "url": "https://packages.wolfi.dev/os/x86_64/apk-tools-2.14.12-r0.apk",
-        "version": "2.14.12-r0",
+        "url": "https://packages.wolfi.dev/os/x86_64/apk-tools-2.14.13-r0.apk",
+        "version": "2.14.13-r0",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-15879",
-          "checksum": "sha1-w4dvbYANZCyPgUWkh+tvBlgUShs="
+          "range": "bytes=0-15866",
+          "checksum": "sha1-Mu4S4nmI0FiN2FLlKa6zQgsS04w="
         },
         "data": {
-          "range": "bytes=15880-194270",
-          "checksum": "sha256-OjBy0bn7mq3fZfF2pUWm6ibSB5u10uBXUO90wSusWEM="
+          "range": "bytes=15867-194133",
+          "checksum": "sha256-KEy6xOQWA9qRXkAkAMua/+XeX7RW/ErydLXehMNR0YY="
         },
-        "checksum": "Q1w4dvbYANZCyPgUWkh+tvBlgUShs="
+        "checksum": "Q1Mu4S4nmI0FiN2FLlKa6zQgsS04w="
       },
       {
         "name": "busybox",
@@ -2936,22 +2936,22 @@
       },
       {
         "name": "openjdk-11",
-        "url": "https://packages.wolfi.dev/os/aarch64/openjdk-11-11.0.32.1-r6.apk",
-        "version": "11.0.32.1-r6",
+        "url": "https://packages.wolfi.dev/os/aarch64/openjdk-11-11.0.33-r0.apk",
+        "version": "11.0.33-r0",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-10704",
-          "checksum": "sha1-ZnjYXTvYwueYC37BO3O0wJr9a8I="
+          "range": "bytes=0-18146",
+          "checksum": "sha1-0oZ99ZdR+R0Zt6FU9iMUZr7PYtE="
         },
         "data": {
-          "range": "bytes=10705-62592315",
-          "checksum": "sha256-lK56TJ4LR1lQ4mdTvyTIVn0WExPLXJ1tIDSB4b+Xyyw="
+          "range": "bytes=18147-62700455",
+          "checksum": "sha256-6FXAJBcfJlj6TLOW9HkmHFAmW7Z0MyujE014d0UvHDg="
         },
-        "checksum": "Q1ZnjYXTvYwueYC37BO3O0wJr9a8I="
+        "checksum": "Q10oZ99ZdR+R0Zt6FU9iMUZr7PYtE="
       },
       {
         "name": "openssl-4.0",
@@ -2993,22 +2993,22 @@
       },
       {
         "name": "apk-tools",
-        "url": "https://packages.wolfi.dev/os/aarch64/apk-tools-2.14.12-r0.apk",
-        "version": "2.14.12-r0",
+        "url": "https://packages.wolfi.dev/os/aarch64/apk-tools-2.14.13-r0.apk",
+        "version": "2.14.13-r0",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-15905",
-          "checksum": "sha1-IMqIw3lsc/XA3NQJI+onuv8nkuo="
+          "range": "bytes=0-15889",
+          "checksum": "sha1-dY1XICt7pKDTOb2qEUMPDWgjo88="
         },
         "data": {
-          "range": "bytes=15906-186782",
-          "checksum": "sha256-IAU+TUGx0jnJ1pLtE3OCdvp6H6++NvcCljbWMIDn/fs="
+          "range": "bytes=15890-186594",
+          "checksum": "sha256-SQ/AIc5a2tmpB+Y0ykfQPQqi7EmpSg30npV7B2qbRlA="
         },
-        "checksum": "Q1IMqIw3lsc/XA3NQJI+onuv8nkuo="
+        "checksum": "Q1dY1XICt7pKDTOb2qEUMPDWgjo88="
       },
       {
         "name": "busybox",

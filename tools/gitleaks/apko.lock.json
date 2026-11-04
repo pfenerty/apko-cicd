@@ -865,22 +865,22 @@
       },
       {
         "name": "gitleaks",
-        "url": "https://packages.wolfi.dev/os/x86_64/gitleaks-8.30.1-r28.apk",
-        "version": "8.30.1-r28",
+        "url": "https://packages.wolfi.dev/os/x86_64/gitleaks-8.30.1-r29.apk",
+        "version": "8.30.1-r29",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-10833",
-          "checksum": "sha1-vjNJ/4vnlj8cxIz21tuDTHjpdLo="
+          "range": "bytes=0-18024",
+          "checksum": "sha1-R4GERP9gJg2CzDui3Dg0y6Cl/BA="
         },
         "data": {
-          "range": "bytes=10834-7471069",
-          "checksum": "sha256-z+ytSKBudG5551TYkyIV3aidKXvGktzVgJnmgQ2IAig="
+          "range": "bytes=18025-7481025",
+          "checksum": "sha256-geUykMsLW11g3vjZ/o/o/7HtP64jtuxfoxLml+OXFlU="
         },
-        "checksum": "Q1vjNJ/4vnlj8cxIz21tuDTHjpdLo="
+        "checksum": "Q1R4GERP9gJg2CzDui3Dg0y6Cl/BA="
       },
       {
         "name": "nushell",
@@ -941,22 +941,22 @@
       },
       {
         "name": "apk-tools",
-        "url": "https://packages.wolfi.dev/os/x86_64/apk-tools-2.14.12-r0.apk",
-        "version": "2.14.12-r0",
+        "url": "https://packages.wolfi.dev/os/x86_64/apk-tools-2.14.13-r0.apk",
+        "version": "2.14.13-r0",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-15879",
-          "checksum": "sha1-w4dvbYANZCyPgUWkh+tvBlgUShs="
+          "range": "bytes=0-15866",
+          "checksum": "sha1-Mu4S4nmI0FiN2FLlKa6zQgsS04w="
         },
         "data": {
-          "range": "bytes=15880-194270",
-          "checksum": "sha256-OjBy0bn7mq3fZfF2pUWm6ibSB5u10uBXUO90wSusWEM="
+          "range": "bytes=15867-194133",
+          "checksum": "sha256-KEy6xOQWA9qRXkAkAMua/+XeX7RW/ErydLXehMNR0YY="
         },
-        "checksum": "Q1w4dvbYANZCyPgUWkh+tvBlgUShs="
+        "checksum": "Q1Mu4S4nmI0FiN2FLlKa6zQgsS04w="
       },
       {
         "name": "busybox",
@@ -1853,22 +1853,22 @@
       },
       {
         "name": "gitleaks",
-        "url": "https://packages.wolfi.dev/os/aarch64/gitleaks-8.30.1-r28.apk",
-        "version": "8.30.1-r28",
+        "url": "https://packages.wolfi.dev/os/aarch64/gitleaks-8.30.1-r29.apk",
+        "version": "8.30.1-r29",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-10861",
-          "checksum": "sha1-LLC6txPGv1C8NfIHe0hvhgMyTpo="
+          "range": "bytes=0-18064",
+          "checksum": "sha1-/UA7iU5Lgbo3/4OiCY1KSSs8V3Y="
         },
         "data": {
-          "range": "bytes=10862-6771045",
-          "checksum": "sha256-jINS9Wuz7FvAL8k6Re8OyWx/z6fAKstCBg8MFDJgbWU="
+          "range": "bytes=18065-6803032",
+          "checksum": "sha256-d2QlAchKj+UX2D5ZmYelOqy9vS7iSMejkljgR7mNQEI="
         },
-        "checksum": "Q1LLC6txPGv1C8NfIHe0hvhgMyTpo="
+        "checksum": "Q1/UA7iU5Lgbo3/4OiCY1KSSs8V3Y="
       },
       {
         "name": "nushell",
@@ -1929,22 +1929,22 @@
       },
       {
         "name": "apk-tools",
-        "url": "https://packages.wolfi.dev/os/aarch64/apk-tools-2.14.12-r0.apk",
-        "version": "2.14.12-r0",
+        "url": "https://packages.wolfi.dev/os/aarch64/apk-tools-2.14.13-r0.apk",
+        "version": "2.14.13-r0",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-15905",
-          "checksum": "sha1-IMqIw3lsc/XA3NQJI+onuv8nkuo="
+          "range": "bytes=0-15889",
+          "checksum": "sha1-dY1XICt7pKDTOb2qEUMPDWgjo88="
         },
         "data": {
-          "range": "bytes=15906-186782",
-          "checksum": "sha256-IAU+TUGx0jnJ1pLtE3OCdvp6H6++NvcCljbWMIDn/fs="
+          "range": "bytes=15890-186594",
+          "checksum": "sha256-SQ/AIc5a2tmpB+Y0ykfQPQqi7EmpSg30npV7B2qbRlA="
         },
-        "checksum": "Q1IMqIw3lsc/XA3NQJI+onuv8nkuo="
+        "checksum": "Q1dY1XICt7pKDTOb2qEUMPDWgjo88="
       },
       {
         "name": "busybox",
