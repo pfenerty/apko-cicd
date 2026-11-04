@@ -2,7 +2,7 @@
   "version": "v1",
   "config": {
     "name": "/workspace/workspace/tools/syft/apko.yaml",
-    "checksum": "sha256-XLYN2makDrPViA8RbmQBWRIwH9o89/Y2FON/p2Q3C/U="
+    "checksum": "sha256-x8yvDZWza1Umi6EL+IdFTiFeKe974UFxmRd1xJaajFI="
   },
   "contents": {
     "keyring": [
@@ -827,22 +827,22 @@
       },
       {
         "name": "syft",
-        "url": "https://packages.wolfi.dev/os/x86_64/syft-1.55.0-r2.apk",
-        "version": "1.55.0-r2",
+        "url": "https://packages.wolfi.dev/os/x86_64/syft-1.56.0-r0.apk",
+        "version": "1.56.0-r0",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-12537",
-          "checksum": "sha1-FlhTk1I6Dx4cq7zHTPUdDNX0l7Y="
+          "range": "bytes=0-12559",
+          "checksum": "sha1-tZAcri8579tQGbpiq4TBLZXt/bM="
         },
         "data": {
-          "range": "bytes=12538-31911035",
-          "checksum": "sha256-lYuNV8BIV+4JAw/i1quvjM+MkVbuDPgiR+PtEFwHAc4="
+          "range": "bytes=12560-32312121",
+          "checksum": "sha256-6Sn2EFsaikFzENy98vUQhMk7HEvMwp7YXN7lSgn5bFY="
         },
-        "checksum": "Q1FlhTk1I6Dx4cq7zHTPUdDNX0l7Y="
+        "checksum": "Q1tZAcri8579tQGbpiq4TBLZXt/bM="
       },
       {
         "name": "wolfi-keys",
@@ -865,22 +865,22 @@
       },
       {
         "name": "apk-tools",
-        "url": "https://packages.wolfi.dev/os/x86_64/apk-tools-2.14.12-r0.apk",
-        "version": "2.14.12-r0",
+        "url": "https://packages.wolfi.dev/os/x86_64/apk-tools-2.14.13-r0.apk",
+        "version": "2.14.13-r0",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-15879",
-          "checksum": "sha1-w4dvbYANZCyPgUWkh+tvBlgUShs="
+          "range": "bytes=0-15866",
+          "checksum": "sha1-Mu4S4nmI0FiN2FLlKa6zQgsS04w="
         },
         "data": {
-          "range": "bytes=15880-194270",
-          "checksum": "sha256-OjBy0bn7mq3fZfF2pUWm6ibSB5u10uBXUO90wSusWEM="
+          "range": "bytes=15867-194133",
+          "checksum": "sha256-KEy6xOQWA9qRXkAkAMua/+XeX7RW/ErydLXehMNR0YY="
         },
-        "checksum": "Q1w4dvbYANZCyPgUWkh+tvBlgUShs="
+        "checksum": "Q1Mu4S4nmI0FiN2FLlKa6zQgsS04w="
       },
       {
         "name": "busybox",
@@ -1739,22 +1739,22 @@
       },
       {
         "name": "syft",
-        "url": "https://packages.wolfi.dev/os/aarch64/syft-1.55.0-r2.apk",
-        "version": "1.55.0-r2",
+        "url": "https://packages.wolfi.dev/os/aarch64/syft-1.56.0-r0.apk",
+        "version": "1.56.0-r0",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-12568",
-          "checksum": "sha1-W9dzmmMmeerwiBHzecktTdYGpJM="
+          "range": "bytes=0-12591",
+          "checksum": "sha1-J/QRYiY8kal9cn2D38HSFqqU7VE="
         },
         "data": {
-          "range": "bytes=12569-29086788",
-          "checksum": "sha256-EfQGz1R97qj9dvNCcUCjLrL0QZU0mofIq8+K80GT2c0="
+          "range": "bytes=12592-29432018",
+          "checksum": "sha256-xkfeE3ZDcdz5hZzj2ZaXuNknXydCpq/c5lOO0TeReRk="
         },
-        "checksum": "Q1W9dzmmMmeerwiBHzecktTdYGpJM="
+        "checksum": "Q1J/QRYiY8kal9cn2D38HSFqqU7VE="
       },
       {
         "name": "wolfi-keys",
@@ -1777,22 +1777,22 @@
       },
       {
         "name": "apk-tools",
-        "url": "https://packages.wolfi.dev/os/aarch64/apk-tools-2.14.12-r0.apk",
-        "version": "2.14.12-r0",
+        "url": "https://packages.wolfi.dev/os/aarch64/apk-tools-2.14.13-r0.apk",
+        "version": "2.14.13-r0",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-15905",
-          "checksum": "sha1-IMqIw3lsc/XA3NQJI+onuv8nkuo="
+          "range": "bytes=0-15889",
+          "checksum": "sha1-dY1XICt7pKDTOb2qEUMPDWgjo88="
         },
         "data": {
-          "range": "bytes=15906-186782",
-          "checksum": "sha256-IAU+TUGx0jnJ1pLtE3OCdvp6H6++NvcCljbWMIDn/fs="
+          "range": "bytes=15890-186594",
+          "checksum": "sha256-SQ/AIc5a2tmpB+Y0ykfQPQqi7EmpSg30npV7B2qbRlA="
         },
-        "checksum": "Q1IMqIw3lsc/XA3NQJI+onuv8nkuo="
+        "checksum": "Q1dY1XICt7pKDTOb2qEUMPDWgjo88="
       },
       {
         "name": "busybox",
