@@ -20,12 +20,12 @@ endef
 $(eval $(call IMAGE,base,base/apko.yaml,base:stable))
 
 # ── Tools ────────────────────────────────────────────────────────────────────
-$(eval $(call IMAGE,tools-syft,tools/syft/apko.yaml,syft:1.56.0))
-$(eval $(call IMAGE,tools-grype,tools/grype/apko.yaml,grype:0.121.1))
+$(eval $(call IMAGE,tools-syft,tools/syft/apko.yaml,syft:1.57.0))
+$(eval $(call IMAGE,tools-grype,tools/grype/apko.yaml,grype:0.121.2))
 $(eval $(call IMAGE,tools-gitleaks,tools/gitleaks/apko.yaml,gitleaks:8.30.1))
 $(eval $(call IMAGE,tools-semgrep,tools/semgrep/apko.yaml,semgrep:1.165.0))
 $(eval $(call IMAGE,tools-oras,tools/oras/apko.yaml,oras:1.3.6))
-$(eval $(call IMAGE,tools-apko,tools/apko/apko.yaml,apko:1.4.15))
+$(eval $(call IMAGE,tools-apko,tools/apko/apko.yaml,apko:1.4.17))
 $(eval $(call IMAGE,tools-melange,tools/melange/apko.yaml,melange:0.56.3))
 $(eval $(call IMAGE,tools-golangci-lint-go1.22,tools/golangci-lint/1.22.yaml,golangci-lint:2.15.0-go1.22))
 $(eval $(call IMAGE,tools-golangci-lint-go1.23,tools/golangci-lint/1.23.yaml,golangci-lint:2.15.0-go1.23))
