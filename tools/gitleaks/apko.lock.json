@@ -865,22 +865,22 @@
       },
       {
         "name": "gitleaks",
-        "url": "https://packages.wolfi.dev/os/x86_64/gitleaks-8.30.1-r30.apk",
-        "version": "8.30.1-r30",
+        "url": "https://packages.wolfi.dev/os/x86_64/gitleaks-8.30.1-r31.apk",
+        "version": "8.30.1-r31",
         "architecture": "x86_64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-18499",
-          "checksum": "sha1-T73/1QfsJKUpMnFg/bs9/dWsdZc="
+          "range": "bytes=0-18502",
+          "checksum": "sha1-1adMW7hk3NYR9OCVURyhRO90S64="
         },
         "data": {
-          "range": "bytes=18500-7500827",
-          "checksum": "sha256-mHamjBKGkcHbkZKpCjzwUZmvVw76oqmuAJs0XQ6sR3I="
+          "range": "bytes=18503-7524770",
+          "checksum": "sha256-yJJF3HLNqM8Gnnc72AFIGFMFuyGb5l+2MFlSrBs32YU="
         },
-        "checksum": "Q1T73/1QfsJKUpMnFg/bs9/dWsdZc="
+        "checksum": "Q11adMW7hk3NYR9OCVURyhRO90S64="
       },
       {
         "name": "nushell",
@@ -1853,22 +1853,22 @@
       },
       {
         "name": "gitleaks",
-        "url": "https://packages.wolfi.dev/os/aarch64/gitleaks-8.30.1-r30.apk",
-        "version": "8.30.1-r30",
+        "url": "https://packages.wolfi.dev/os/aarch64/gitleaks-8.30.1-r31.apk",
+        "version": "8.30.1-r31",
         "architecture": "aarch64",
         "signature": {
           "range": "",
           "checksum": ""
         },
         "control": {
-          "range": "bytes=0-18527",
-          "checksum": "sha1-ElR2QTVukq9feNcOFmOGxcF2aw0="
+          "range": "bytes=0-18531",
+          "checksum": "sha1-IJVpUKcEdlSGR0/osKlIYwsfbC4="
         },
         "data": {
-          "range": "bytes=18528-6773625",
-          "checksum": "sha256-D1Rxa45KetgpAlCFEjwWsQHA8G96LCydzdx4jG1OF24="
+          "range": "bytes=18532-6791124",
+          "checksum": "sha256-YyRgdQEJ0mGj2A/MOS94JY44ggys7m7bD4o3yWMUhKA="
         },
-        "checksum": "Q1ElR2QTVukq9feNcOFmOGxcF2aw0="
+        "checksum": "Q1IJVpUKcEdlSGR0/osKlIYwsfbC4="
       },
       {
         "name": "nushell",
