@@ -32,6 +32,8 @@ repos:
     #   - /Users/patrickfenerty/code/common  # unimplemented in current beads version; causes daemon JSONL-watch errors
 export:
     auto: true
+sync:
+    remote: "git+ssh://git@github.com/pfenerty/apko-cicd.git"
 
 # Integration settings (access with 'bd config get/set')
 # These are stored in the database, not in this file:
