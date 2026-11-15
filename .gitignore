@@ -9,3 +9,6 @@ local-melange.rsa.pub
 .dolt/
 *.db
 .beads-credential-key
+
+# bd runtime lock
+.beads.gate.lock
