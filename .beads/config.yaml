@@ -27,9 +27,11 @@
 # Multi-repo configuration (experimental - bd-307)
 # Allows hydrating from multiple repositories and routing writes to the correct JSONL
 repos:
-  primary: "."
-  # additional:
-  #   - /Users/patrickfenerty/code/common  # unimplemented in current beads version; causes daemon JSONL-watch errors
+    primary: "."
+    # additional:
+    #   - /Users/patrickfenerty/code/common  # unimplemented in current beads version; causes daemon JSONL-watch errors
+export:
+    auto: true
 
 # Integration settings (access with 'bd config get/set')
 # These are stored in the database, not in this file:
