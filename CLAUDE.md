@@ -40,6 +40,14 @@ Build individual images with `make <target-name>` (e.g., `make nodejs-22`, `make
 Versions are pinned in individual apko YAML configs and updated automatically by [Renovate](https://docs.renovatebot.com/) using the `~` (compatible release) operator for patch-level auto-updates.
 
 
+## Gotchas
+
+- **apko lock files checksum the whole config YAML**, annotations included. After any edit to an apko YAML, re-run `apko lock <yaml>`, or publish fails with `checksum in the lock file ... does not matches`.
+- **gosec is not a Wolfi package** (govulncheck is). The gosec images are built by melange from source (`tools/gosec/melange.yaml`) and consumed through a local `@local` apko repo. apko merges included repositories and keyrings, so the gosec configs only add `@local` on top of the Wolfi base.
+- **melange only runs on Linux**, so `make melange-gosec` can't run on a Mac; it runs in the Tekton pipeline, in a privileged step. That needs `bubblewrap` in `base` and the Wolfi repository and keyring declared in `melange.yaml`'s `environment`. The `apko-cicd-ci` namespace allows privileged pods.
+- **gosec builds are amd64-only** until Talos registers qemu binfmt host-wide (homelab-ep8). Cross-arch melange fails with `bwrap: execvp /bin/sh: Exec format error`.
+- **tektonic has no scheduled trigger**, only push, PR and tag events. The daily package-update job is a hand-written, triggerless Tekton Pipeline plus a CronJob in `ci/update/`, applied by homelab's `apko-cicd-update` Flux Kustomization. It lives outside `.tekton/` because tektonic's synth deletes any file there it didn't emit. It needs the `github-automerge-token` secret and branch protection on `main`.
+
 <!-- BEGIN BEADS INTEGRATION v:1 profile:minimal hash:ca08a54f -->
 ## Beads Issue Tracker
 
