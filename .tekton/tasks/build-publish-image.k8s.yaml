@@ -129,7 +129,7 @@ spec:
     - env:
         - name: DOCKER_CONFIG
           value: /tmp/docker-auth
-      image: ghcr.io/pfenerty/apko-cicd/apko:1.5.2
+      image: ghcr.io/pfenerty/apko-cicd/apko:1.5.3
       name: publish
       onError: continue
       script: |-
